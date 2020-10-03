@@ -67,6 +67,13 @@ class ElectionsViewController: UIViewController {
             
         }).resume()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "show2" {
+            let vc = segue.destination as! ElectDetailViewController
+            vc.currentElection = sender as? Elections
+        }
+    }
 }
 
 extension ElectionsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -81,6 +88,10 @@ extension ElectionsViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let elect = elections[indexPath.row]
+        performSegue(withIdentifier: "show2", sender: elect)
+    }
     
 }
 
@@ -93,8 +104,8 @@ struct Elections {
     let absentee: [Location]
     
     init (json: [String: Any]) {
-        self.name = (json["election"] as? [String: String])!["name"]!
-        self.date = (json["election"] as? [String: String])!["electionDay"]!
+        self.name = (json["election"] as? [String: String])!["name"] ?? "Not available"
+        self.date = (json["election"] as? [String: String])!["electionDay"] ?? "Not available"
         
         var array = json["pollingLocations"] as! [[String: Any]]
         var temp = [Location]()

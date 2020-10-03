@@ -17,6 +17,8 @@
 		49006B5F25258D2C00FCAACA /* GAVotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49006B5E25258D2C00FCAACA /* GAVotesUITests.swift */; };
 		490935CB25259D61009D0740 /* RepresentativesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490935CA25259D61009D0740 /* RepresentativesViewController.swift */; };
 		4975665F2526E1410026B1A8 /* ElectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975665E2526E1410026B1A8 /* ElectionsViewController.swift */; };
+		49EDD4A425278FF2008E0E2E /* RepDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDD4A325278FF2008E0E2E /* RepDetailViewController.swift */; };
+		49EDD4AF2528128F008E0E2E /* ElectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDD4AE2528128F008E0E2E /* ElectDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		49006B6025258D2C00FCAACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490935CA25259D61009D0740 /* RepresentativesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativesViewController.swift; sourceTree = "<group>"; };
 		4975665E2526E1410026B1A8 /* ElectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectionsViewController.swift; sourceTree = "<group>"; };
+		49EDD4A325278FF2008E0E2E /* RepDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepDetailViewController.swift; sourceTree = "<group>"; };
+		49EDD4AE2528128F008E0E2E /* ElectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +111,9 @@
 				49006B3E25258D2A00FCAACA /* SceneDelegate.swift */,
 				49006B4025258D2A00FCAACA /* AddressViewController.swift */,
 				490935CA25259D61009D0740 /* RepresentativesViewController.swift */,
+				49EDD4A325278FF2008E0E2E /* RepDetailViewController.swift */,
 				4975665E2526E1410026B1A8 /* ElectionsViewController.swift */,
+				49EDD4AE2528128F008E0E2E /* ElectDetailViewController.swift */,
 				49006B4225258D2A00FCAACA /* Main.storyboard */,
 				49006B4525258D2C00FCAACA /* Assets.xcassets */,
 				49006B4725258D2C00FCAACA /* LaunchScreen.storyboard */,
@@ -269,6 +275,8 @@
 				49006B3D25258D2A00FCAACA /* AppDelegate.swift in Sources */,
 				49006B3F25258D2A00FCAACA /* SceneDelegate.swift in Sources */,
 				490935CB25259D61009D0740 /* RepresentativesViewController.swift in Sources */,
+				49EDD4A425278FF2008E0E2E /* RepDetailViewController.swift in Sources */,
+				49EDD4AF2528128F008E0E2E /* ElectDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

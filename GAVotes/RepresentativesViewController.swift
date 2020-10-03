@@ -9,12 +9,16 @@ import UIKit
 
 class RepresentativesViewController: UIViewController {
     
-    private var representatives = [Officials]()
+    private var federal = [Officials]()
+    private var state = [Officials]()
+    private var county = [Officials]()
+    private var other = [Officials]()
     @IBOutlet weak var table: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let url = formatURL()
+        print(url)
         getData(from: url)
         table.delegate = self
         table.dataSource = self
@@ -57,9 +61,23 @@ class RepresentativesViewController: UIViewController {
                 }
                 let array = (json["offices"] as? [[String: Any]])!
                 for dict in array {
-                    let title = dict["name"] as! String
+                    let title = dict["name"] as? String ?? "Not available"
+                    let levels = (dict["levels"] as? [String] ?? ["Not available"])[0]
                     for indices in dict["officialIndices"] as! [Int] {
-                        strongSelf.representatives.append(Officials(json: json, index: indices, title: title))
+                        switch (levels) {
+                        case "country":
+                            strongSelf.federal.append(Officials(json: json, index: indices, title: title))
+                            break
+                        case "administrativeArea1":
+                            strongSelf.state.append(Officials(json: json, index: indices, title: title))
+                            break
+                        case "administrativeArea2":
+                            strongSelf.county.append(Officials(json: json, index: indices, title: title))
+                            break
+                        default:
+                            strongSelf.other.append(Officials(json: json, index: indices, title: title))
+                            break
+                        }
                     }
                 }
                 DispatchQueue.main.async {
@@ -70,19 +88,99 @@ class RepresentativesViewController: UIViewController {
             }
         }).resume()
     }
+    
+    func getPic(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "show" {
+            let vc = segue.destination as! RepDetailViewController
+            vc.currentOfficial = sender as? Officials
+        }
+    }
 
 }
 
 extension RepresentativesViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return representatives.count
+        switch section {
+        case 0:
+            return federal.count
+        case 1:
+            return state.count
+        case 2:
+            return county.count
+        case 3:
+            return other.count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "represent", for: indexPath)
-        cell.textLabel?.text = representatives[indexPath.row].name
-        cell.detailTextLabel?.text = representatives[indexPath.row].title
+        
+        switch indexPath.section {
+        case 0:
+            cell.textLabel?.text = federal[indexPath.row].name
+            cell.detailTextLabel?.text = federal[indexPath.row].title
+        case 1:
+            cell.textLabel?.text = state[indexPath.row].name
+            cell.detailTextLabel?.text = state[indexPath.row].title
+        case 2:
+            cell.textLabel?.text = county[indexPath.row].name
+            cell.detailTextLabel?.text = county[indexPath.row].title
+        case 3:
+            cell.textLabel?.text = other[indexPath.row].name
+            cell.detailTextLabel?.text = other[indexPath.row].title
+        default:
+            break
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            let person = federal[indexPath.row]
+            performSegue(withIdentifier: "show", sender: person)
+        case 1:
+            let person = state[indexPath.row]
+            performSegue(withIdentifier: "show", sender: person)
+        case 2:
+            let person = county[indexPath.row]
+            performSegue(withIdentifier: "show", sender: person)
+        case 3:
+            let person = other[indexPath.row]
+            performSegue(withIdentifier: "show", sender: person)
+        default:
+            break
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Federal"
+        case 1:
+            return "State"
+        case 2:
+            return "County"
+        case 3:
+            return "Other"
+        default:
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
 
@@ -91,20 +189,26 @@ struct Officials {
     let name: String
     let title: String
     let party: String
-    let photoURL: String?
-    let phone: [String]
+    let photoURL: String
+    let phone: String
     let index: Int
-    let address: [[String: String]]?
-    let channels: [[String: String]]?
+    let address: String
+    let emails: String
+    let channels: [[String: String]]
     
     init (json: [String: Any], index: Int, title: String) {
         self.index = index
         self.title = title
-        self.name = (((json["officials"] as? [Any])![index] as? [String: Any])!["name"] as? String)!
-        self.party = (((json["officials"] as? [Any])![index] as? [String: Any])!["party"] as? String)!
-        self.photoURL = (((json["officials"] as? [Any])![index] as? [String: Any])!["photoUrl"] as? String)
-        self.phone = (((json["officials"] as? [Any])![index] as? [String: Any])!["phones"] as? [String])!
-        self.address = (((json["officials"] as? [Any])![index] as? [String: Any])!["address"] as? [[String: String]])
-        self.channels = (((json["officials"] as? [Any])![index] as? [String: Any])!["channels"] as? [[String: String]])
+        self.name = (((json["officials"] as? [Any])![index] as? [String: Any])!["name"] as? String) ?? "Not available"
+        self.party = (((json["officials"] as? [Any])![index] as? [String: Any])!["party"] as? String) ?? "Not available"
+        self.photoURL = (((json["officials"] as? [Any])![index] as? [String: Any])!["photoUrl"] as? String) ?? "https://www.birchgrovedental.co.uk/wp-content/uploads/2016/01/empty-person.jpg"
+        self.phone = (((json["officials"] as? [Any])![index] as? [String: Any])!["phones"] as? [String])?[0] ?? "Not available"
+        let line = (((json["officials"] as? [Any])![index] as? [String: Any])!["address"] as? [[String: String]])?[0]["line1"] ?? "Current"
+        let city = (((json["officials"] as? [Any])![index] as? [String: Any])!["address"] as? [[String: String]])?[0]["city"] ?? "Address"
+        let state = (((json["officials"] as? [Any])![index] as? [String: Any])!["address"] as? [[String: String]])?[0]["state"] ?? "Not"
+        let zip = (((json["officials"] as? [Any])![index] as? [String: Any])!["address"] as? [[String: String]])?[0]["zip"] ?? "Available"
+        self.address = "\(line) \(city), \(state) \(zip)"
+        self.channels = (((json["officials"] as? [Any])![index] as? [String: Any])!["channels"] as? [[String: String]]) ?? [["Not available": "Not available"]]
+        self.emails = (((json["officials"] as? [Any])![index] as? [String: Any])!["emails"] as? [String])?[0] ?? "Not available"
     }
 }
