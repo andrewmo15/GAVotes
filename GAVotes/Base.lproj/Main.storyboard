@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Soc-rF-qii" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3329" y="129"/>
+            <point key="canvasLocation" x="3403" y="899"/>
         </scene>
         <!--Rep Detail View Controller-->
         <scene sceneID="bit-T2-fGw">
@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="miH-lh-veJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4074" y="129"/>
+            <point key="canvasLocation" x="4148" y="899"/>
         </scene>
         <!--Representatives-->
         <scene sceneID="7tC-yA-Yej">
@@ -117,7 +117,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Fd-xI-zZJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2555.072463768116" y="128.57142857142856"/>
+            <point key="canvasLocation" x="2629" y="899"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="uqd-cW-fzm">
@@ -130,87 +130,29 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="18x-3P-K3S" kind="relationship" relationship="viewControllers" id="X9b-xm-Lx7"/>
-                        <segue destination="LA2-Di-ZIO" kind="relationship" relationship="viewControllers" id="xQU-M3-YJG"/>
+                        <segue destination="qno-dy-SQQ" kind="relationship" relationship="viewControllers" id="NP2-ur-Hd2"/>
+                        <segue destination="18x-3P-K3S" kind="relationship" relationship="viewControllers" id="qcZ-zW-a6S"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ScT-pr-FuS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1496" y="437"/>
         </scene>
-        <!--Upcoming Elections-->
+        <!--Elections View Controller-->
         <scene sceneID="msf-9F-I1b">
             <objects>
                 <viewController id="Rl4-KP-AOt" customClass="ElectionsViewController" customModule="GAVotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Np-sS-PS2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vEQ-gU-cah">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="elect" textLabel="jha-BX-hXL" detailTextLabel="m5Q-Bp-j5q" style="IBUITableViewCellStyleSubtitle" id="7kk-mQ-51N">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7kk-mQ-51N" id="yNG-Wq-Wj6">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jha-BX-hXL">
-                                                    <rect key="frame" x="20" y="10" width="33" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m5Q-Bp-j5q">
-                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="NsR-Y2-i7D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="vEQ-gU-cah" secondAttribute="trailing" id="6Xv-th-wcN"/>
-                            <constraint firstItem="vEQ-gU-cah" firstAttribute="bottom" secondItem="NsR-Y2-i7D" secondAttribute="bottom" id="Pse-Yd-c7z"/>
-                            <constraint firstItem="vEQ-gU-cah" firstAttribute="leading" secondItem="NsR-Y2-i7D" secondAttribute="leading" id="lWB-r9-PxA"/>
-                            <constraint firstItem="vEQ-gU-cah" firstAttribute="top" secondItem="NsR-Y2-i7D" secondAttribute="top" id="rUU-EE-Y3A"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Upcoming Elections" id="GyM-vJ-cdw"/>
-                    <connections>
-                        <outlet property="table" destination="vEQ-gU-cah" id="ENO-C3-WbQ"/>
-                        <segue destination="WFn-qx-Irf" kind="show" identifier="show2" id="xle-Gq-G5O"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="GyM-vJ-cdw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZfN-Wa-omj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3296" y="882"/>
-        </scene>
-        <!--Elect Detail View Controller-->
-        <scene sceneID="ZMH-Gu-KKi">
-            <objects>
-                <viewController id="WFn-qx-Irf" customClass="ElectDetailViewController" customModule="GAVotes" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6lx-BF-H3e">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="JqQ-6F-JAU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="YtY-M9-mjk"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TNM-dn-nSj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4074" y="882"/>
+            <point key="canvasLocation" x="3403" y="106"/>
         </scene>
         <!--Edit Address-->
         <scene sceneID="yH9-iw-st8">
@@ -227,25 +169,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQi-Gn-b35" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1496" y="1168"/>
-        </scene>
-        <!--Elections-->
-        <scene sceneID="0q7-Ei-Fq9">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LA2-Di-ZIO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Elections" image="tray.fill" catalog="system" id="9Md-dI-pXN"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="xSH-qg-VIb">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Rl4-KP-AOt" kind="relationship" relationship="rootViewController" id="lti-GS-mBN"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AB7-nL-zHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2554" y="882"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="95V-WY-ape">
@@ -265,10 +188,29 @@
             </objects>
             <point key="canvasLocation" x="732" y="1168"/>
         </scene>
+        <!--Election-->
+        <scene sceneID="in8-1O-zTb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qno-dy-SQQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Election" image="square.and.pencil" catalog="system" id="4z7-IO-v0u"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Zq-K8-gI9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Rl4-KP-AOt" kind="relationship" relationship="rootViewController" id="Clr-nR-8XS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FnV-mc-FaF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2629" y="106"/>
+        </scene>
     </scenes>
     <resources>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="tray.fill" catalog="system" width="128" height="88"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

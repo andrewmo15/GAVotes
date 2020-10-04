@@ -9,6 +9,8 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
+    private let dataSource = ["AL", "GA", "VA"]
+    
     private let address: UITextField = {
         let address = UITextField()
         address.textColor = .black
@@ -48,6 +50,11 @@ class WelcomeViewController: UIViewController {
         return state
     }()
     
+    private let states: UIPickerView = {
+        let states = UIPickerView()
+        return states
+    }()
+    
     private let zipcode: UITextField = {
         let zipcode = UITextField()
         zipcode.textColor = .black
@@ -74,6 +81,9 @@ class WelcomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        states.delegate = self
+        state.inputView = states
+        configureToolBar()
         view.addSubview(address)
         view.addSubview(city)
         view.addSubview(state)
@@ -90,6 +100,19 @@ class WelcomeViewController: UIViewController {
         submit.frame = CGRect(x: 30, y: 400, width: view.frame.width - 60, height: 40)
     }
     
+    private func configureToolBar() {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneTapped))
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        state.inputAccessoryView = toolBar
+    }
+    
+    @objc private func doneTapped() {
+        view.endEditing(true)
+    }
+    
     @objc private func submitTapped() {
         guard let myAddress = address.text, let myCity = city.text, let myState = state.text, let myZipcode = zipcode.text else {
             let alert = UIAlertController(title: "Error", message: "Please enter in all fields", preferredStyle: .alert)
@@ -101,10 +124,26 @@ class WelcomeViewController: UIViewController {
         UserDefaults.standard.set(myCity, forKey: "City")
         UserDefaults.standard.set(myState, forKey: "State")
         UserDefaults.standard.set(myZipcode, forKey: "Zipcode")
+        UserDefaults.standard.set("\(myAddress) \(myCity), \(myState) \(myZipcode)", forKey: "FullAddress")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "enter")
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
     
+}
+extension WelcomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return dataSource.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return dataSource[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        state.text = dataSource[row]
+    }
 }

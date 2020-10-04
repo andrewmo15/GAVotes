@@ -19,7 +19,7 @@
 		493983102529496700CD6D68 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4939830F2529496700CD6D68 /* EditAddressViewController.swift */; };
 		4975665F2526E1410026B1A8 /* ElectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975665E2526E1410026B1A8 /* ElectionsViewController.swift */; };
 		49EDD4A425278FF2008E0E2E /* RepDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDD4A325278FF2008E0E2E /* RepDetailViewController.swift */; };
-		49EDD4AF2528128F008E0E2E /* ElectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDD4AE2528128F008E0E2E /* ElectDetailViewController.swift */; };
+		49EDD4AF2528128F008E0E2E /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDD4AE2528128F008E0E2E /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,7 @@
 		4939830F2529496700CD6D68 /* EditAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
 		4975665E2526E1410026B1A8 /* ElectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectionsViewController.swift; sourceTree = "<group>"; };
 		49EDD4A325278FF2008E0E2E /* RepDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepDetailViewController.swift; sourceTree = "<group>"; };
-		49EDD4AE2528128F008E0E2E /* ElectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectDetailViewController.swift; sourceTree = "<group>"; };
+		49EDD4AE2528128F008E0E2E /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,7 @@
 				490935CA25259D61009D0740 /* RepresentativesViewController.swift */,
 				49EDD4A325278FF2008E0E2E /* RepDetailViewController.swift */,
 				4975665E2526E1410026B1A8 /* ElectionsViewController.swift */,
-				49EDD4AE2528128F008E0E2E /* ElectDetailViewController.swift */,
+				49EDD4AE2528128F008E0E2E /* LocationViewController.swift */,
 				49006B4225258D2A00FCAACA /* Main.storyboard */,
 				49006B4525258D2C00FCAACA /* Assets.xcassets */,
 				49006B4725258D2C00FCAACA /* LaunchScreen.storyboard */,
@@ -280,7 +280,7 @@
 				490935CB25259D61009D0740 /* RepresentativesViewController.swift in Sources */,
 				493983102529496700CD6D68 /* EditAddressViewController.swift in Sources */,
 				49EDD4A425278FF2008E0E2E /* RepDetailViewController.swift in Sources */,
-				49EDD4AF2528128F008E0E2E /* ElectDetailViewController.swift in Sources */,
+				49EDD4AF2528128F008E0E2E /* LocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

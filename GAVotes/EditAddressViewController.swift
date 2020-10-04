@@ -8,6 +8,8 @@
 import UIKit
 
 class EditAddressViewController: UIViewController {
+    
+    private let dataSource = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
 
     private let address: UITextField = {
         let address = UITextField()
@@ -48,6 +50,11 @@ class EditAddressViewController: UIViewController {
         return state
     }()
     
+    private let states: UIPickerView = {
+        let states = UIPickerView()
+        return states
+    }()
+    
     private let zipcode: UITextField = {
         let zipcode = UITextField()
         zipcode.textColor = .black
@@ -74,6 +81,9 @@ class EditAddressViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        states.delegate = self
+        state.inputView = states
+        configureToolBar()
         view.addSubview(address)
         view.addSubview(city)
         view.addSubview(state)
@@ -91,6 +101,20 @@ class EditAddressViewController: UIViewController {
         submit.frame = CGRect(x: 30, y: 400, width: view.frame.width - 60, height: 40)
     }
     
+    private func configureToolBar() {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneTapped))
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        state.inputAccessoryView = toolBar
+    }
+    
+    @objc private func doneTapped() {
+        view.endEditing(true)
+    }
+    
+    
     @objc private func cancel() {
         dismiss(animated: true, completion: nil)
     }
@@ -106,6 +130,23 @@ class EditAddressViewController: UIViewController {
         UserDefaults.standard.set(myCity, forKey: "City")
         UserDefaults.standard.set(myState, forKey: "State")
         UserDefaults.standard.set(myZipcode, forKey: "Zipcode")
+        UserDefaults.standard.set("\(myAddress) \(myCity), \(myState) \(myZipcode)", forKey: "FullAddress")
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension EditAddressViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return dataSource.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return dataSource[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        state.text = dataSource[row]
     }
 }

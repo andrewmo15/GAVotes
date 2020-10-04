@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class RepDetailViewController: UIViewController {
+class RepDetailViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     var currentOfficial: Officials?
     
@@ -59,12 +60,28 @@ class RepDetailViewController: UIViewController {
         return phone
     }()
     
+    private let phoneButton: UIButton = {
+        let phoneButton = UIButton()
+        phoneButton.titleLabel?.font = .systemFont(ofSize: 15)
+        phoneButton.setTitleColor(.link, for: .normal)
+        phoneButton.addTarget(self, action: #selector(phoneButtonTapped), for: .touchUpInside)
+        return phoneButton
+    }()
+    
     private let email: UILabel = {
         let email = UILabel()
         email.font = .systemFont(ofSize: 15)
         email.textColor = .black
         email.numberOfLines = 2
         return email
+    }()
+    
+    private let emailButton: UIButton = {
+        let emailButton = UIButton()
+        emailButton.titleLabel?.font = .systemFont(ofSize: 15)
+        emailButton.setTitleColor(.link, for: .normal)
+        emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
+        return emailButton
     }()
     
     private let channels: UITextView = {
@@ -82,8 +99,20 @@ class RepDetailViewController: UIViewController {
         occupation.text = currentOfficial?.title
         party.text = currentOfficial?.party
         address.text = "Address: " + currentOfficial!.address
-        phone.text = "Phone: " + currentOfficial!.phone
-        email.text = "Email: " + currentOfficial!.emails
+        if currentOfficial!.phone == "Not Available" {
+            phone.text = "Phone: " + currentOfficial!.phone
+            view.addSubview(phone)
+        } else {
+            phoneButton.setTitle("Phone: " + currentOfficial!.phone, for: .normal)
+            view.addSubview(phoneButton)
+        }
+        if currentOfficial!.emails == "Not Available" {
+            email.text = "Email: " + currentOfficial!.emails
+            view.addSubview(email)
+        } else {
+            emailButton.setTitle("Email: " + currentOfficial!.emails, for: .normal)
+            view.addSubview(emailButton)
+        }
         photo.downloaded(from: currentOfficial!.photoURL)
         configureChannels()
         view.addSubview(photo)
@@ -91,9 +120,7 @@ class RepDetailViewController: UIViewController {
         view.addSubview(occupation)
         view.addSubview(party)
         view.addSubview(address)
-        view.addSubview(phone)
         view.addSubview(channels)
-        view.addSubview(email)
     }
     
     override func viewDidLayoutSubviews() {
@@ -104,7 +131,9 @@ class RepDetailViewController: UIViewController {
         party.frame = CGRect(x: 30, y: 320, width: view.frame.width - 60, height: 60)
         address.frame = CGRect(x: 30, y: 380, width: view.frame.width - 60, height: 60)
         phone.frame = CGRect(x: 30, y: 440, width: view.frame.width - 60, height: 60)
+        phoneButton.frame = CGRect(x: 30, y: 440, width: view.frame.width - 60, height: 60)
         email.frame = CGRect(x: 30, y: 500, width: view.frame.width - 60, height: 60)
+        emailButton.frame = CGRect(x: 30, y: 500, width: view.frame.width - 60, height: 60)
         channels.frame = CGRect(x: 30, y: 560, width: view.frame.width - 60, height: 180)
     }
     
@@ -134,8 +163,8 @@ class RepDetailViewController: UIViewController {
                 length = 7
                 dict[temp] = [start, length]
                 break
-            case "Not available":
-                url += "Not available"
+            case "Not Available":
+                url += " Not Available"
             default:
                 break
             }
@@ -147,25 +176,80 @@ class RepDetailViewController: UIViewController {
         channels.attributedText = attributedString
         channels.font = .systemFont(ofSize: 15)
     }
+    
+    @objc private func phoneButtonTapped() {
+        let theirPhone = formatPhone(thePhone: currentOfficial!.phone)
+        let url = URL(string: "tel://\(theirPhone)")!
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
+    private func formatPhone(thePhone: String) -> String {
+        var str = ""
+        for char in thePhone {
+            if char.isNumber {
+                str.append(char)
+            }
+        }
+        return str
+    }
+    
+    @objc private func emailButtonTapped() {
+        guard MFMailComposeViewController.canSendMail() else {
+            let alert = UIAlertController(title: "Error", message: "You must have Mail app", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        let composer = MFMailComposeViewController()
+        composer.mailComposeDelegate = self
+        composer.setToRecipients([currentOfficial!.emails])
+        present(composer, animated: true)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        if let _ = error {
+            let alert = UIAlertController(title: "Error", message: "Something went wrong", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+            controller.dismiss(animated: true, completion: nil)
+            return
+        }
+        switch result {
+        case .failed:
+            let alert = UIAlertController(title: "Error", message: "Email failed to send", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+        case .saved:
+            let alert = UIAlertController(title: "Saved", message: "Your draft was saved", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+        case .sent:
+            let alert = UIAlertController(title: "Success!", message: "Your email sent!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+        default:
+            break
+        }
+        controller.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
+            guard let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200, let mimeType = response?.mimeType, mimeType.hasPrefix("image"), let data = data, error == nil, let image = UIImage(data: data) else {
+                    return
+            }
             DispatchQueue.main.async() { [weak self] in
                 self?.image = image
             }
         }.resume()
     }
     func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
-        guard let url = URL(string: link) else { return }
+        guard let url = URL(string: link) else {
+            return
+        }
         downloaded(from: url, contentMode: mode)
     }
 }

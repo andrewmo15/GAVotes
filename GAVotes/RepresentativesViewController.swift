@@ -68,7 +68,9 @@ class RepresentativesViewController: UIViewController {
             }
             
             guard let data = data, error == nil else {
-                print("Something went wrong")
+                let alert = UIAlertController(title: "Error", message: "Something went wrong!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                strongSelf.present(alert, animated: true, completion: nil)
                 return
             }
             
@@ -106,7 +108,9 @@ class RepresentativesViewController: UIViewController {
                     strongSelf.table.reloadData()
                 }
             } catch let jsonErr {
-                print("Error serializing json:", jsonErr)
+                let alert = UIAlertController(title: "Error serializing json", message: jsonErr.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                strongSelf.present(alert, animated: true, completion: nil)
             }
         }).resume()
     }
@@ -220,16 +224,16 @@ struct Officials {
     init (json: [String: Any], index: Int, title: String) {
         self.index = index
         self.title = title
-        self.name = (((json["officials"] as? [Any])![index] as? [String: Any])!["name"] as? String) ?? "Not available"
-        self.party = (((json["officials"] as? [Any])![index] as? [String: Any])!["party"] as? String) ?? "Not available"
+        self.name = (((json["officials"] as? [Any])![index] as? [String: Any])!["name"] as? String) ?? "Not Available"
+        self.party = (((json["officials"] as? [Any])![index] as? [String: Any])!["party"] as? String) ?? "Not Available"
         self.photoURL = (((json["officials"] as? [Any])![index] as? [String: Any])!["photoUrl"] as? String) ?? "https://www.birchgrovedental.co.uk/wp-content/uploads/2016/01/empty-person.jpg"
-        self.phone = (((json["officials"] as? [Any])![index] as? [String: Any])!["phones"] as? [String])?[0] ?? "Not available"
+        self.phone = (((json["officials"] as? [Any])![index] as? [String: Any])!["phones"] as? [String])?[0] ?? "Not Available"
         let line = (((json["officials"] as? [Any])![index] as? [String: Any])!["address"] as? [[String: String]])?[0]["line1"] ?? "Current"
         let city = (((json["officials"] as? [Any])![index] as? [String: Any])!["address"] as? [[String: String]])?[0]["city"] ?? "Address"
         let state = (((json["officials"] as? [Any])![index] as? [String: Any])!["address"] as? [[String: String]])?[0]["state"] ?? "Not"
         let zip = (((json["officials"] as? [Any])![index] as? [String: Any])!["address"] as? [[String: String]])?[0]["zip"] ?? "Available"
         self.address = "\(line) \(city), \(state) \(zip)"
-        self.channels = (((json["officials"] as? [Any])![index] as? [String: Any])!["channels"] as? [[String: String]]) ?? [["Not available": "Not available"]]
-        self.emails = (((json["officials"] as? [Any])![index] as? [String: Any])!["emails"] as? [String])?[0] ?? "Not available"
+        self.channels = (((json["officials"] as? [Any])![index] as? [String: Any])!["channels"] as? [[String: String]]) ?? [["type": "Not Available"]]
+        self.emails = (((json["officials"] as? [Any])![index] as? [String: Any])!["emails"] as? [String])?[0] ?? "Not Available"
     }
 }

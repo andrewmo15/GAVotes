@@ -9,13 +9,79 @@ import UIKit
 
 class ElectionsViewController: UIViewController {
     
-    var elections = [Elections]()
-    @IBOutlet weak var table: UITableView!
+    private var elections: Elections?
+    
+    private let name: UILabel = {
+        let name = UILabel()
+        name.font = .systemFont(ofSize: 40, weight: .bold)
+        name.textAlignment = .center
+        name.textColor = .black
+        name.numberOfLines = 2
+        return name
+    }()
+    
+    private let date: UILabel = {
+        let date = UILabel()
+        date.font = .systemFont(ofSize: 20)
+        date.textAlignment = .center
+        date.textColor = .black
+        date.numberOfLines = 1
+        return date
+    }()
+    
+    private let data: UILabel = {
+        let data = UILabel()
+        data.font = .systemFont(ofSize: 20)
+        data.textAlignment = .center
+        data.textColor = .black
+        data.numberOfLines = 5
+        return data
+    }()
+    
+    private let error: UILabel = {
+        let error = UILabel()
+        error.font = .systemFont(ofSize: 30)
+        error.textAlignment = .center
+        error.textColor = .black
+        error.numberOfLines = 10
+        return error
+    }()
+    
+    private let polling: UIButton = {
+        let polling = UIButton()
+        polling.setTitle("View Polling Locations", for: .normal)
+        polling.setTitleColor(.white, for: .normal)
+        polling.backgroundColor = .black
+        polling.layer.masksToBounds = true
+        polling.titleLabel?.font = .systemFont(ofSize: 23)
+        polling.addTarget(self, action: #selector(pollingTapped), for: .touchUpInside)
+        return polling
+    }()
+    
+    private let early: UIButton = {
+        let early = UIButton()
+        early.setTitle("View Early Voting Locations", for: .normal)
+        early.setTitleColor(.white, for: .normal)
+        early.backgroundColor = .black
+        early.layer.masksToBounds = true
+        early.titleLabel?.font = .systemFont(ofSize: 23)
+        early.addTarget(self, action: #selector(earlyTapped), for: .touchUpInside)
+        return early
+    }()
+    
+    private let absentee: UIButton = {
+        let absentee = UIButton()
+        absentee.setTitle("View Drop-off Locations", for: .normal)
+        absentee.setTitleColor(.white, for: .normal)
+        absentee.backgroundColor = .black
+        absentee.layer.masksToBounds = true
+        absentee.titleLabel?.font = .systemFont(ofSize: 23)
+        absentee.addTarget(self, action: #selector(absenteeTapped), for: .touchUpInside)
+        return absentee
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        table.delegate = self
-        table.dataSource = self
         let url = formatURL()
         getData(from: url)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(showAddress))
@@ -23,11 +89,20 @@ class ElectionsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        table.delegate = self
-        table.dataSource = self
         let url = formatURL()
         getData(from: url)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(showAddress))
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        name.frame = CGRect(x: 30, y: 100, width: view.frame.width - 60, height: 120)
+        date.frame = CGRect(x: 30, y: 220, width: view.frame.width - 60, height: 20)
+        data.frame = CGRect(x: 30, y: 240, width: view.frame.width - 60, height: 100)
+        polling.frame = CGRect(x: 30, y: view.frame.height - 340, width: view.frame.width - 60, height: 60)
+        early.frame = CGRect(x: 30, y: view.frame.height - 270, width: view.frame.width - 60, height: 60)
+        absentee.frame = CGRect(x: 30, y: view.frame.height - 200, width: view.frame.width - 60, height: 60)
+        error.frame = CGRect(x: 20, y: 100, width: view.frame.width - 40, height: view.frame.height - 200)
     }
     
     @objc private func showAddress() {
@@ -63,108 +138,169 @@ class ElectionsViewController: UIViewController {
             }
             
             guard let data = data, error == nil else {
-                print("Something went wrong")
+                let alert = UIAlertController(title: "Error", message: "Something went wrong", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                strongSelf.present(alert, animated: true, completion: nil)
                 return
             }
-            
-            strongSelf.elections.removeAll()
             
             do {
                 guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else {
                     return
                 }
                 
-                strongSelf.elections.append(Elections(json: json))
-                
+                strongSelf.elections = Elections(json: json)
                 DispatchQueue.main.async {
-                    strongSelf.table.reloadData()
+                    strongSelf.decide()
                 }
-                
             } catch let jsonErr {
-                print("Error serializing json:", jsonErr)
+                let alert = UIAlertController(title: "Error serializing json", message: jsonErr.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                strongSelf.present(alert, animated: true, completion: nil)
             }
             
         }).resume()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "show2" {
-            let vc = segue.destination as! ElectDetailViewController
-            vc.currentElection = sender as? Elections
+    private func decide() {
+        if elections!.available {
+            addViews()
+        } else {
+            addError()
         }
     }
+    
+    private func addError() {
+        error.text = "Data is not yet available for your location: \(UserDefaults.standard.string(forKey: "FullAddress") ?? "No address provided")\nPlease come back later or try a different location"
+        name.removeFromSuperview()
+        date.removeFromSuperview()
+        data.removeFromSuperview()
+        polling.removeFromSuperview()
+        early.removeFromSuperview()
+        absentee.removeFromSuperview()
+        view.addSubview(error)
+    }
+    
+    private func addViews() {
+        name.text = elections!.name
+        date.text = elections!.date
+        data.text = "Data is now available for your location!\n\(UserDefaults.standard.string(forKey: "FullAddress") ?? "No address provided")"
+        error.removeFromSuperview()
+        view.addSubview(name)
+        view.addSubview(date)
+        view.addSubview(data)
+        view.addSubview(polling)
+        view.addSubview(early)
+        view.addSubview(absentee)
+    }
+    
+    @objc private func pollingTapped() {
+        let vc = LocationViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        vc.title = "Polling Locations"
+        vc.location = elections?.pollingLocations
+        nav.modalPresentationStyle = .automatic
+        present(nav, animated: true)
+    }
+    
+    @objc private func earlyTapped() {
+        let vc = LocationViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        vc.title = "Early Voting Locations"
+        vc.location = elections?.earlyLocations
+        nav.modalPresentationStyle = .automatic
+        present(nav, animated: true)
+    }
+    
+    @objc private func absenteeTapped() {
+        let vc = LocationViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        vc.title = "Drop-off Locations"
+        vc.location = elections?.absenteeLocations
+        nav.modalPresentationStyle = .automatic
+        present(nav, animated: true)
+    }
+    
 }
 
-extension ElectionsViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return elections.capacity
-    }
+class Elections {
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "elect", for: indexPath)
-        cell.textLabel?.text = elections[indexPath.row].name
-        cell.detailTextLabel?.text = elections[indexPath.row].date
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let elect = elections[indexPath.row]
-        performSegue(withIdentifier: "show2", sender: elect)
-    }
-}
-
-struct Elections {
-    
+    let available: Bool
     let name: String
     let date: String
     let pollingLocations: [Location]
     let earlyLocations: [Location]
-    let absentee: [Location]
+    let absenteeLocations: [Location]
     
     init (json: [String: Any]) {
-        self.name = (json["election"] as? [String: String])!["name"] ?? "Not available"
-        self.date = (json["election"] as? [String: String])!["electionDay"] ?? "Not available"
-        var array = json["pollingLocations"] as! [[String: Any]]
-        var temp = [Location]()
-        for i in 0 ..< array.count {
-            let dict = array[i]["address"] as! [String: String]
-            let myaddress = "\(dict["line1"]!) \(dict["city"]!) \(dict["state"]!) \(dict["zip"]!)"
-            let myhours = array[i]["pollingHours"] as? String ?? "Not available"
-            let startDate = array[i]["startDate"] as? String ?? "Not available"
-            let endDate = array[i]["endDate"] as? String ?? "Not available"
-            let myname = dict["locationName"]!
-            let thing = Location(name: myname, address: myaddress, hours: myhours, start: startDate, end: endDate)
-            temp.append(thing)
-        }
-        self.pollingLocations = temp
+        let dict = json["election"] as? [String: String] ?? ["data": "Not Available"]
+        if dict["data"] == "Not Available" {
+            self.available = false
+            self.name = "Not Available"
+            self.date = "Not Available"
+            self.pollingLocations = [Location]()
+            self.earlyLocations = [Location]()
+            self.absenteeLocations = [Location]()
+        } else {
+            self.available = true
+            self.name = dict["name"] ?? "Not Available"
+            self.date = dict["electionDay"] ?? "Not Available"
+            if let array = json["pollingLocations"] as? [[String: Any]] {
+                var temp = [Location]()
+                for i in 0 ..< array.count {
+                    let dict = array[i]["address"] as! [String: String]
+                    let myAddress = "\(dict["line1"]!) \(dict["city"]!) \(dict["state"]!) \(dict["zip"]!)"
+                    let myHours = array[i]["pollingHours"] as? String ?? "Not Available"
+                    let startDate = array[i]["startDate"] as? String ?? "Not Available"
+                    let endDate = array[i]["endDate"] as? String ?? "Not Available"
+                    let myName = dict["locationName"] ?? "Not Available"
+                    let myLongitude = array[i]["longitude"] as? Double ?? -100000.00
+                    let myLatitude = array[i]["latitude"] as? Double ?? -100000.00
+                    let thing = Location(name: myName, address: myAddress, hours: myHours, start: startDate, end: endDate, longitude: myLongitude, latitude: myLatitude)
+                    temp.append(thing)
+                }
+                self.pollingLocations = temp
+            } else {
+                self.pollingLocations = [Location]()
+            }
         
-        array = json["dropOffLocations"] as! [[String: Any]]
-        var temp2 = [Location]()
-        for i in 0 ..< array.count {
-            let dict = array[i]["address"] as! [String: String]
-            let myaddress = "\(dict["line1"]!) \(dict["city"]!) \(dict["state"]!) \(dict["zip"]!)"
-            let myhours = array[i]["pollingHours"] as? String ?? "Not available"
-            let startDate = array[i]["startDate"] as? String ?? "Not available"
-            let endDate = array[i]["endDate"] as? String ?? "Not available"
-            let myname = dict["locationName"]!
-            let thing = Location(name: myname, address: myaddress, hours: myhours, start: startDate, end: endDate)
-            temp2.append(thing)
+            if let array = json["dropOffLocations"] as? [[String: Any]] {
+                var temp2 = [Location]()
+                for i in 0 ..< array.count {
+                    let dict = array[i]["address"] as! [String: String]
+                    let myAddress = "\(dict["line1"]!) \(dict["city"]!) \(dict["state"]!) \(dict["zip"]!)"
+                    let myHours = array[i]["pollingHours"] as? String ?? "Not Available"
+                    let startDate = array[i]["startDate"] as? String ?? "Not Available"
+                    let endDate = array[i]["endDate"] as? String ?? "Not Available"
+                    let myName = dict["locationName"] ?? "Not Available"
+                    let myLongitude = array[i]["longitude"] as? Double ?? -100000.00
+                    let myLatitude = array[i]["latitude"] as? Double ?? -100000.00
+                    let thing = Location(name: myName, address: myAddress, hours: myHours, start: startDate, end: endDate, longitude: myLongitude, latitude: myLatitude)
+                    temp2.append(thing)
+                }
+                self.absenteeLocations = temp2
+            } else {
+                self.absenteeLocations = [Location]()
+            }
+            if let array = json["earlyVoteSites"] as? [[String: Any]] {
+                var temp3 = [Location]()
+                for i in 0 ..< array.count {
+                    let dict = array[i]["address"] as! [String: String]
+                    let myAddress = "\(dict["line1"]!) \(dict["city"]!) \(dict["state"]!) \(dict["zip"]!)"
+                    let myHours = array[i]["pollingHours"] as? String ?? "Not Available"
+                    let startDate = array[i]["startDate"] as? String ?? "Not Available"
+                    let endDate = array[i]["endDate"] as? String ?? "Not Available"
+                    let myName = dict["locationName"] ?? "Not Available"
+                    let myLongitude = array[i]["longitude"] as? Double ?? -100000.00
+                    let myLatitude = array[i]["latitude"] as? Double ?? -100000.00
+                    let thing = Location(name: myName, address: myAddress, hours: myHours, start: startDate, end: endDate, longitude: myLongitude, latitude: myLatitude)
+                    temp3.append(thing)
+                }
+                self.earlyLocations = temp3
+            } else {
+                self.earlyLocations = [Location]()
+            }
         }
-        self.absentee = temp2
-        
-        array = json["earlyVoteSites"] as! [[String: Any]]
-        var temp3 = [Location]()
-        for i in 0 ..< array.count {
-            let dict = array[i]["address"] as! [String: String]
-            let myaddress = "\(dict["line1"]!) \(dict["city"]!) \(dict["state"]!) \(dict["zip"]!)"
-            let myhours = array[i]["pollingHours"] as? String ?? "Not available"
-            let startDate = array[i]["startDate"] as? String ?? "Not available"
-            let endDate = array[i]["endDate"] as? String ?? "Not available"
-            let myname = dict["locationName"]!
-            let thing = Location(name: myname, address: myaddress, hours: myhours, start: startDate, end: endDate)
-            temp3.append(thing)
-        }
-        self.earlyLocations = temp3
     }
 }
 
@@ -174,12 +310,6 @@ struct Location {
     let hours: String
     let start: String
     let end: String
-    
-    init(name: String, address: String, hours: String, start: String, end: String) {
-        self.name = name
-        self.address = address
-        self.hours = hours
-        self.start = start
-        self.end = end
-    }
+    let longitude: Double
+    let latitude: Double
 }
