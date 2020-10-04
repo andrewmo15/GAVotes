@@ -18,11 +18,28 @@ class RepresentativesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let url = formatURL()
-        print(url)
         getData(from: url)
         table.delegate = self
         table.dataSource = self
         view.backgroundColor = .white
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(showAddress))
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        let url = formatURL()
+        getData(from: url)
+        table.delegate = self
+        table.dataSource = self
+        view.backgroundColor = .white
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(showAddress))
+    }
+    
+    @objc private func showAddress() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "editAddress")
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     private func formatURL() -> String {
@@ -54,6 +71,11 @@ class RepresentativesViewController: UIViewController {
                 print("Something went wrong")
                 return
             }
+            
+            strongSelf.federal.removeAll()
+            strongSelf.state.removeAll()
+            strongSelf.county.removeAll()
+            strongSelf.other.removeAll()
             
             do {
                 guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else {
@@ -125,7 +147,6 @@ extension RepresentativesViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "represent", for: indexPath)
-        
         switch indexPath.section {
         case 0:
             cell.textLabel?.text = federal[indexPath.row].name

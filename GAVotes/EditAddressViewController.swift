@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  EditAddressViewController.swift
 //  GAVotes
 //
-//  Created by Andrew Mo on 10/1/20.
+//  Created by Andrew Mo on 10/3/20.
 //
 
 import UIKit
 
-class AddressViewController: UIViewController {
-    
+class EditAddressViewController: UIViewController {
+
     private let address: UITextField = {
         let address = UITextField()
         address.textColor = .black
@@ -79,6 +79,7 @@ class AddressViewController: UIViewController {
         view.addSubview(state)
         view.addSubview(zipcode)
         view.addSubview(submit)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancel))
     }
     
     override func viewDidLayoutSubviews() {
@@ -90,6 +91,9 @@ class AddressViewController: UIViewController {
         submit.frame = CGRect(x: 30, y: 400, width: view.frame.width - 60, height: 40)
     }
     
+    @objc private func cancel() {
+        dismiss(animated: true, completion: nil)
+    }
     
     @objc private func submitTapped() {
         guard let myAddress = address.text, let myCity = city.text, let myState = state.text, let myZipcode = zipcode.text else {
@@ -102,10 +106,6 @@ class AddressViewController: UIViewController {
         UserDefaults.standard.set(myCity, forKey: "City")
         UserDefaults.standard.set(myState, forKey: "State")
         UserDefaults.standard.set(myZipcode, forKey: "Zipcode")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "enter")
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        dismiss(animated: true, completion: nil)
     }
-    
 }

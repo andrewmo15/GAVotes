@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Address View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AddressViewController" customModule="GAVotes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="welcome" id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="GAVotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,31 +72,33 @@
                             <constraint firstItem="IyE-Ot-ZUu" firstAttribute="trailing" secondItem="KPl-Ef-Gtd" secondAttribute="trailing" id="cny-Px-ctc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Representatives" id="BN3-2p-M2V"/>
+                    <navigationItem key="navigationItem" title="Representatives" id="BN3-2p-M2V">
+                        <barButtonItem key="rightBarButtonItem" id="I9U-PZ-e9S"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="table" destination="IyE-Ot-ZUu" id="Y60-gp-qvt"/>
-                        <segue destination="0qX-W2-Sj7" kind="show" identifier="show" id="f6T-wG-IFm"/>
+                        <segue destination="6wA-TX-gY7" kind="show" identifier="show" id="JXC-Yu-DTY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Soc-rF-qii" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3297.1014492753625" y="128.57142857142856"/>
+            <point key="canvasLocation" x="3329" y="129"/>
         </scene>
         <!--Rep Detail View Controller-->
-        <scene sceneID="M8y-eY-Ej9">
+        <scene sceneID="bit-T2-fGw">
             <objects>
-                <viewController id="0qX-W2-Sj7" customClass="RepDetailViewController" customModule="GAVotes" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wtW-Gx-5lL">
+                <viewController id="6wA-TX-gY7" customClass="RepDetailViewController" customModule="GAVotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S7C-mX-SV2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="s2h-gR-64P"/>
+                        <viewLayoutGuide key="safeArea" id="OhD-i5-Kzt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="L3D-Uo-GNa"/>
+                    <navigationItem key="navigationItem" id="jwW-M5-EWj"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SrV-HW-baL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="miH-lh-veJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4074" y="133"/>
+            <point key="canvasLocation" x="4074" y="129"/>
         </scene>
         <!--Representatives-->
         <scene sceneID="7tC-yA-Yej">
@@ -192,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZfN-Wa-omj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3295.652173913044" y="837.72321428571422"/>
+            <point key="canvasLocation" x="3296" y="882"/>
         </scene>
         <!--Elect Detail View Controller-->
         <scene sceneID="ZMH-Gu-KKi">
@@ -208,7 +210,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNM-dn-nSj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4074" y="838"/>
+            <point key="canvasLocation" x="4074" y="882"/>
+        </scene>
+        <!--Edit Address-->
+        <scene sceneID="yH9-iw-st8">
+            <objects>
+                <viewController id="ofM-hZ-NYo" customClass="EditAddressViewController" customModule="GAVotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YrT-8a-GdK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="DCN-Ge-EwT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Address" id="KJ8-BI-X1z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQi-Gn-b35" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1496" y="1168"/>
         </scene>
         <!--Elections-->
         <scene sceneID="0q7-Ei-Fq9">
@@ -227,7 +245,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AB7-nL-zHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2553.6231884057975" y="837.72321428571422"/>
+            <point key="canvasLocation" x="2554" y="882"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="95V-WY-ape">
+            <objects>
+                <navigationController storyboardIdentifier="editAddress" automaticallyAdjustsScrollViewInsets="NO" id="qFe-4l-tRk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Wc-43-Cq0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ofM-hZ-NYo" kind="relationship" relationship="rootViewController" id="2Tk-9C-wjn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3lu-YJ-Rub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="732" y="1168"/>
         </scene>
     </scenes>
     <resources>

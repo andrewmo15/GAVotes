@@ -18,6 +18,23 @@ class ElectionsViewController: UIViewController {
         table.dataSource = self
         let url = formatURL()
         getData(from: url)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(showAddress))
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        table.delegate = self
+        table.dataSource = self
+        let url = formatURL()
+        getData(from: url)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(showAddress))
+    }
+    
+    @objc private func showAddress() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "editAddress")
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     private func formatURL() -> String {
@@ -49,6 +66,8 @@ class ElectionsViewController: UIViewController {
                 print("Something went wrong")
                 return
             }
+            
+            strongSelf.elections.removeAll()
             
             do {
                 guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else {
@@ -92,7 +111,6 @@ extension ElectionsViewController: UITableViewDelegate, UITableViewDataSource {
         let elect = elections[indexPath.row]
         performSegue(withIdentifier: "show2", sender: elect)
     }
-    
 }
 
 struct Elections {
@@ -106,7 +124,6 @@ struct Elections {
     init (json: [String: Any]) {
         self.name = (json["election"] as? [String: String])!["name"] ?? "Not available"
         self.date = (json["election"] as? [String: String])!["electionDay"] ?? "Not available"
-        
         var array = json["pollingLocations"] as! [[String: Any]]
         var temp = [Location]()
         for i in 0 ..< array.count {

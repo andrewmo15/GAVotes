@@ -31,10 +31,9 @@ class ElectDetailViewController: UIViewController {
     
     private let pollingLocation: UILabel = {
         let pollingLocation = UILabel()
-        pollingLocation.font = .systemFont(ofSize: 20)
-        pollingLocation.textAlignment = .center
+        pollingLocation.font = .systemFont(ofSize: 15)
         pollingLocation.textColor = .black
-        pollingLocation.numberOfLines = 2
+        pollingLocation.numberOfLines = 50
         return pollingLocation
     }()
     
@@ -42,7 +41,7 @@ class ElectDetailViewController: UIViewController {
         let earlyVoting = UILabel()
         earlyVoting.font = .systemFont(ofSize: 15)
         earlyVoting.textColor = .black
-        earlyVoting.numberOfLines = 2
+        earlyVoting.numberOfLines = 50
         return earlyVoting
     }()
     
@@ -50,7 +49,7 @@ class ElectDetailViewController: UIViewController {
         let absentee = UILabel()
         absentee.font = .systemFont(ofSize: 15)
         absentee.textColor = .black
-        absentee.numberOfLines = 2
+        absentee.numberOfLines = 50
         return absentee
     }()
 
@@ -58,6 +57,7 @@ class ElectDetailViewController: UIViewController {
         super.viewDidLoad()
         name.text = currentElection!.name
         date.text = currentElection!.date
+        configurePollingLocations()
         view.addSubview(name)
         view.addSubview(date)
         view.addSubview(pollingLocation)
@@ -67,10 +67,37 @@ class ElectDetailViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        name.frame = CGRect(x: 30, y: 200, width: view.frame.width - 60, height: 60)
-        date.frame = CGRect(x: 30, y: 260, width: view.frame.width - 60, height: 60)
-        pollingLocation.frame = CGRect(x: 30, y: 320, width: view.frame.width - 60, height: 60)
-        earlyVoting.frame = CGRect(x: 30, y: 380, width: view.frame.width - 60, height: 60)
-        absentee.frame = CGRect(x: 30, y: 440, width: view.frame.width - 60, height: 60)
+        name.frame = CGRect(x: 30, y: 100, width: view.frame.width - 60, height: 60)
+        date.frame = CGRect(x: 30, y: 140, width: view.frame.width - 60, height: 60)
+        pollingLocation.frame = CGRect(x: 30, y: 180, width: view.frame.width - 60, height: 150)
+        earlyVoting.frame = CGRect(x: 30, y: 330, width: view.frame.width - 60, height: 150)
+        absentee.frame = CGRect(x: 30, y: 480, width: view.frame.width - 60, height: 400)
+    }
+    
+    private func configurePollingLocations() {
+        for num in 0 ..< currentElection!.earlyLocations.count {
+            if num == 0 {
+                earlyVoting.text = "Early Voting Locations:\n"
+                earlyVoting.text! += "  At: \(currentElection!.earlyLocations[num].name)\n  Address: \(currentElection!.earlyLocations[num].address)\n  Start time: \(currentElection!.earlyLocations[num].start)\n  End time: \(currentElection!.earlyLocations[num].end)\n\n"
+            } else {
+                earlyVoting.text! += "  At: \(currentElection!.earlyLocations[num].name)\n  Address: \(currentElection!.earlyLocations[num].address)\n  Start time: \(currentElection!.earlyLocations[num].start)\n  End time: \(currentElection!.earlyLocations[num].end)\n\n"
+            }
+        }
+        for num in 0 ..< currentElection!.pollingLocations.count {
+            if num == 0 {
+                pollingLocation.text = "Polling Locations:\n"
+                pollingLocation.text! += "  At: \(currentElection!.pollingLocations[num].name)\n  Address: \(currentElection!.pollingLocations[num].address)\n  Start time: \(currentElection!.pollingLocations[num].start)\n  End time: \(currentElection!.pollingLocations[num].end)\n\n"
+            } else {
+                pollingLocation.text! += "  At: \(currentElection!.pollingLocations[num].name)\n  Address: \(currentElection!.pollingLocations[num].address)\n  Start time: \(currentElection!.pollingLocations[num].start)\n  End time: \(currentElection!.pollingLocations[num].end)\n\n"
+            }
+        }
+        for num in 0 ..< currentElection!.absentee.count {
+            if num == 0 {
+                absentee.text = "Drop Off Locations:\n"
+                absentee.text! += "  At: \(currentElection!.absentee[num].name)\n  Address: \(currentElection!.absentee[num].address)\n  Start time: \(currentElection!.absentee[num].start)\n  End time: \(currentElection!.absentee[num].end)\n\n"
+            } else {
+                absentee.text! += "  At: \(currentElection!.absentee[num].name)\n  Address: \(currentElection!.absentee[num].address)\n  Start time: \(currentElection!.absentee[num].start)\n  End time: \(currentElection!.absentee[num].end)\n\n"
+            }
+        }
     }
 }
