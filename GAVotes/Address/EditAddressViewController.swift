@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditAddressViewController: UIViewController {
+class EditAddressViewController: UIViewController, UITextFieldDelegate {
     
     private let dataSource = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
 
@@ -20,7 +20,9 @@ class EditAddressViewController: UIViewController {
         address.leftViewMode = .always
         address.backgroundColor = .white
         address.tintColor = .link
-        address.placeholder = "Enter Address"
+        let placeholderText = NSAttributedString(string: "Enter Address", attributes: [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        address.attributedPlaceholder = placeholderText
+        address.font = UIFont(name: "Louis George Cafe Bold", size: 17)!
         return address
     }()
     
@@ -33,7 +35,9 @@ class EditAddressViewController: UIViewController {
         city.leftViewMode = .always
         city.backgroundColor = .white
         city.tintColor = .link
-        city.placeholder = "Enter City"
+        let placeholderText = NSAttributedString(string: "Enter City", attributes: [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        city.attributedPlaceholder = placeholderText
+        city.font = UIFont(name: "Louis George Cafe Bold", size: 17)!
         return city
     }()
     
@@ -46,7 +50,9 @@ class EditAddressViewController: UIViewController {
         state.leftViewMode = .always
         state.backgroundColor = .white
         state.tintColor = .link
-        state.placeholder = "Enter State"
+        let placeholderText = NSAttributedString(string: "Enter State", attributes: [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        state.attributedPlaceholder = placeholderText
+        state.font = UIFont(name: "Louis George Cafe Bold", size: 17)!
         return state
     }()
     
@@ -64,7 +70,9 @@ class EditAddressViewController: UIViewController {
         zipcode.leftViewMode = .always
         zipcode.backgroundColor = .white
         zipcode.tintColor = .link
-        zipcode.placeholder = "Enter Zip Code"
+        let placeholderText = NSAttributedString(string: "Enter Zipcode", attributes: [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        zipcode.attributedPlaceholder = placeholderText
+        zipcode.font = UIFont(name: "Louis George Cafe Bold", size: 17)!
         return zipcode
     }()
     
@@ -72,9 +80,9 @@ class EditAddressViewController: UIViewController {
         let submit = UIButton()
         submit.setTitle("Submit", for: .normal)
         submit.setTitleColor(.white, for: .normal)
-        submit.backgroundColor = .black
+        submit.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
         submit.layer.masksToBounds = true
-        submit.titleLabel?.font = .systemFont(ofSize: 23)
+        submit.titleLabel?.font = UIFont(name: "Louis George Cafe Bold", size: 22)!
         submit.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
         return submit
     }()
@@ -84,21 +92,34 @@ class EditAddressViewController: UIViewController {
         states.delegate = self
         state.inputView = states
         configureToolBar()
+        configureNavBar()
         view.addSubview(address)
         view.addSubview(city)
         view.addSubview(state)
         view.addSubview(zipcode)
         view.addSubview(submit)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancel))
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         address.frame = CGRect(x: 30, y: 120, width: view.frame.width - 60, height: 52)
         city.frame = CGRect(x: 30, y: 190, width: view.frame.width - 60, height: 52)
-        state.frame = CGRect(x: 30, y: 260, width: view.frame.width - 60, height: 45)
-        zipcode.frame = CGRect(x: 30, y: 330, width: view.frame.width - 60, height: 50)
-        submit.frame = CGRect(x: 30, y: 400, width: view.frame.width - 60, height: 40)
+        state.frame = CGRect(x: 30, y: 260, width: view.frame.width - 60, height: 52)
+        zipcode.frame = CGRect(x: 30, y: 330, width: view.frame.width - 60, height: 52)
+        submit.frame = CGRect(x: 30, y: 400, width: view.frame.width - 60, height: 45)
+    }
+    
+    private func configureNavBar() {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 35)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancel))
+        navigationItem.rightBarButtonItem?.tintColor = .white
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
     }
     
     private func configureToolBar() {
@@ -113,7 +134,6 @@ class EditAddressViewController: UIViewController {
     @objc private func doneTapped() {
         view.endEditing(true)
     }
-    
     
     @objc private func cancel() {
         dismiss(animated: true, completion: nil)
@@ -135,7 +155,7 @@ class EditAddressViewController: UIViewController {
     }
 }
 
-extension EditAddressViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension EditAddressViewController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -148,5 +168,25 @@ extension EditAddressViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         state.text = dataSource[row]
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case address:
+            textField.resignFirstResponder()
+            city.becomeFirstResponder()
+        case city:
+            textField.resignFirstResponder()
+            state.becomeFirstResponder()
+        case state:
+            textField.resignFirstResponder()
+            zipcode.becomeFirstResponder()
+        case zipcode:
+            textField.resignFirstResponder()
+            submitTapped()
+        default:
+            break
+        }
+        return true
     }
 }

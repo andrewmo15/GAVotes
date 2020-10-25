@@ -10,95 +10,138 @@ import MapKit
 
 class LocationViewController: UIViewController {
     
-    var location: [Location]?
-    var count = 0
-    var num = 0
-    
-    private let error: UILabel = {
-        let error = UILabel()
-        error.font = .systemFont(ofSize: 30)
-        error.textAlignment = .center
-        error.textColor = .black
-        error.numberOfLines = 2
-        return error
-    }()
+    var location: Location?
+    @IBOutlet weak var table: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        configurePollingLocations()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(done))
+        table.delegate = self
+        table.dataSource = self
+        configureNavBar()
+        self.title = "Location"
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
-    
-    @objc private func done() {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    private func configurePollingLocations() {
-        if location!.count == 0 {
-            error.text = "No data for locations near your address"
-            error.frame = CGRect(x: 30, y: 100, width: view.frame.width - 60, height: 120)
-            view.addSubview(error)
-        } else {
-            for num in 0 ..< location!.count {
-                self.num = num
-                let thing = UIView(frame: CGRect(x: 10, y: (CGFloat(count) * 210) + 75, width: view.frame.width - 20, height: 200))
-                let name = UILabel()
-                name.frame = CGRect(x: 0, y: 0, width: thing.frame.width, height: 100)
-                name.font = .systemFont(ofSize: 35, weight: .bold)
-                name.textAlignment = .center
-                name.textColor = .black
-                name.numberOfLines = 2
-                name.text = "\(location![num].name)"
-                if location![num].latitude == -100000.00 || location![num].longitude == -100000.00 {
-                    let address = UILabel()
-                    address.frame = CGRect(x: 0, y: 150, width: thing.frame.width, height: 50)
-                    address.font = .systemFont(ofSize: 20)
-                    address.textAlignment = .center
-                    address.textColor = .black
-                    address.numberOfLines = 2
-                    address.text = "Address: \(location![num].address)"
-                    thing.addSubview(address)
-                } else {
-                    let address = UIButton()
-                    address.frame = CGRect(x: 0, y: 150, width: thing.frame.width, height: 50)
-                    address.titleLabel?.font = .systemFont(ofSize: 20)
-                    address.titleLabel?.numberOfLines = 2
-                    address.titleLabel?.textAlignment = .center
-                    address.setTitleColor(.link, for: .normal)
-                    address.setTitle("Address: \(location![num].address)", for: .normal)
-                    address.addTarget(self, action: #selector(addressTapped), for: .touchUpInside)
-                    thing.addSubview(address)
-                }
-                let times = UILabel()
-                times.frame = CGRect(x: 0, y: 100, width: thing.frame.width, height: 50)
-                times.font = .systemFont(ofSize: 20)
-                times.textAlignment = .center
-                times.textColor = .black
-                times.numberOfLines = 2
-                times.text = "Start date: \(location![num].start)\nEnd date: \(location![num].end)"
-                thing.addSubview(name)
-                thing.addSubview(times)
-                view.addSubview(thing)
-                count += 1
-            }
-        }
+    private func configureNavBar() {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 40)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        navigationController?.navigationBar.tintColor = .white
     }
     
     @objc private func addressTapped() {
-        let latitude: CLLocationDegrees = location![num].latitude
-        let longitude: CLLocationDegrees = location![num].longitude
+        let latitude: CLLocationDegrees = location!.latitude
+        let longitude: CLLocationDegrees = location!.longitude
         let regionDistance: CLLocationDistance = 1000
         let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
         let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
         let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
         let placemark = MKPlacemark(coordinate: coordinates)
         let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = location![num].name
+        mapItem.name = location!.name
         mapItem.openInMaps(launchOptions: options)
     }
+    
+    private func formatName(name: String) -> String {
+        let array = name.split(separator: " ")
+        var str = ""
+        for word in array {
+            str += word.prefix(1) + String(word.suffix(word.count - 1)).lowercased() + " "
+        }
+        return String(str.prefix(str.count - 1))
+    }
+}
+
+extension LocationViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "place", for: indexPath)
+        cell.textLabel?.font = UIFont(name: "Louis George Cafe", size: 20)!
+        switch indexPath.section {
+        case 0:
+            cell.textLabel?.text = formatName(name: location!.name)
+            cell.textLabel?.numberOfLines = 2
+        case 1:
+            cell.textLabel?.text = location?.address
+            cell.textLabel?.numberOfLines = 2
+        case 2:
+            cell.textLabel?.text = location?.hours
+            cell.textLabel?.numberOfLines = 20
+        case 3:
+            cell.textLabel?.text = location?.start
+        case 4:
+            cell.textLabel?.text = location?.end
+        case 5:
+            cell.textLabel?.text = location?.notes
+            cell.textLabel?.numberOfLines = 20
+        default:
+            break
+        }
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 6
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Name"
+        case 1:
+            return "Address"
+        case 2:
+            return "Hours"
+        case 3:
+            return "Start Date"
+        case 4:
+            return "End Date"
+        case 5:
+            return "Notes"
+        default:
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 && !(location?.latitude == -100000 || location?.longitude == -100000) {
+            addressTapped()
+        } else {
+            let alert = UIAlertController(title: "Sorry", message: "The location does not exist", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 70
+        case 1:
+            return 70
+        case 2:
+            return 150
+        case 3:
+            return 50
+        case 4:
+            return 50
+        case 5:
+            return 100
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "Louis George Cafe Bold", size: 15)!
+        header.textLabel?.textColor = .systemPink
+    }
+    
 }

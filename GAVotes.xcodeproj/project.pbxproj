@@ -17,11 +17,24 @@
 		49006B5F25258D2C00FCAACA /* GAVotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49006B5E25258D2C00FCAACA /* GAVotesUITests.swift */; };
 		490935CB25259D61009D0740 /* RepresentativesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490935CA25259D61009D0740 /* RepresentativesViewController.swift */; };
 		493983102529496700CD6D68 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4939830F2529496700CD6D68 /* EditAddressViewController.swift */; };
+		49437A70252ABBCA00D70271 /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49437A6F252ABBCA00D70271 /* LevelsViewController.swift */; };
 		4975665F2526E1410026B1A8 /* ElectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975665E2526E1410026B1A8 /* ElectionsViewController.swift */; };
+		49B2BF4C25460BD8007BC3CB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B2BF4B25460BD8007BC3CB /* Location.swift */; };
 		49DAA6672529B48300438D60 /* Officials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAA6662529B48300438D60 /* Officials.swift */; };
-		49DAA66C2529B4AE00438D60 /* Elections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAA66B2529B4AE00438D60 /* Elections.swift */; };
+		49DAA66C2529B4AE00438D60 /* Polling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAA66B2529B4AE00438D60 /* Polling.swift */; };
+		49DED6362544DF19004D2D96 /* AvailableElectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DED6352544DF19004D2D96 /* AvailableElectionViewController.swift */; };
+		49DED63E2544E065004D2D96 /* Election.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DED63D2544E065004D2D96 /* Election.swift */; };
+		49DED6852544FCFD004D2D96 /* CandidatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DED6842544FCFD004D2D96 /* CandidatesViewController.swift */; };
+		49DED68A2544FE54004D2D96 /* Candidates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DED6892544FE54004D2D96 /* Candidates.swift */; };
+		49DED69225451204004D2D96 /* PollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DED69125451204004D2D96 /* PollingViewController.swift */; };
 		49EDD4A425278FF2008E0E2E /* RepDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDD4A325278FF2008E0E2E /* RepDetailViewController.swift */; };
 		49EDD4AF2528128F008E0E2E /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDD4AE2528128F008E0E2E /* LocationViewController.swift */; };
+		49F898832545648B00FC7A3C /* Louis George Cafe Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49F8987D2545648B00FC7A3C /* Louis George Cafe Light.ttf */; };
+		49F898842545648B00FC7A3C /* Louis George Cafe Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49F8987E2545648B00FC7A3C /* Louis George Cafe Bold.ttf */; };
+		49F898852545648B00FC7A3C /* Louis George Cafe Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49F8987F2545648B00FC7A3C /* Louis George Cafe Italic.ttf */; };
+		49F898862545648B00FC7A3C /* Louis George Cafe Light Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49F898802545648B00FC7A3C /* Louis George Cafe Light Italic.ttf */; };
+		49F898872545648B00FC7A3C /* Louis George Cafe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49F898812545648B00FC7A3C /* Louis George Cafe.ttf */; };
+		49F898882545648B00FC7A3C /* Louis George Cafe Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49F898822545648B00FC7A3C /* Louis George Cafe Bold Italic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,11 +71,24 @@
 		49006B6025258D2C00FCAACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490935CA25259D61009D0740 /* RepresentativesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativesViewController.swift; sourceTree = "<group>"; };
 		4939830F2529496700CD6D68 /* EditAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
+		49437A6F252ABBCA00D70271 /* LevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
 		4975665E2526E1410026B1A8 /* ElectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectionsViewController.swift; sourceTree = "<group>"; };
+		49B2BF4B25460BD8007BC3CB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		49DAA6662529B48300438D60 /* Officials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Officials.swift; sourceTree = "<group>"; };
-		49DAA66B2529B4AE00438D60 /* Elections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elections.swift; sourceTree = "<group>"; };
+		49DAA66B2529B4AE00438D60 /* Polling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polling.swift; sourceTree = "<group>"; };
+		49DED6352544DF19004D2D96 /* AvailableElectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AvailableElectionViewController.swift; path = GAVotes/Elections/AvailableElectionViewController.swift; sourceTree = SOURCE_ROOT; };
+		49DED63D2544E065004D2D96 /* Election.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Election.swift; sourceTree = "<group>"; };
+		49DED6842544FCFD004D2D96 /* CandidatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidatesViewController.swift; sourceTree = "<group>"; };
+		49DED6892544FE54004D2D96 /* Candidates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candidates.swift; sourceTree = "<group>"; };
+		49DED69125451204004D2D96 /* PollingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PollingViewController.swift; path = GAVotes/Elections/PollingViewController.swift; sourceTree = SOURCE_ROOT; };
 		49EDD4A325278FF2008E0E2E /* RepDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepDetailViewController.swift; sourceTree = "<group>"; };
 		49EDD4AE2528128F008E0E2E /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		49F8987D2545648B00FC7A3C /* Louis George Cafe Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Louis George Cafe Light.ttf"; sourceTree = "<group>"; };
+		49F8987E2545648B00FC7A3C /* Louis George Cafe Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Louis George Cafe Bold.ttf"; sourceTree = "<group>"; };
+		49F8987F2545648B00FC7A3C /* Louis George Cafe Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Louis George Cafe Italic.ttf"; sourceTree = "<group>"; };
+		49F898802545648B00FC7A3C /* Louis George Cafe Light Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Louis George Cafe Light Italic.ttf"; sourceTree = "<group>"; };
+		49F898812545648B00FC7A3C /* Louis George Cafe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Louis George Cafe.ttf"; sourceTree = "<group>"; };
+		49F898822545648B00FC7A3C /* Louis George Cafe Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Louis George Cafe Bold Italic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +139,7 @@
 		49006B3B25258D2A00FCAACA /* GAVotes */ = {
 			isa = PBXGroup;
 			children = (
+				49F8987C2545647700FC7A3C /* Fonts */,
 				49DAA6782529B5BA00438D60 /* Storyboards */,
 				49DAA6772529B5A300438D60 /* Elections */,
 				49DAA6762529B58500438D60 /* Representatives */,
@@ -154,8 +181,8 @@
 		49DAA6752529B57800438D60 /* Address */ = {
 			isa = PBXGroup;
 			children = (
-				4939830F2529496700CD6D68 /* EditAddressViewController.swift */,
 				49006B4025258D2A00FCAACA /* WelcomeViewController.swift */,
+				4939830F2529496700CD6D68 /* EditAddressViewController.swift */,
 			);
 			path = Address;
 			sourceTree = "<group>";
@@ -163,6 +190,7 @@
 		49DAA6762529B58500438D60 /* Representatives */ = {
 			isa = PBXGroup;
 			children = (
+				49437A6F252ABBCA00D70271 /* LevelsViewController.swift */,
 				490935CA25259D61009D0740 /* RepresentativesViewController.swift */,
 				49EDD4A325278FF2008E0E2E /* RepDetailViewController.swift */,
 				49DAA6662529B48300438D60 /* Officials.swift */,
@@ -173,9 +201,15 @@
 		49DAA6772529B5A300438D60 /* Elections */ = {
 			isa = PBXGroup;
 			children = (
+				49DED6352544DF19004D2D96 /* AvailableElectionViewController.swift */,
 				4975665E2526E1410026B1A8 /* ElectionsViewController.swift */,
-				49DAA66B2529B4AE00438D60 /* Elections.swift */,
+				49DED6842544FCFD004D2D96 /* CandidatesViewController.swift */,
+				49DED69125451204004D2D96 /* PollingViewController.swift */,
 				49EDD4AE2528128F008E0E2E /* LocationViewController.swift */,
+				49DED63D2544E065004D2D96 /* Election.swift */,
+				49DAA66B2529B4AE00438D60 /* Polling.swift */,
+				49B2BF4B25460BD8007BC3CB /* Location.swift */,
+				49DED6892544FE54004D2D96 /* Candidates.swift */,
 			);
 			path = Elections;
 			sourceTree = "<group>";
@@ -187,6 +221,19 @@
 				49006B4725258D2C00FCAACA /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		49F8987C2545647700FC7A3C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				49F898822545648B00FC7A3C /* Louis George Cafe Bold Italic.ttf */,
+				49F8987E2545648B00FC7A3C /* Louis George Cafe Bold.ttf */,
+				49F8987F2545648B00FC7A3C /* Louis George Cafe Italic.ttf */,
+				49F898802545648B00FC7A3C /* Louis George Cafe Light Italic.ttf */,
+				49F8987D2545648B00FC7A3C /* Louis George Cafe Light.ttf */,
+				49F898812545648B00FC7A3C /* Louis George Cafe.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,9 +339,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F898842545648B00FC7A3C /* Louis George Cafe Bold.ttf in Resources */,
+				49F898862545648B00FC7A3C /* Louis George Cafe Light Italic.ttf in Resources */,
 				49006B4925258D2C00FCAACA /* LaunchScreen.storyboard in Resources */,
 				49006B4625258D2C00FCAACA /* Assets.xcassets in Resources */,
 				49006B4425258D2A00FCAACA /* Main.storyboard in Resources */,
+				49F898872545648B00FC7A3C /* Louis George Cafe.ttf in Resources */,
+				49F898852545648B00FC7A3C /* Louis George Cafe Italic.ttf in Resources */,
+				49F898832545648B00FC7A3C /* Louis George Cafe Light.ttf in Resources */,
+				49F898882545648B00FC7A3C /* Louis George Cafe Bold Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,14 +372,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DED68A2544FE54004D2D96 /* Candidates.swift in Sources */,
 				4975665F2526E1410026B1A8 /* ElectionsViewController.swift in Sources */,
 				49DAA6672529B48300438D60 /* Officials.swift in Sources */,
 				49006B4125258D2A00FCAACA /* WelcomeViewController.swift in Sources */,
+				49DED6362544DF19004D2D96 /* AvailableElectionViewController.swift in Sources */,
+				49B2BF4C25460BD8007BC3CB /* Location.swift in Sources */,
 				49006B3D25258D2A00FCAACA /* AppDelegate.swift in Sources */,
-				49DAA66C2529B4AE00438D60 /* Elections.swift in Sources */,
+				49DAA66C2529B4AE00438D60 /* Polling.swift in Sources */,
+				49DED6852544FCFD004D2D96 /* CandidatesViewController.swift in Sources */,
 				49006B3F25258D2A00FCAACA /* SceneDelegate.swift in Sources */,
 				490935CB25259D61009D0740 /* RepresentativesViewController.swift in Sources */,
+				49DED69225451204004D2D96 /* PollingViewController.swift in Sources */,
 				493983102529496700CD6D68 /* EditAddressViewController.swift in Sources */,
+				49DED63E2544E065004D2D96 /* Election.swift in Sources */,
+				49437A70252ABBCA00D70271 /* LevelsViewController.swift in Sources */,
 				49EDD4A425278FF2008E0E2E /* RepDetailViewController.swift in Sources */,
 				49EDD4AF2528128F008E0E2E /* LocationViewController.swift in Sources */,
 			);

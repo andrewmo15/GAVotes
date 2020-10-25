@@ -9,11 +9,13 @@ import UIKit
 
 class ElectionsViewController: UIViewController {
     
-    private var elections: Elections?
+    private var pollings: Polling?
+    var elect: Election?
+    private var candidate: Candidates?
     
     private let name: UILabel = {
         let name = UILabel()
-        name.font = .systemFont(ofSize: 40, weight: .bold)
+        name.font = UIFont(name: "Louis George Cafe Bold", size: 40)!
         name.textAlignment = .center
         name.textColor = .black
         name.numberOfLines = 2
@@ -22,7 +24,7 @@ class ElectionsViewController: UIViewController {
     
     private let date: UILabel = {
         let date = UILabel()
-        date.font = .systemFont(ofSize: 20)
+        date.font = UIFont(name: "Louis George Cafe", size: 20)!
         date.textAlignment = .center
         date.textColor = .black
         date.numberOfLines = 1
@@ -31,7 +33,7 @@ class ElectionsViewController: UIViewController {
     
     private let data: UILabel = {
         let data = UILabel()
-        data.font = .systemFont(ofSize: 20)
+        data.font = UIFont(name: "Louis George Cafe", size: 20)!
         data.textAlignment = .center
         data.textColor = .black
         data.numberOfLines = 5
@@ -40,7 +42,7 @@ class ElectionsViewController: UIViewController {
     
     private let error: UILabel = {
         let error = UILabel()
-        error.font = .systemFont(ofSize: 30)
+        error.font = UIFont(name: "Louis George Cafe", size: 30)!
         error.textAlignment = .center
         error.textColor = .black
         error.numberOfLines = 10
@@ -51,65 +53,64 @@ class ElectionsViewController: UIViewController {
         let polling = UIButton()
         polling.setTitle("View Polling Locations", for: .normal)
         polling.setTitleColor(.white, for: .normal)
-        polling.backgroundColor = .black
+        polling.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
         polling.layer.masksToBounds = true
-        polling.titleLabel?.font = .systemFont(ofSize: 23)
+        polling.titleLabel?.font = UIFont(name: "Louis George Cafe", size: 23)!
         polling.addTarget(self, action: #selector(pollingTapped), for: .touchUpInside)
+        polling.layer.masksToBounds = true
+        polling.layer.cornerRadius = 10
         return polling
     }()
     
-    private let early: UIButton = {
-        let early = UIButton()
-        early.setTitle("View Early Voting Locations", for: .normal)
-        early.setTitleColor(.white, for: .normal)
-        early.backgroundColor = .black
-        early.layer.masksToBounds = true
-        early.titleLabel?.font = .systemFont(ofSize: 23)
-        early.addTarget(self, action: #selector(earlyTapped), for: .touchUpInside)
-        return early
-    }()
-    
-    private let absentee: UIButton = {
-        let absentee = UIButton()
-        absentee.setTitle("View Drop-off Locations", for: .normal)
-        absentee.setTitleColor(.white, for: .normal)
-        absentee.backgroundColor = .black
-        absentee.layer.masksToBounds = true
-        absentee.titleLabel?.font = .systemFont(ofSize: 23)
-        absentee.addTarget(self, action: #selector(absenteeTapped), for: .touchUpInside)
-        return absentee
+    private let candidates: UIButton = {
+        let candidates = UIButton()
+        candidates.setTitle("View Candidate Information", for: .normal)
+        candidates.setTitleColor(.white, for: .normal)
+        candidates.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
+        candidates.layer.masksToBounds = true
+        candidates.titleLabel?.font = UIFont(name: "Louis George Cafe", size: 23)!
+        candidates.addTarget(self, action: #selector(candidatesTapped), for: .touchUpInside)
+        candidates.layer.masksToBounds = true
+        candidates.layer.cornerRadius = 10
+        return candidates
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let url = formatURL()
         getData(from: url)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(showAddress))
+        configureNavBar()
+        view.backgroundColor = .white
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         let url = formatURL()
         getData(from: url)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(showAddress))
+        configureNavBar()
+        view.backgroundColor = .white
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        name.frame = CGRect(x: 30, y: 100, width: view.frame.width - 60, height: 120)
-        date.frame = CGRect(x: 30, y: 220, width: view.frame.width - 60, height: 20)
-        data.frame = CGRect(x: 30, y: 240, width: view.frame.width - 60, height: 100)
-        polling.frame = CGRect(x: 30, y: view.frame.height - 340, width: view.frame.width - 60, height: 60)
-        early.frame = CGRect(x: 30, y: view.frame.height - 270, width: view.frame.width - 60, height: 60)
-        absentee.frame = CGRect(x: 30, y: view.frame.height - 200, width: view.frame.width - 60, height: 60)
+        name.frame = CGRect(x: 30, y: 180, width: view.frame.width - 60, height: 120)
+        date.frame = CGRect(x: 30, y: 300, width: view.frame.width - 60, height: 20)
+        data.frame = CGRect(x: 30, y: 320, width: view.frame.width - 60, height: 100)
+        candidates.frame = CGRect(x: 30, y: view.frame.height - 270, width: view.frame.width - 60, height: 60)
+        polling.frame = CGRect(x: 30, y: view.frame.height - 200, width: view.frame.width - 60, height: 60)
         error.frame = CGRect(x: 20, y: 100, width: view.frame.width - 40, height: view.frame.height - 200)
     }
     
-    @objc private func showAddress() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "editAddress")
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+    private func configureNavBar() {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 35)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        self.title = "Election"
     }
     
     private func formatURL() -> String {
@@ -127,7 +128,7 @@ class ElectionsViewController: UIViewController {
         for i in 0 ..< array!.count {
             url += "%20\(array![i])"
         }
-        return url + "%2C%20\(UserDefaults.standard.string(forKey: "State")!)%2C%20\(UserDefaults.standard.string(forKey: "Zipcode")!)&key=AIzaSyBK0gua620ptoniUbZc3ypO-WWR-BpkdQQ"
+        return url + "%2C%20\(UserDefaults.standard.string(forKey: "State")!)%2C%20\(UserDefaults.standard.string(forKey: "Zipcode")!)&electionId=\(elect!.id)&key=AIzaSyBK0gua620ptoniUbZc3ypO-WWR-BpkdQQ"
     }
     
     private func getData(from url: String) {
@@ -149,7 +150,8 @@ class ElectionsViewController: UIViewController {
                     return
                 }
                 
-                strongSelf.elections = Elections(json: json)
+                strongSelf.pollings = Polling(json: json)
+                strongSelf.candidate = Candidates(json: json)
                 DispatchQueue.main.async {
                     strongSelf.decide()
                 }
@@ -163,60 +165,45 @@ class ElectionsViewController: UIViewController {
     }
     
     private func decide() {
-        if elections!.available {
-            addViews()
+        if pollings!.available {
+            name.text = pollings!.name
+            date.text = pollings!.date
+            data.text = "Data is now available for your location!\n\(UserDefaults.standard.string(forKey: "FullAddress") ?? "No address provided")"
+            error.removeFromSuperview()
+            view.addSubview(name)
+            view.addSubview(date)
+            view.addSubview(data)
+            view.addSubview(polling)
+            view.addSubview(candidates)
         } else {
-            addError()
+            error.text = "Data is not yet available for your location: \(UserDefaults.standard.string(forKey: "FullAddress") ?? "No address provided")\nPlease come back later or try a different location"
+            name.removeFromSuperview()
+            date.removeFromSuperview()
+            data.removeFromSuperview()
+            polling.removeFromSuperview()
+            candidates.removeFromSuperview()
+            view.addSubview(error)
         }
     }
     
-    private func addError() {
-        error.text = "Data is not yet available for your location: \(UserDefaults.standard.string(forKey: "FullAddress") ?? "No address provided")\nPlease come back later or try a different location"
-        name.removeFromSuperview()
-        date.removeFromSuperview()
-        data.removeFromSuperview()
-        polling.removeFromSuperview()
-        early.removeFromSuperview()
-        absentee.removeFromSuperview()
-        view.addSubview(error)
-    }
-    
-    private func addViews() {
-        name.text = elections!.name
-        date.text = elections!.date
-        data.text = "Data is now available for your location!\n\(UserDefaults.standard.string(forKey: "FullAddress") ?? "No address provided")"
-        error.removeFromSuperview()
-        view.addSubview(name)
-        view.addSubview(date)
-        view.addSubview(data)
-        view.addSubview(polling)
-        view.addSubview(early)
-        view.addSubview(absentee)
-    }
-    
     @objc private func pollingTapped() {
-        let vc = LocationViewController()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "polling") as! PollingViewController
+        vc.polling = pollings?.pollingLocations
+        vc.early = pollings?.earlyLocations
+        vc.absentee = pollings?.absenteeLocations
         let nav = UINavigationController(rootViewController: vc)
         vc.title = "Polling Locations"
-        vc.location = elections?.pollingLocations
         nav.modalPresentationStyle = .automatic
         present(nav, animated: true)
     }
     
-    @objc private func earlyTapped() {
-        let vc = LocationViewController()
+    @objc private func candidatesTapped() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "cand") as! CandidatesViewController
+        vc.candidates = candidate
         let nav = UINavigationController(rootViewController: vc)
-        vc.title = "Early Voting Locations"
-        vc.location = elections?.earlyLocations
-        nav.modalPresentationStyle = .automatic
-        present(nav, animated: true)
-    }
-    
-    @objc private func absenteeTapped() {
-        let vc = LocationViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        vc.title = "Drop-off Locations"
-        vc.location = elections?.absenteeLocations
+        vc.title = "Candidates"
         nav.modalPresentationStyle = .automatic
         present(nav, animated: true)
     }

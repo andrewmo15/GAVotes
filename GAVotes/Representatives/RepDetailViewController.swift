@@ -19,34 +19,25 @@ class RepDetailViewController: UIViewController, MFMailComposeViewControllerDele
     
     private let name: UILabel = {
         let name = UILabel()
-        name.font = .systemFont(ofSize: 30)
+        name.font = UIFont(name: "Louis George Cafe Bold", size: 40)!
         name.textAlignment = .center
         name.textColor = .black
         name.numberOfLines = 2
         return name
     }()
     
-    private let occupation: UILabel = {
-        let occupation = UILabel()
-        occupation.font = .systemFont(ofSize: 20)
-        occupation.textAlignment = .center
-        occupation.textColor = .black
-        occupation.numberOfLines = 2
-        return occupation
-    }()
-    
-    private let party: UILabel = {
-        let party = UILabel()
-        party.font = .systemFont(ofSize: 20)
-        party.textAlignment = .center
-        party.textColor = .black
-        party.numberOfLines = 2
-        return party
+    private let occuParty: UILabel = {
+        let occuParty = UILabel()
+        occuParty.font = UIFont(name: "Louis George Cafe", size: 23)!
+        occuParty.textAlignment = .center
+        occuParty.textColor = .black
+        occuParty.numberOfLines = 3
+        return occuParty
     }()
     
     private let address: UILabel = {
         let address = UILabel()
-        address.font = .systemFont(ofSize: 15)
+        address.font = UIFont(name: "Louis George Cafe", size: 17)!
         address.textColor = .black
         address.numberOfLines = 2
         return address
@@ -54,7 +45,7 @@ class RepDetailViewController: UIViewController, MFMailComposeViewControllerDele
     
     private let phone: UILabel = {
         let phone = UILabel()
-        phone.font = .systemFont(ofSize: 15)
+        phone.font = UIFont(name: "Louis George Cafe", size: 17)!
         phone.textColor = .black
         phone.numberOfLines = 2
         return phone
@@ -62,15 +53,16 @@ class RepDetailViewController: UIViewController, MFMailComposeViewControllerDele
     
     private let phoneButton: UIButton = {
         let phoneButton = UIButton()
-        phoneButton.titleLabel?.font = .systemFont(ofSize: 15)
+        phoneButton.titleLabel?.font = UIFont(name: "Louis George Cafe", size: 17)!
         phoneButton.setTitleColor(.link, for: .normal)
         phoneButton.addTarget(self, action: #selector(phoneButtonTapped), for: .touchUpInside)
+        phoneButton.contentHorizontalAlignment = .left
         return phoneButton
     }()
     
     private let email: UILabel = {
         let email = UILabel()
-        email.font = .systemFont(ofSize: 15)
+        email.font = UIFont(name: "Louis George Cafe", size: 17)!
         email.textColor = .black
         email.numberOfLines = 2
         return email
@@ -78,9 +70,10 @@ class RepDetailViewController: UIViewController, MFMailComposeViewControllerDele
     
     private let emailButton: UIButton = {
         let emailButton = UIButton()
-        emailButton.titleLabel?.font = .systemFont(ofSize: 15)
+        emailButton.titleLabel?.font = UIFont(name: "Louis George Cafe", size: 17)!
         emailButton.setTitleColor(.link, for: .normal)
         emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
+        emailButton.contentHorizontalAlignment = .left
         return emailButton
     }()
     
@@ -95,9 +88,10 @@ class RepDetailViewController: UIViewController, MFMailComposeViewControllerDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        name.text = currentOfficial?.name
-        occupation.text = currentOfficial?.title
-        party.text = currentOfficial?.party
+        configureNavBar()
+        view.backgroundColor = .white
+        name.text = currentOfficial!.name
+        occuParty.text = "\(currentOfficial!.title)\n\(currentOfficial!.party)"
         address.text = "Address: " + currentOfficial!.address
         if currentOfficial!.phone == "Not Available" {
             phone.text = "Phone: " + currentOfficial!.phone
@@ -117,24 +111,32 @@ class RepDetailViewController: UIViewController, MFMailComposeViewControllerDele
         configureChannels()
         view.addSubview(photo)
         view.addSubview(name)
-        view.addSubview(occupation)
-        view.addSubview(party)
+        view.addSubview(occuParty)
         view.addSubview(address)
         view.addSubview(channels)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        photo.frame = CGRect(x: 30, y: 100, width: 100, height: 125)
-        name.frame = CGRect(x: 30, y: 200, width: view.frame.width - 60, height: 60)
-        occupation.frame = CGRect(x: 30, y: 260, width: view.frame.width - 60, height: 60)
-        party.frame = CGRect(x: 30, y: 320, width: view.frame.width - 60, height: 60)
-        address.frame = CGRect(x: 30, y: 380, width: view.frame.width - 60, height: 60)
-        phone.frame = CGRect(x: 30, y: 440, width: view.frame.width - 60, height: 60)
-        phoneButton.frame = CGRect(x: 30, y: 440, width: view.frame.width - 60, height: 60)
-        email.frame = CGRect(x: 30, y: 500, width: view.frame.width - 60, height: 60)
-        emailButton.frame = CGRect(x: 30, y: 500, width: view.frame.width - 60, height: 60)
-        channels.frame = CGRect(x: 30, y: 560, width: view.frame.width - 60, height: 180)
+        photo.frame = CGRect(x: view.frame.width / 2 - (0.1 * view.frame.height), y: 200, width: 0.2 * view.frame.height, height: 0.25 * view.frame.height)
+        name.frame = CGRect(x: 15, y: photo.frame.maxY + 10, width: view.frame.width - 30, height: 60)
+        occuParty.frame = CGRect(x: 15, y: name.frame.maxY, width: view.frame.width - 30, height: 85)
+        address.frame = CGRect(x: 15, y: occuParty.frame.maxY + 10, width: view.frame.width - 30, height: 60)
+        phone.frame = CGRect(x: 15, y: address.frame.maxY, width: view.frame.width - 30, height: 40)
+        phoneButton.frame = CGRect(x: 15, y: address.frame.maxY, width: view.frame.width - 30, height: 40)
+        email.frame = CGRect(x: 15, y: phone.frame.maxY, width: view.frame.width - 30, height: 40)
+        emailButton.frame = CGRect(x: 15, y: phone.frame.maxY, width: view.frame.width - 30, height: 40)
+        channels.frame = CGRect(x: 10, y: email.frame.maxY, width: view.frame.width - 30, height: 120)
+    }
+    
+    private func configureNavBar() {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 40)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
     }
     
     private func configureChannels() {
@@ -174,7 +176,7 @@ class RepDetailViewController: UIViewController, MFMailComposeViewControllerDele
             attributedString.addAttribute(.link, value: key, range: NSRange(location: value[0], length: value[1]))
         }
         channels.attributedText = attributedString
-        channels.font = .systemFont(ofSize: 15)
+        channels.font = UIFont(name: "Louis George Cafe", size: 17)!
     }
     
     @objc private func phoneButtonTapped() {

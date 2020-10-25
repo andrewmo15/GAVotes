@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Louis George Cafe Bold Italic.ttf</string>
+		<string>Louis George Cafe Bold.ttf</string>
+		<string>Louis George Cafe Italic.ttf</string>
+		<string>Louis George Cafe Light Italic.ttf</string>
+		<string>Louis George Cafe Light.ttf</string>
+		<string>Louis George Cafe.ttf</string>
+	</array>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
