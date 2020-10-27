@@ -24,8 +24,8 @@ class AvailableElectionViewController: UIViewController {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
-        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 35)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 35)!, NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
@@ -93,10 +93,10 @@ extension AvailableElectionViewController: UITableViewDelegate, UITableViewDataS
         let cell = tableView.dequeueReusableCell(withIdentifier: "election", for: indexPath)
         cell.backgroundColor = .white
         cell.textLabel?.text = available[indexPath.row].name
-        cell.textLabel?.font = UIFont(name: "Louis George Cafe Bold", size: 20)
+        cell.textLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 20)
         cell.textLabel?.textColor = .black
         cell.detailTextLabel?.text = available[indexPath.row].date
-        cell.detailTextLabel?.font = UIFont(name: "Louis George Cafe", size: 15)
+        cell.detailTextLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 15)
         cell.detailTextLabel?.textColor = .black
         return cell
     }

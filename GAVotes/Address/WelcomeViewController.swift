@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController, UITextFieldDelegate {
+class WelcomeViewController: UIViewController {
     
     private let dataSource = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
     
@@ -19,7 +19,7 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
     
     private let welcome: UILabel = {
         let welcome = UILabel()
-        welcome.font = UIFont(name: "Louis George Cafe Bold", size: 60)!
+        welcome.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 60)!
         welcome.textAlignment = .center
         welcome.textColor = .white
         welcome.numberOfLines = 1
@@ -36,9 +36,9 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         address.leftViewMode = .always
         address.backgroundColor = .white
         address.tintColor = .link
-        let placeholderText = NSAttributedString(string: "Enter Address", attributes: [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        let placeholderText = NSAttributedString(string: "Enter Address", attributes: [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         address.attributedPlaceholder = placeholderText
-        address.font = UIFont(name: "Louis George Cafe Bold", size: 17)!
+        address.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 17)!
         return address
     }()
     
@@ -51,9 +51,9 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         city.leftViewMode = .always
         city.backgroundColor = .white
         city.tintColor = .link
-        let placeholderText = NSAttributedString(string: "Enter City", attributes: [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        let placeholderText = NSAttributedString(string: "Enter City", attributes: [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         city.attributedPlaceholder = placeholderText
-        city.font = UIFont(name: "Louis George Cafe Bold", size: 17)!
+        city.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 17)!
         return city
     }()
     
@@ -66,9 +66,9 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         state.leftViewMode = .always
         state.backgroundColor = .white
         state.tintColor = .link
-        let placeholderText = NSAttributedString(string: "Enter State", attributes: [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        let placeholderText = NSAttributedString(string: "Enter State", attributes: [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         state.attributedPlaceholder = placeholderText
-        state.font = UIFont(name: "Louis George Cafe Bold", size: 17)!
+        state.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 17)!
         return state
     }()
     
@@ -86,9 +86,9 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         zipcode.leftViewMode = .always
         zipcode.backgroundColor = .white
         zipcode.tintColor = .link
-        let placeholderText = NSAttributedString(string: "Enter Zipcode", attributes: [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        let placeholderText = NSAttributedString(string: "Enter Zipcode", attributes: [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         zipcode.attributedPlaceholder = placeholderText
-        zipcode.font = UIFont(name: "Louis George Cafe Bold", size: 17)!
+        zipcode.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 17)!
         return zipcode
     }()
     
@@ -98,7 +98,7 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         submit.setTitleColor(.white, for: .normal)
         submit.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
         submit.layer.masksToBounds = true
-        submit.titleLabel?.font = UIFont(name: "Louis George Cafe Bold", size: 22)!
+        submit.titleLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 22)!
         submit.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
         return submit
     }()
@@ -112,6 +112,10 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         state.inputView = states
         configureToolBar()
         configureNavBar()
+        address.addTarget(self, action: #selector(WelcomeViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
+        city.addTarget(self, action: #selector(WelcomeViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
+        state.addTarget(self, action: #selector(WelcomeViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
+        zipcode.addTarget(self, action: #selector(WelcomeViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
         view.addSubview(background)
         view.addSubview(welcome)
         view.addSubview(address)
@@ -147,13 +151,13 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
-        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 35)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 35)!, NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancel))
         navigationItem.rightBarButtonItem?.tintColor = .white
-        navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
     }
     
     private func configureToolBar() {
@@ -196,7 +200,7 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-extension WelcomeViewController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+extension WelcomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -211,23 +215,15 @@ extension WelcomeViewController: UIPickerViewDelegate, UIPickerViewDataSource, U
         state.text = dataSource[row]
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch textField {
-        case address:
-            textField.resignFirstResponder()
+    @objc func textFieldShouldReturn(_ textField: UITextField) {
+        if textField == address {
             city.becomeFirstResponder()
-        case city:
-            textField.resignFirstResponder()
+        } else if textField == city {
             state.becomeFirstResponder()
-        case state:
-            textField.resignFirstResponder()
+        } else if textField == state {
             zipcode.becomeFirstResponder()
-        case zipcode:
-            textField.resignFirstResponder()
+        } else if textField == zipcode {
             submitTapped()
-        default:
-            break
         }
-        return true
     }
 }

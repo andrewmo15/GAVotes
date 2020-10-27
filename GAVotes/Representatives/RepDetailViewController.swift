@@ -19,7 +19,7 @@ class RepDetailViewController: UIViewController, MFMailComposeViewControllerDele
     
     private let name: UILabel = {
         let name = UILabel()
-        name.font = UIFont(name: "Louis George Cafe Bold", size: 40)!
+        name.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 40)!
         name.textAlignment = .center
         name.textColor = .black
         name.numberOfLines = 2
@@ -28,7 +28,7 @@ class RepDetailViewController: UIViewController, MFMailComposeViewControllerDele
     
     private let occuParty: UILabel = {
         let occuParty = UILabel()
-        occuParty.font = UIFont(name: "Louis George Cafe", size: 23)!
+        occuParty.font = UIFont(name: "LouisGeorgeCafe", size: 23)!
         occuParty.textAlignment = .center
         occuParty.textColor = .black
         occuParty.numberOfLines = 3
@@ -37,7 +37,7 @@ class RepDetailViewController: UIViewController, MFMailComposeViewControllerDele
     
     private let address: UILabel = {
         let address = UILabel()
-        address.font = UIFont(name: "Louis George Cafe", size: 17)!
+        address.font = UIFont(name: "LouisGeorgeCafe", size: 17)!
         address.textColor = .black
         address.numberOfLines = 2
         return address
@@ -45,7 +45,7 @@ class RepDetailViewController: UIViewController, MFMailComposeViewControllerDele
     
     private let phone: UILabel = {
         let phone = UILabel()
-        phone.font = UIFont(name: "Louis George Cafe", size: 17)!
+        phone.font = UIFont(name: "LouisGeorgeCafe", size: 17)!
         phone.textColor = .black
         phone.numberOfLines = 2
         return phone
@@ -53,7 +53,7 @@ class RepDetailViewController: UIViewController, MFMailComposeViewControllerDele
     
     private let phoneButton: UIButton = {
         let phoneButton = UIButton()
-        phoneButton.titleLabel?.font = UIFont(name: "Louis George Cafe", size: 17)!
+        phoneButton.titleLabel?.font = UIFont(name: "LouisGeorgeCafe", size: 17)!
         phoneButton.setTitleColor(.link, for: .normal)
         phoneButton.addTarget(self, action: #selector(phoneButtonTapped), for: .touchUpInside)
         phoneButton.contentHorizontalAlignment = .left
@@ -62,7 +62,7 @@ class RepDetailViewController: UIViewController, MFMailComposeViewControllerDele
     
     private let email: UILabel = {
         let email = UILabel()
-        email.font = UIFont(name: "Louis George Cafe", size: 17)!
+        email.font = UIFont(name: "LouisGeorgeCafe", size: 17)!
         email.textColor = .black
         email.numberOfLines = 2
         return email
@@ -70,7 +70,7 @@ class RepDetailViewController: UIViewController, MFMailComposeViewControllerDele
     
     private let emailButton: UIButton = {
         let emailButton = UIButton()
-        emailButton.titleLabel?.font = UIFont(name: "Louis George Cafe", size: 17)!
+        emailButton.titleLabel?.font = UIFont(name: "LouisGeorgeCafe", size: 17)!
         emailButton.setTitleColor(.link, for: .normal)
         emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
         emailButton.contentHorizontalAlignment = .left
@@ -133,8 +133,8 @@ class RepDetailViewController: UIViewController, MFMailComposeViewControllerDele
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
-        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 40)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 40)!, NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
     }
@@ -176,7 +176,7 @@ class RepDetailViewController: UIViewController, MFMailComposeViewControllerDele
             attributedString.addAttribute(.link, value: key, range: NSRange(location: value[0], length: value[1]))
         }
         channels.attributedText = attributedString
-        channels.font = UIFont(name: "Louis George Cafe", size: 17)!
+        channels.font = UIFont(name: "LouisGeorgeCafe", size: 17)!
     }
     
     @objc private func phoneButtonTapped() {

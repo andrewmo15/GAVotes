@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ElectionsViewController: UIViewController {
     
@@ -15,7 +16,7 @@ class ElectionsViewController: UIViewController {
     
     private let name: UILabel = {
         let name = UILabel()
-        name.font = UIFont(name: "Louis George Cafe Bold", size: 40)!
+        name.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 40)!
         name.textAlignment = .center
         name.textColor = .black
         name.numberOfLines = 2
@@ -24,7 +25,7 @@ class ElectionsViewController: UIViewController {
     
     private let date: UILabel = {
         let date = UILabel()
-        date.font = UIFont(name: "Louis George Cafe", size: 20)!
+        date.font = UIFont(name: "LouisGeorgeCafe", size: 20)!
         date.textAlignment = .center
         date.textColor = .black
         date.numberOfLines = 1
@@ -33,7 +34,7 @@ class ElectionsViewController: UIViewController {
     
     private let data: UILabel = {
         let data = UILabel()
-        data.font = UIFont(name: "Louis George Cafe", size: 20)!
+        data.font = UIFont(name: "LouisGeorgeCafe", size: 20)!
         data.textAlignment = .center
         data.textColor = .black
         data.numberOfLines = 5
@@ -42,7 +43,7 @@ class ElectionsViewController: UIViewController {
     
     private let error: UILabel = {
         let error = UILabel()
-        error.font = UIFont(name: "Louis George Cafe", size: 30)!
+        error.font = UIFont(name: "LouisGeorgeCafe", size: 30)!
         error.textAlignment = .center
         error.textColor = .black
         error.numberOfLines = 10
@@ -55,7 +56,7 @@ class ElectionsViewController: UIViewController {
         polling.setTitleColor(.white, for: .normal)
         polling.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
         polling.layer.masksToBounds = true
-        polling.titleLabel?.font = UIFont(name: "Louis George Cafe", size: 23)!
+        polling.titleLabel?.font = UIFont(name: "LouisGeorgeCafe", size: 23)!
         polling.addTarget(self, action: #selector(pollingTapped), for: .touchUpInside)
         polling.layer.masksToBounds = true
         polling.layer.cornerRadius = 10
@@ -68,7 +69,7 @@ class ElectionsViewController: UIViewController {
         candidates.setTitleColor(.white, for: .normal)
         candidates.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
         candidates.layer.masksToBounds = true
-        candidates.titleLabel?.font = UIFont(name: "Louis George Cafe", size: 23)!
+        candidates.titleLabel?.font = UIFont(name: "LouisGeorgeCafe", size: 23)!
         candidates.addTarget(self, action: #selector(candidatesTapped), for: .touchUpInside)
         candidates.layer.masksToBounds = true
         candidates.layer.cornerRadius = 10
@@ -105,11 +106,12 @@ class ElectionsViewController: UIViewController {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
-        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 35)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 35)!, NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bell.fill"), style: .done, target: self, action: #selector(notify))
         self.title = "Election"
     }
     
@@ -208,4 +210,49 @@ class ElectionsViewController: UIViewController {
         present(nav, animated: true)
     }
     
+    @objc private func notify() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { [weak self] (allow, error) in
+            guard let strongSelf = self else {
+                return
+            }
+            if error != nil {
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Error", message: error.debugDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                    strongSelf.present(alert, animated: true)
+                }
+            } else if allow {
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Success!", message: "You will be notified 3 days prior!", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                    strongSelf.present(alert, animated: true)
+                }
+                
+                let content = UNMutableNotificationContent()
+                content.title = "Vote Now!"
+                content.body = "2 days until the \(strongSelf.elect!.name)"
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                var date = dateFormatter.date(from: strongSelf.elect!.date)
+                date?.addTimeInterval(-172800)
+                let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date!)
+                
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+                let uuidString = UUID().uuidString
+                let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+                
+                center.add(request) { (error) in
+                    if error != nil {
+                        DispatchQueue.main.async {
+                            let alert = UIAlertController(title: "Error", message: error.debugDescription, preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                            strongSelf.present(alert, animated: true)
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

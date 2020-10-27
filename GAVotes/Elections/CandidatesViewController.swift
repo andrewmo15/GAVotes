@@ -23,13 +23,13 @@ class CandidatesViewController: UIViewController {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
-        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 35)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 35)!, NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(done))
         navigationItem.rightBarButtonItem?.tintColor = .white
-        navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
     }
     
     @objc private func done() {
@@ -57,10 +57,10 @@ extension CandidatesViewController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         cell.backgroundColor = .white
         cell.textLabel?.text = formatName(name: (candidates?.candidates[indexPath.section]![indexPath.row].name)!)
-        cell.textLabel?.font = UIFont(name: "Louis George Cafe Bold", size: 22)!
+        cell.textLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 22)!
         cell.textLabel?.textColor = .black
         cell.detailTextLabel?.text = formatName(name: (candidates?.candidates[indexPath.section]![indexPath.row].party)!)
-        cell.detailTextLabel?.font = UIFont(name: "Louis George Cafe Bold", size: 17)!
+        cell.detailTextLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 17)!
         cell.detailTextLabel?.textColor = .black
         return cell
     }
@@ -75,7 +75,7 @@ extension CandidatesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.font = UIFont(name: "Louis George Cafe Bold", size: 15)!
+        header.textLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 15)!
         header.textLabel?.textColor = .systemPink
     }
     

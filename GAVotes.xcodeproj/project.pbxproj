@@ -19,6 +19,7 @@
 		493983102529496700CD6D68 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4939830F2529496700CD6D68 /* EditAddressViewController.swift */; };
 		49437A70252ABBCA00D70271 /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49437A6F252ABBCA00D70271 /* LevelsViewController.swift */; };
 		4975665F2526E1410026B1A8 /* ElectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975665E2526E1410026B1A8 /* ElectionsViewController.swift */; };
+		49A11F452547EE520073491F /* VoterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A11F442547EE520073491F /* VoterInfoViewController.swift */; };
 		49B2BF4C25460BD8007BC3CB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B2BF4B25460BD8007BC3CB /* Location.swift */; };
 		49DAA6672529B48300438D60 /* Officials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAA6662529B48300438D60 /* Officials.swift */; };
 		49DAA66C2529B4AE00438D60 /* Polling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAA66B2529B4AE00438D60 /* Polling.swift */; };
@@ -73,6 +74,7 @@
 		4939830F2529496700CD6D68 /* EditAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
 		49437A6F252ABBCA00D70271 /* LevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
 		4975665E2526E1410026B1A8 /* ElectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectionsViewController.swift; sourceTree = "<group>"; };
+		49A11F442547EE520073491F /* VoterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoterInfoViewController.swift; sourceTree = "<group>"; };
 		49B2BF4B25460BD8007BC3CB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		49DAA6662529B48300438D60 /* Officials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Officials.swift; sourceTree = "<group>"; };
 		49DAA66B2529B4AE00438D60 /* Polling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polling.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				49DAA6732529B55F00438D60 /* Resources */,
 				49006B4525258D2C00FCAACA /* Assets.xcassets */,
 				49006B4A25258D2C00FCAACA /* Info.plist */,
+				49A11F442547EE520073491F /* VoterInfoViewController.swift */,
 			);
 			path = GAVotes;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				49DED6852544FCFD004D2D96 /* CandidatesViewController.swift in Sources */,
 				49006B3F25258D2A00FCAACA /* SceneDelegate.swift in Sources */,
 				490935CB25259D61009D0740 /* RepresentativesViewController.swift in Sources */,
+				49A11F452547EE520073491F /* VoterInfoViewController.swift in Sources */,
 				49DED69225451204004D2D96 /* PollingViewController.swift in Sources */,
 				493983102529496700CD6D68 /* EditAddressViewController.swift in Sources */,
 				49DED63E2544E065004D2D96 /* Election.swift in Sources */,

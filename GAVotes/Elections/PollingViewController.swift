@@ -25,13 +25,13 @@ class PollingViewController: UIViewController {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
-        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 40)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 40)!, NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(done))
         navigationItem.rightBarButtonItem?.tintColor = .white
-        navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
     }
     
     @objc private func done() {
@@ -73,8 +73,11 @@ extension PollingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "poll", for: indexPath)
         cell.textLabel?.numberOfLines = 2
-        cell.textLabel?.font = UIFont(name: "Louis George Cafe Bold", size: 20)!
-        cell.detailTextLabel?.font = UIFont(name: "Louis George Cafe", size: 15)!
+        cell.textLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 20)!
+        cell.detailTextLabel?.font = UIFont(name: "LouisGeorgeCafe", size: 15)!
+        cell.backgroundColor = .white
+        cell.textLabel?.textColor = .black
+        cell.detailTextLabel?.textColor = .black
         switch indexPath.section {
         case 0:
             cell.textLabel?.text = formatName(name: polling![indexPath.row].name)
@@ -130,7 +133,7 @@ extension PollingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.font = UIFont(name: "Louis George Cafe Bold", size: 15)!
+        header.textLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 15)!
         header.textLabel?.textColor = .systemPink
     }
 }

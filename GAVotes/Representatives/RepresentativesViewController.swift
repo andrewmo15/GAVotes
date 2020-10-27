@@ -27,8 +27,8 @@ class RepresentativesViewController: UIViewController, UISearchBarDelegate {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
-        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 40)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 40)!, NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
@@ -42,7 +42,7 @@ class RepresentativesViewController: UIViewController, UISearchBarDelegate {
         search.barTintColor = .white
         search.tintColor = .link
         search.searchTextField.textColor = .black
-        search.searchTextField.font = UIFont(name: "Louis George Cafe Bold", size: 17)!
+        search.searchTextField.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 17)!
         search.placeholder = "Search for a representative"
         search.delegate = self
     }
@@ -83,9 +83,9 @@ extension RepresentativesViewController: UITableViewDelegate, UITableViewDataSou
         let cell = tableView.dequeueReusableCell(withIdentifier: "represent", for: indexPath)
         cell.backgroundColor = .white
         cell.textLabel?.text = dataFiltered[indexPath.row].name
-        cell.textLabel?.font = UIFont(name: "Louis George Cafe Bold", size: 20)!
+        cell.textLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 20)!
         cell.textLabel?.textColor = .black
-        cell.detailTextLabel?.font = UIFont(name: "Louis George Cafe", size: 15)!
+        cell.detailTextLabel?.font = UIFont(name: "LouisGeorgeCafe", size: 15)!
         cell.detailTextLabel?.text = dataFiltered[indexPath.row].title
         cell.detailTextLabel?.textColor = .black
         return cell

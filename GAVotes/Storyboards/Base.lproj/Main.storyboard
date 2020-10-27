@@ -356,10 +356,10 @@
             </objects>
             <point key="canvasLocation" x="-358" y="899"/>
         </scene>
-        <!--View Controller-->
+        <!--Voter Info View Controller-->
         <scene sceneID="mit-PX-vU9">
             <objects>
-                <viewController id="2BT-H6-1s7" sceneMemberID="viewController">
+                <viewController id="2BT-H6-1s7" customClass="VoterInfoViewController" customModule="GAVotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wPd-F9-lET">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -37,8 +37,8 @@ class LevelsViewController: UIViewController {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.backgroundColor = UIColor(red: 14.0 / 255.0, green: 26.0 / 255.0, blue: 82.0 / 255.0, alpha: 1)
-        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Louis George Cafe Bold", size: 40)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 40)!, NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
@@ -55,7 +55,7 @@ class LevelsViewController: UIViewController {
     private func configureButtons() {
         federal.setTitle("Federal", for: .normal)
         federal.setTitleColor(.black, for: .normal)
-        federal.titleLabel?.font = UIFont(name: "Louis George Cafe Bold", size: 30)!
+        federal.titleLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 30)!
         federal.frame = CGRect(x: 30, y: (view.frame.height / 2) - ((view.frame.height / 6) + 100), width: view.frame.width - 60, height: view.frame.height / 6)
         federal.layer.borderWidth = 5
         federal.layer.cornerRadius = 15
@@ -64,7 +64,7 @@ class LevelsViewController: UIViewController {
         
         state.setTitle("State", for: .normal)
         state.setTitleColor(.black, for: .normal)
-        state.titleLabel?.font = UIFont(name: "Louis George Cafe Bold", size: 30)!
+        state.titleLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 30)!
         state.frame = CGRect(x: 30, y: (view.frame.height / 2) - view.frame.height / 12, width: view.frame.width - 60, height: view.frame.height / 6)
         state.layer.borderWidth = 3
         state.layer.cornerRadius = 15
@@ -73,7 +73,7 @@ class LevelsViewController: UIViewController {
         
         county.setTitle("County", for: .normal)
         county.setTitleColor(.black, for: .normal)
-        county.titleLabel?.font = UIFont(name: "Louis George Cafe Bold", size: 30)!
+        county.titleLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 30)!
         county.frame = CGRect(x: 30, y: (view.frame.height / 2) + 100, width: view.frame.width - 60, height: view.frame.height / 6)
         county.layer.borderWidth = 5
         county.layer.cornerRadius = 15
