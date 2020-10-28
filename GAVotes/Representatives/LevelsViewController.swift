@@ -56,7 +56,7 @@ class LevelsViewController: UIViewController {
         federal.setTitle("Federal", for: .normal)
         federal.setTitleColor(.black, for: .normal)
         federal.titleLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 30)!
-        federal.frame = CGRect(x: 30, y: (view.frame.height / 2) - ((view.frame.height / 6) + 100), width: view.frame.width - 60, height: view.frame.height / 6)
+        federal.frame = CGRect(x: 30, y: 180, width: view.frame.width - 60, height: view.frame.height / 6)
         federal.layer.borderWidth = 5
         federal.layer.cornerRadius = 15
         federal.layer.borderColor = UIColor(red: 93 / 255.0, green: 151 / 255.0, blue: 223 / 255.0, alpha: 1).cgColor
@@ -65,7 +65,7 @@ class LevelsViewController: UIViewController {
         state.setTitle("State", for: .normal)
         state.setTitleColor(.black, for: .normal)
         state.titleLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 30)!
-        state.frame = CGRect(x: 30, y: (view.frame.height / 2) - view.frame.height / 12, width: view.frame.width - 60, height: view.frame.height / 6)
+        state.frame = CGRect(x: 30, y: federal.frame.maxY + 20, width: view.frame.width - 60, height: view.frame.height / 6)
         state.layer.borderWidth = 3
         state.layer.cornerRadius = 15
         state.layer.borderColor = UIColor.lightGray.cgColor
@@ -74,7 +74,7 @@ class LevelsViewController: UIViewController {
         county.setTitle("County", for: .normal)
         county.setTitleColor(.black, for: .normal)
         county.titleLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 30)!
-        county.frame = CGRect(x: 30, y: (view.frame.height / 2) + 100, width: view.frame.width - 60, height: view.frame.height / 6)
+        county.frame = CGRect(x: 30, y: state.frame.maxY + 20, width: view.frame.width - 60, height: view.frame.height / 6)
         county.layer.borderWidth = 5
         county.layer.cornerRadius = 15
         county.layer.borderColor = UIColor(red: 227 / 255.0, green: 127 / 255.0, blue: 127 / 255.0, alpha: 1).cgColor

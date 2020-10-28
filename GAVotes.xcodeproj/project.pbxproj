@@ -29,6 +29,7 @@
 		49DED6852544FCFD004D2D96 /* CandidatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DED6842544FCFD004D2D96 /* CandidatesViewController.swift */; };
 		49DED68A2544FE54004D2D96 /* Candidates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DED6892544FE54004D2D96 /* Candidates.swift */; };
 		49DED69225451204004D2D96 /* PollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DED69125451204004D2D96 /* PollingViewController.swift */; };
+		49EB604B2549E857007313C8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EB604A2549E857007313C8 /* MapKit.framework */; };
 		49EDD4A425278FF2008E0E2E /* RepDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDD4A325278FF2008E0E2E /* RepDetailViewController.swift */; };
 		49EDD4AF2528128F008E0E2E /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDD4AE2528128F008E0E2E /* LocationViewController.swift */; };
 		49F898832545648B00FC7A3C /* Louis George Cafe Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49F8987D2545648B00FC7A3C /* Louis George Cafe Light.ttf */; };
@@ -85,6 +86,8 @@
 		49DED6842544FCFD004D2D96 /* CandidatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidatesViewController.swift; sourceTree = "<group>"; };
 		49DED6892544FE54004D2D96 /* Candidates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candidates.swift; sourceTree = "<group>"; };
 		49DED69125451204004D2D96 /* PollingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PollingViewController.swift; path = GAVotes/Elections/PollingViewController.swift; sourceTree = SOURCE_ROOT; };
+		49EB604A2549E857007313C8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		49EB604C2549E864007313C8 /* GAVotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GAVotes.entitlements; sourceTree = "<group>"; };
 		49EDD4A325278FF2008E0E2E /* RepDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepDetailViewController.swift; sourceTree = "<group>"; };
 		49EDD4AE2528128F008E0E2E /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		49F8987D2545648B00FC7A3C /* Louis George Cafe Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Louis George Cafe Light.ttf"; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49EB604B2549E857007313C8 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +131,7 @@
 				49006B5225258D2C00FCAACA /* GAVotesTests */,
 				49006B5D25258D2C00FCAACA /* GAVotesUITests */,
 				49006B3A25258D2A00FCAACA /* Products */,
+				49EB60492549E857007313C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +148,7 @@
 		49006B3B25258D2A00FCAACA /* GAVotes */ = {
 			isa = PBXGroup;
 			children = (
+				49EB604C2549E864007313C8 /* GAVotes.entitlements */,
 				49A11F442547EE520073491F /* VotingInfoViewController.swift */,
 				49F8987C2545647700FC7A3C /* Fonts */,
 				49DAA6782529B5BA00438D60 /* Storyboards */,
@@ -227,6 +233,14 @@
 				49006B4725258D2C00FCAACA /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		49EB60492549E857007313C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49EB604A2549E857007313C8 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		49F8987C2545647700FC7A3C /* Fonts */ = {
@@ -572,6 +586,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GAVotes/GAVotes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RD4JHDYVT6;
 				INFOPLIST_FILE = GAVotes/Info.plist;
@@ -592,6 +607,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GAVotes/GAVotes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RD4JHDYVT6;
 				INFOPLIST_FILE = GAVotes/Info.plist;

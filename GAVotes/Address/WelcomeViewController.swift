@@ -11,6 +11,12 @@ class WelcomeViewController: UIViewController {
     
     private let dataSource = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
     
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.clipsToBounds = true
+        return scrollView
+    }()
+    
     let background: UIImageView = {
         let background = UIImageView()
         background.image = UIImage(named: "background")
@@ -19,11 +25,11 @@ class WelcomeViewController: UIViewController {
     
     private let welcome: UILabel = {
         let welcome = UILabel()
-        welcome.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 60)!
+        welcome.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 55)!
         welcome.textAlignment = .center
         welcome.textColor = .white
-        welcome.numberOfLines = 1
-        welcome.text = "Welcome to"
+        welcome.numberOfLines = 3
+        welcome.text = "Welcome to GAVotes"
         return welcome
     }()
     
@@ -117,23 +123,26 @@ class WelcomeViewController: UIViewController {
         state.addTarget(self, action: #selector(WelcomeViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
         zipcode.addTarget(self, action: #selector(WelcomeViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
         view.addSubview(background)
-        view.addSubview(welcome)
-        view.addSubview(address)
-        view.addSubview(city)
-        view.addSubview(state)
-        view.addSubview(zipcode)
-        view.addSubview(submit)
+        view.addSubview(scrollView)
+        scrollView.addSubview(welcome)
+        scrollView.addSubview(address)
+        scrollView.addSubview(city)
+        scrollView.addSubview(state)
+        scrollView.addSubview(zipcode)
+        scrollView.addSubview(submit)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        scrollView.frame = view.bounds
+        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height)
         background.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        welcome.frame = CGRect(x: 30, y: 70, width: view.frame.width - 60, height: 80)
-        address.frame = CGRect(x: 30, y: view.frame.height - 420, width: view.frame.width - 60, height: 52)
+        welcome.frame = CGRect(x: 20, y: 40, width: view.frame.width - 40, height: 200)
+        address.frame = CGRect(x: 30, y: view.frame.height - 400, width: view.frame.width - 60, height: 52)
         city.frame = CGRect(x: 30, y: address.frame.maxY + 15, width: view.frame.width - 60, height: 52)
         state.frame = CGRect(x: 30, y: city.frame.maxY + 15, width: view.frame.width - 60, height: 52)
         zipcode.frame = CGRect(x: 30, y: state.frame.maxY + 15, width: view.frame.width - 60, height: 52)
-        submit.frame = CGRect(x: 30, y: zipcode.frame.maxY + 30, width: view.frame.width - 60, height: 50)
+        submit.frame = CGRect(x: 30, y: zipcode.frame.maxY + 15, width: view.frame.width - 60, height: 50)
     }
 
     @objc func keyboardWillShow(notification: NSNotification) {

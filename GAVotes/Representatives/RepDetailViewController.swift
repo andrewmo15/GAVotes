@@ -8,9 +8,15 @@
 import UIKit
 import MessageUI
 
-class RepDetailViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class RepDetailViewController: UIViewController, MFMailComposeViewControllerDelegate, UIScrollViewDelegate {
     
     var currentOfficial: Officials?
+    
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.clipsToBounds = true
+        return scrollView
+    }()
     
     private let photo: UIImageView = {
         let imageView = UIImageView()
@@ -90,35 +96,38 @@ class RepDetailViewController: UIViewController, MFMailComposeViewControllerDele
         super.viewDidLoad()
         configureNavBar()
         view.backgroundColor = .white
+        view.addSubview(scrollView)
         name.text = currentOfficial!.name
         occuParty.text = "\(currentOfficial!.title)\n\(currentOfficial!.party)"
         address.text = "Address: " + currentOfficial!.address
         if currentOfficial!.phone == "Not Available" {
             phone.text = "Phone: " + currentOfficial!.phone
-            view.addSubview(phone)
+            scrollView.addSubview(phone)
         } else {
             phoneButton.setTitle("Phone: " + currentOfficial!.phone, for: .normal)
-            view.addSubview(phoneButton)
+            scrollView.addSubview(phoneButton)
         }
         if currentOfficial!.emails == "Not Available" {
             email.text = "Email: " + currentOfficial!.emails
-            view.addSubview(email)
+            scrollView.addSubview(email)
         } else {
             emailButton.setTitle("Email: " + currentOfficial!.emails, for: .normal)
-            view.addSubview(emailButton)
+            scrollView.addSubview(emailButton)
         }
         photo.downloaded(from: currentOfficial!.photoURL)
         configureChannels()
-        view.addSubview(photo)
-        view.addSubview(name)
-        view.addSubview(occuParty)
-        view.addSubview(address)
-        view.addSubview(channels)
+        scrollView.addSubview(photo)
+        scrollView.addSubview(name)
+        scrollView.addSubview(occuParty)
+        scrollView.addSubview(address)
+        scrollView.addSubview(channels)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        photo.frame = CGRect(x: view.frame.width / 2 - (0.1 * view.frame.height), y: 200, width: 0.2 * view.frame.height, height: 0.25 * view.frame.height)
+        scrollView.frame = view.bounds
+        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height)
+        photo.frame = CGRect(x: view.frame.width / 2 - (0.1 * view.frame.height), y: 30, width: 0.2 * view.frame.height, height: 0.25 * view.frame.height)
         name.frame = CGRect(x: 15, y: photo.frame.maxY + 10, width: view.frame.width - 30, height: 60)
         occuParty.frame = CGRect(x: 15, y: name.frame.maxY, width: view.frame.width - 30, height: 85)
         address.frame = CGRect(x: 15, y: occuParty.frame.maxY + 10, width: view.frame.width - 30, height: 60)

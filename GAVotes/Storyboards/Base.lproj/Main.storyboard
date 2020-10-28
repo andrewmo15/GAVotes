@@ -370,7 +370,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GdP-f3-I0L">
-                                <rect key="frame" x="0.0" y="188" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="158" width="414" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2D-SA-jkV" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -618,7 +618,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZT1-Bd-Dte">
-                                <rect key="frame" x="0.0" y="248" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="218" width="414" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjI-xY-oEJ" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -755,7 +755,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="col-tz-j2S">
-                                <rect key="frame" x="0.0" y="308" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="278" width="414" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZv-Cs-zkr" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -968,7 +968,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uD9-Nu-sJs">
-                                <rect key="frame" x="0.0" y="368" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="338" width="414" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1T-xt-CtK" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -1105,9 +1105,9 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here’s some information about how to register and how to vote." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5af-PR-1I1">
-                                <rect key="frame" x="0.0" y="88" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="NfC-Si-qut"/>
+                                    <constraint firstAttribute="height" constant="70" id="NfC-Si-qut"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="18"/>
                                 <nil key="textColor"/>

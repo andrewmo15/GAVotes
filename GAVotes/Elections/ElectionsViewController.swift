@@ -14,6 +14,12 @@ class ElectionsViewController: UIViewController {
     var elect: Election?
     private var candidate: Candidates?
     
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.clipsToBounds = true
+        return scrollView
+    }()
+    
     private let name: UILabel = {
         let name = UILabel()
         name.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 40)!
@@ -78,6 +84,7 @@ class ElectionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(scrollView)
         let url = formatURL()
         getData(from: url)
         configureNavBar()
@@ -86,6 +93,7 @@ class ElectionsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        view.addSubview(scrollView)
         let url = formatURL()
         getData(from: url)
         configureNavBar()
@@ -94,11 +102,13 @@ class ElectionsViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        name.frame = CGRect(x: 30, y: 180, width: view.frame.width - 60, height: 120)
-        date.frame = CGRect(x: 30, y: 300, width: view.frame.width - 60, height: 20)
-        data.frame = CGRect(x: 30, y: 320, width: view.frame.width - 60, height: 100)
-        candidates.frame = CGRect(x: 30, y: view.frame.height - 270, width: view.frame.width - 60, height: 60)
-        polling.frame = CGRect(x: 30, y: view.frame.height - 200, width: view.frame.width - 60, height: 60)
+        scrollView.frame = view.bounds
+        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height)
+        name.frame = CGRect(x: 30, y: 30, width: view.frame.width - 60, height: 120)
+        date.frame = CGRect(x: 30, y: name.frame.maxY + 20, width: view.frame.width - 60, height: 20)
+        data.frame = CGRect(x: 30, y: date.frame.maxY + 20, width: view.frame.width - 60, height: 100)
+        candidates.frame = CGRect(x: 30, y: data.frame.maxY + 100, width: view.frame.width - 60, height: 60)
+        polling.frame = CGRect(x: 30, y: candidates.frame.maxY + 10, width: view.frame.width - 60, height: 60)
         error.frame = CGRect(x: 20, y: 100, width: view.frame.width - 40, height: view.frame.height - 200)
     }
     
@@ -172,11 +182,11 @@ class ElectionsViewController: UIViewController {
             date.text = pollings!.date
             data.text = "Data is now available for your location!\n\(UserDefaults.standard.string(forKey: "FullAddress") ?? "No address provided")"
             error.removeFromSuperview()
-            view.addSubview(name)
-            view.addSubview(date)
-            view.addSubview(data)
-            view.addSubview(polling)
-            view.addSubview(candidates)
+            scrollView.addSubview(name)
+            scrollView.addSubview(date)
+            scrollView.addSubview(data)
+            scrollView.addSubview(polling)
+            scrollView.addSubview(candidates)
         } else {
             error.text = "Data is not yet available for your location: \(UserDefaults.standard.string(forKey: "FullAddress") ?? "No address provided")\nPlease come back later or try a different location"
             name.removeFromSuperview()
@@ -184,7 +194,7 @@ class ElectionsViewController: UIViewController {
             data.removeFromSuperview()
             polling.removeFromSuperview()
             candidates.removeFromSuperview()
-            view.addSubview(error)
+            scrollView.addSubview(error)
         }
     }
     
