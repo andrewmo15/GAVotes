@@ -18,6 +18,8 @@ With Georgia Votes, you can
 
 Every vote matters!
 
+Created by Andrew Mo and Grace Lee.
+
 # Terms and Conditions
 
 Last updated: October 27, 2020
