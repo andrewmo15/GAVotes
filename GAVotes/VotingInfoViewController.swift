@@ -207,6 +207,8 @@ class VotingInfoViewController: UIViewController {
         vrrequirementsBody.font = UIFont(name: "LouisGeorgeCafe", size: 18)!
         vrrequirementsBody.textAlignment = .left
         vrrequirementsBody.textColor = .black
+        vrrequirementsBody.backgroundColor = .white
+        vrrequirementsBody.tintColor = .link
         
         var text = "You can register to vote online here.\nYou will need valid ID. Valid forms of ID include:\n    1. Georgia’s driver’s license, even if expired\n    2. Valid US passport\n    3. Georgia voter identification card\n    4. School ID is accepted from the following colleges, universities, and technical colleges found here.\n    5. You can find more specific information about what qualifies as Valid ID and how to obtain a Georgia voter identification card here.\nYou are NOT officially registered until the form is approved, and you will receive a voter precinct card in the mail within 3 or 4 weeks."
         var attributedString = NSMutableAttributedString(string: text)
@@ -217,6 +219,8 @@ class VotingInfoViewController: UIViewController {
         vronlineBody.font = UIFont(name: "LouisGeorgeCafe", size: 18)!
         vronlineBody.textAlignment = .left
         vronlineBody.textColor = .black
+        vronlineBody.backgroundColor = .white
+        vronlineBody.tintColor = .link
         
         text = "You can register by mail by printing and filling out this form.\n    1. Valid Georgia ID is not necessary for the form, though you may need the last four digits of your Social Security Number. If you have neither, check the box on Row 5 and a unique identifier will be provided for you\n    2. IF you are registering for the first time in Georgia and submitting the form by mail, you must include a copy of your ID as well as proof of residence, such as a copy of valid photo ID, utility bill, or bank statement. You can also provide this information when you vote for the first time. More information can be found on the form above.\nWhen complete, send the form to your local election official, which you can find here (postage is prepaid).\nYou are NOT officially registered until the form is approved, and you will receive a voter precinct card in the mail within 3 or 4 weeks."
         attributedString = NSMutableAttributedString(string: text)
@@ -226,6 +230,8 @@ class VotingInfoViewController: UIViewController {
         vrByMailBody.font = UIFont(name: "LouisGeorgeCafe", size: 18)!
         vrByMailBody.textAlignment = .left
         vrByMailBody.textColor = .black
+        vrByMailBody.backgroundColor = .white
+        vrByMailBody.tintColor = .link
         
         text = "You can register to vote in person, though due to COVID-19, many locations are not open. You can find out where and when to register by contacting your local election office, which you can find here.\nYou will need to bring valid ID. Valid forms of ID include:\n    1. Georgia’s driver’s license, even if expired\n    2. Valid US passport\n    3. Georgia voter identification card\n    4. School ID is accepted from the following colleges, universities, and technical colleges found here.\n    5. You can find more specific information about what qualifies as Valid ID and how to obtain a Georgia voter identification card here.\nBe sure to social distance when registering to vote. CDC guidelines for voters can be found here."
         attributedString = NSMutableAttributedString(string: text)
@@ -237,6 +243,8 @@ class VotingInfoViewController: UIViewController {
         vrInPersonBody.font = UIFont(name: "LouisGeorgeCafe", size: 18)!
         vrInPersonBody.textAlignment = .left
         vrInPersonBody.textColor = .black
+        vrInPersonBody.backgroundColor = .white
+        vrInPersonBody.tintColor = .link
         
         text = "In Person & By Mail: 29 days prior to Election Day.\nOnline: Fifth Monday prior to Election Day.\nGeorgia does NOT offer same-day voter registration.\nSpecific voter registration deadlines for each election can be found here."
         attributedString = NSMutableAttributedString(string: text)
@@ -245,6 +253,8 @@ class VotingInfoViewController: UIViewController {
         vrDeadlinesBody.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 18)!
         vrDeadlinesBody.textAlignment = .left
         vrDeadlinesBody.textColor = .black
+        vrDeadlinesBody.backgroundColor = .white
+        vrDeadlinesBody.tintColor = .link
         
         text = "You can look up your voter registration status and ballot status here.\nYou can change your current voter registration, for example, if you’ve moved or changed your name here.\nFor more information about voter registration policies, read here.\n"
         attributedString = NSMutableAttributedString(string: text)
@@ -255,6 +265,8 @@ class VotingInfoViewController: UIViewController {
         vrAdditionalInformationBody.font = UIFont(name: "LouisGeorgeCafe", size: 18)!
         vrAdditionalInformationBody.textAlignment = .left
         vrAdditionalInformationBody.textColor = .black
+        vrAdditionalInformationBody.backgroundColor = .white
+        vrAdditionalInformationBody.tintColor = .link
         
         text = "You can vote at any early voting site in your county.\nTo vote early, you must bring valid voter ID. Valid forms of ID include:\n    1. Georgia’s driver’s license, even if expired\n    2. Valid US passport\n    3. Georgia voter identification card\n    4. School ID is accepted from the following colleges, universities, and technical colleges found here.\n    5. You can find more specific information about what qualifies as Valid ID and how to obtain a Georgia voter identification card here.\nBe sure to social distance when registering to vote. CDC guidelines for voters can be found here."
         attributedString = NSMutableAttributedString(string: text)
@@ -265,6 +277,8 @@ class VotingInfoViewController: UIViewController {
         evRequirementsBody.font = UIFont(name: "LouisGeorgeCafe", size: 18)!
         evRequirementsBody.textAlignment = .left
         evRequirementsBody.textColor = .black
+        evRequirementsBody.backgroundColor = .white
+        evRequirementsBody.tintColor = .link
         
         text = "Early in-person voting begins on the fourth Monday prior to a primary or election.\nThe early voting period ends on the Friday before Election Day.\nThe calendar for when voting dates and deadlines for voter registration, including when early voting begins, can be found here."
         attributedString = NSMutableAttributedString(string: text)
@@ -273,6 +287,8 @@ class VotingInfoViewController: UIViewController {
         evDatesDeadlinesBody.font = UIFont(name: "LouisGeorgeCafe", size: 18)!
         evDatesDeadlinesBody.textAlignment = .left
         evDatesDeadlinesBody.textColor = .black
+        evDatesDeadlinesBody.backgroundColor = .white
+        evDatesDeadlinesBody.tintColor = .link
         
         text = "For additional information, visit georgia.gov."
         attributedString = NSMutableAttributedString(string: text)
@@ -281,12 +297,16 @@ class VotingInfoViewController: UIViewController {
         evAdditionalInformationBody.font = UIFont(name: "LouisGeorgeCafe", size: 18)!
         evAdditionalInformationBody.textAlignment = .center
         evAdditionalInformationBody.textColor = .black
+        evAdditionalInformationBody.backgroundColor = .white
+        evAdditionalInformationBody.tintColor = .link
         
         text = "Any registered Georgia voter may vote by mail with an absentee ballot.\nYou do not need to provide a reason for voting absentee.\nOnce you have voted by absentee, you CANNOT change your mind by voting in person."
         avbmPoliciesBody.text = text
         avbmPoliciesBody.font = UIFont(name: "LouisGeorgeCafe", size: 18)!
         avbmPoliciesBody.textAlignment = .left
         avbmPoliciesBody.textColor = .black
+        avbmPoliciesBody.backgroundColor = .white
+        avbmPoliciesBody.tintColor = .link
         
         text = "You can request an absentee ballot up to 180 days before an election either online or with an absentee ballot request application. When requesting online, be sure to have your driver’s license or state-issued ID as well as your email address.\nFill out the absentee ballot request application above. You can submit by mail, by fax, or by handing in your application in person at your County Board of Registrar’s Office, which you can find here."
         attributedString = NSMutableAttributedString(string: text)
@@ -297,6 +317,8 @@ class VotingInfoViewController: UIViewController {
         avbmRequestSubmitBallotBody.font = UIFont(name: "LouisGeorgeCafe", size: 18)!
         avbmRequestSubmitBallotBody.textAlignment = .center
         avbmRequestSubmitBallotBody.textColor = .black
+        avbmRequestSubmitBallotBody.backgroundColor = .white
+        avbmRequestSubmitBallotBody.tintColor = .link
         
         text = "Fill out and sign the absentee ballot once received.\nMail your ballot to your county election office, which you can find here.\nYou can also drop off your absentee ballot at a drop-off location in your county, which can be found with this app. You can also contact your County Registrar to find drop-off locations (no stamps required).\nYou do not have to include identification when voting absentee if you are not voting for the first time in Georgia. However, if you are voting for the first time in Georgia, registered by mail, and did not provide valid ID during registration, you have to provide a copy of valid ID when sending in your ballot. Valid forms of ID include:\n    1. Georgia’s driver’s license, even if expired\n    2. Valid US passport\n    3. Georgia voter identification card\n    4. School ID is accepted from the following colleges, universities, and technical colleges found here.\n    5. You can find more specific information about what qualifies as Valid ID and how to obtain a Georgia voter identification card here."
         attributedString = NSMutableAttributedString(string: text)
@@ -308,12 +330,16 @@ class VotingInfoViewController: UIViewController {
         avbmByMailBody.font = UIFont(name: "LouisGeorgeCafe", size: 18)!
         avbmByMailBody.textAlignment = .center
         avbmByMailBody.textColor = .black
+        avbmByMailBody.backgroundColor = .white
+        avbmByMailBody.tintColor = .link
         
         avbmDeadlines.text = "Absentee ballot applications must be received in person, by mail, or online by the Friday before Election Day.\nAbsentee ballots must be received either by mail or in drop-off locations by Election Day at 7:00pm."
         avbmDeadlines.attributedText = attributedString
         avbmDeadlines.font = UIFont(name: "LouisGeorgeCafe", size: 18)!
         avbmDeadlines.textAlignment = .center
         avbmDeadlines.textColor = .black
+        avbmDeadlines.backgroundColor = .white
+        avbmDeadlines.tintColor = .link
         
         text = "For additional information, visit *georgia.gov.\nCheck your voter registration status, ballot status, and more at this link."
         attributedString = NSMutableAttributedString(string: text)
@@ -323,6 +349,8 @@ class VotingInfoViewController: UIViewController {
         avbmAdditionalInformationBody.font = UIFont(name: "LouisGeorgeCafe", size: 18)!
         avbmAdditionalInformationBody.textAlignment = .center
         avbmAdditionalInformationBody.textColor = .black
+        avbmAdditionalInformationBody.backgroundColor = .white
+        avbmAdditionalInformationBody.tintColor = .link
         
         text = "Verify that you are going to your assigned polling station with this app. Your polling station can change from election to election.\nYou must show photo identification when voting in person. Valid forms of ID include:\n    1. Georgia’s driver’s license, even if expired\n    2. Valid US passport\n    3. Georgia voter identification card\n    4. School ID is accepted from the following colleges, universities, and technical colleges found here.\n    5. You can find more specific information about what qualifies as Valid ID and how to obtain a Georgia voter identification card here.\nIf you do not bring your ID to the polling location, you can cast a provisional ballot, but you must provide valid ID at your county registrar within three days of Election Day.\nBe sure to social distance when voting. CDC guidelines for voters can be found here."
         attributedString = NSMutableAttributedString(string: text)
@@ -333,6 +361,8 @@ class VotingInfoViewController: UIViewController {
         vipPoliciesBody.font = UIFont(name: "LouisGeorgeCafe", size: 18)!
         vipPoliciesBody.textAlignment = .center
         vipPoliciesBody.textColor = .black
+        vipPoliciesBody.backgroundColor = .white
+        vipPoliciesBody.tintColor = .link
         
         text = "The calendar for election dates can be found here."
         attributedString = NSMutableAttributedString(string: text)
@@ -341,6 +371,8 @@ class VotingInfoViewController: UIViewController {
         vipDatesDeadlinesBody.font = UIFont(name: "LouisGeorgeCafe", size: 18)!
         vipDatesDeadlinesBody.textAlignment = .center
         vipDatesDeadlinesBody.textColor = .black
+        vipDatesDeadlinesBody.backgroundColor = .white
+        vipDatesDeadlinesBody.tintColor = .link
         
         text = "For additional information, visit georgia.gov. If you have a problem at your polling location, call 404-656-2871 (in metro Atlanta) or 877-725-9727 (everywhere else in Georgia). Check your voter registration status, ballot status, and more at www.mvp.sps.ga.gov"
         attributedString = NSMutableAttributedString(string: text)
@@ -350,5 +382,7 @@ class VotingInfoViewController: UIViewController {
         vipAdditionalInformationBody.font = UIFont(name: "LouisGeorgeCafe", size: 18)!
         vipAdditionalInformationBody.textAlignment = .center
         vipAdditionalInformationBody.textColor = .black
+        vipAdditionalInformationBody.backgroundColor = .white
+        vipAdditionalInformationBody.tintColor = .link
     }
 }
