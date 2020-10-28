@@ -11,12 +11,6 @@ class WelcomeViewController: UIViewController {
     
     private let dataSource = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
     
-    private let scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.clipsToBounds = true
-        return scrollView
-    }()
-    
     let background: UIImageView = {
         let background = UIImageView()
         background.image = UIImage(named: "background")
@@ -108,6 +102,21 @@ class WelcomeViewController: UIViewController {
         submit.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
         return submit
     }()
+    
+    private let links: UITextView = {
+        let links = UITextView()
+        let text = "By continuing, you agree to our Terms and Conditions and Privacy Policy"
+        let attributedString = NSMutableAttributedString(string: text)
+        attributedString.addAttribute(.link, value: "https://github.com/andrewmo15/GAVotes", range: NSRange(location: 32, length: 20))
+        attributedString.addAttribute(.link, value: "https://github.com/andrewmo15/GAVotes", range: NSRange(location: 57, length: text.count - 57))
+        links.attributedText = attributedString
+        links.textColor = UIColor.white
+        links.font = UIFont(name: "PerspectiveSans", size: 12)
+        links.tintColor = .link
+        links.isEditable = false
+        links.backgroundColor = .clear
+        return links
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,26 +132,25 @@ class WelcomeViewController: UIViewController {
         state.addTarget(self, action: #selector(WelcomeViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
         zipcode.addTarget(self, action: #selector(WelcomeViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
         view.addSubview(background)
-        view.addSubview(scrollView)
-        scrollView.addSubview(welcome)
-        scrollView.addSubview(address)
-        scrollView.addSubview(city)
-        scrollView.addSubview(state)
-        scrollView.addSubview(zipcode)
-        scrollView.addSubview(submit)
+        view.addSubview(welcome)
+        view.addSubview(address)
+        view.addSubview(city)
+        view.addSubview(state)
+        view.addSubview(zipcode)
+        view.addSubview(submit)
+        view.addSubview(links)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        scrollView.frame = view.bounds
-        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height)
         background.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         welcome.frame = CGRect(x: 20, y: 40, width: view.frame.width - 40, height: 200)
-        address.frame = CGRect(x: 30, y: view.frame.height - 400, width: view.frame.width - 60, height: 52)
+        address.frame = CGRect(x: 30, y: view.frame.height - 440, width: view.frame.width - 60, height: 52)
         city.frame = CGRect(x: 30, y: address.frame.maxY + 15, width: view.frame.width - 60, height: 52)
         state.frame = CGRect(x: 30, y: city.frame.maxY + 15, width: view.frame.width - 60, height: 52)
         zipcode.frame = CGRect(x: 30, y: state.frame.maxY + 15, width: view.frame.width - 60, height: 52)
         submit.frame = CGRect(x: 30, y: zipcode.frame.maxY + 15, width: view.frame.width - 60, height: 50)
+        links.frame = CGRect(x: 30, y: submit.frame.maxY, width: view.frame.width - 60, height: 50)
     }
 
     @objc func keyboardWillShow(notification: NSNotification) {
