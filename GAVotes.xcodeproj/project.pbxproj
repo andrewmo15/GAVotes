@@ -16,10 +16,11 @@
 		49006B5425258D2C00FCAACA /* GAVotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49006B5325258D2C00FCAACA /* GAVotesTests.swift */; };
 		49006B5F25258D2C00FCAACA /* GAVotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49006B5E25258D2C00FCAACA /* GAVotesUITests.swift */; };
 		490935CB25259D61009D0740 /* RepresentativesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490935CA25259D61009D0740 /* RepresentativesViewController.swift */; };
+		492AAF482549214700DF1C0F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492AAF472549214700DF1C0F /* CustomButton.swift */; };
 		493983102529496700CD6D68 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4939830F2529496700CD6D68 /* EditAddressViewController.swift */; };
 		49437A70252ABBCA00D70271 /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49437A6F252ABBCA00D70271 /* LevelsViewController.swift */; };
 		4975665F2526E1410026B1A8 /* ElectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975665E2526E1410026B1A8 /* ElectionsViewController.swift */; };
-		49A11F452547EE520073491F /* VoterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A11F442547EE520073491F /* VoterInfoViewController.swift */; };
+		49A11F452547EE520073491F /* VotingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A11F442547EE520073491F /* VotingInfoViewController.swift */; };
 		49B2BF4C25460BD8007BC3CB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B2BF4B25460BD8007BC3CB /* Location.swift */; };
 		49DAA6672529B48300438D60 /* Officials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAA6662529B48300438D60 /* Officials.swift */; };
 		49DAA66C2529B4AE00438D60 /* Polling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAA66B2529B4AE00438D60 /* Polling.swift */; };
@@ -71,10 +72,11 @@
 		49006B5E25258D2C00FCAACA /* GAVotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAVotesUITests.swift; sourceTree = "<group>"; };
 		49006B6025258D2C00FCAACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490935CA25259D61009D0740 /* RepresentativesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativesViewController.swift; sourceTree = "<group>"; };
+		492AAF472549214700DF1C0F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		4939830F2529496700CD6D68 /* EditAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
 		49437A6F252ABBCA00D70271 /* LevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
 		4975665E2526E1410026B1A8 /* ElectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectionsViewController.swift; sourceTree = "<group>"; };
-		49A11F442547EE520073491F /* VoterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoterInfoViewController.swift; sourceTree = "<group>"; };
+		49A11F442547EE520073491F /* VotingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingInfoViewController.swift; sourceTree = "<group>"; };
 		49B2BF4B25460BD8007BC3CB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		49DAA6662529B48300438D60 /* Officials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Officials.swift; sourceTree = "<group>"; };
 		49DAA66B2529B4AE00438D60 /* Polling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polling.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		49006B3B25258D2A00FCAACA /* GAVotes */ = {
 			isa = PBXGroup;
 			children = (
+				49A11F442547EE520073491F /* VotingInfoViewController.swift */,
 				49F8987C2545647700FC7A3C /* Fonts */,
 				49DAA6782529B5BA00438D60 /* Storyboards */,
 				49DAA6772529B5A300438D60 /* Elections */,
@@ -149,7 +152,6 @@
 				49DAA6732529B55F00438D60 /* Resources */,
 				49006B4525258D2C00FCAACA /* Assets.xcassets */,
 				49006B4A25258D2C00FCAACA /* Info.plist */,
-				49A11F442547EE520073491F /* VoterInfoViewController.swift */,
 			);
 			path = GAVotes;
 			sourceTree = "<group>";
@@ -175,6 +177,7 @@
 		49DAA6732529B55F00438D60 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				492AAF472549214700DF1C0F /* CustomButton.swift */,
 				49006B3C25258D2A00FCAACA /* AppDelegate.swift */,
 				49006B3E25258D2A00FCAACA /* SceneDelegate.swift */,
 			);
@@ -376,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DED68A2544FE54004D2D96 /* Candidates.swift in Sources */,
+				492AAF482549214700DF1C0F /* CustomButton.swift in Sources */,
 				4975665F2526E1410026B1A8 /* ElectionsViewController.swift in Sources */,
 				49DAA6672529B48300438D60 /* Officials.swift in Sources */,
 				49006B4125258D2A00FCAACA /* WelcomeViewController.swift in Sources */,
@@ -386,7 +390,7 @@
 				49DED6852544FCFD004D2D96 /* CandidatesViewController.swift in Sources */,
 				49006B3F25258D2A00FCAACA /* SceneDelegate.swift in Sources */,
 				490935CB25259D61009D0740 /* RepresentativesViewController.swift in Sources */,
-				49A11F452547EE520073491F /* VoterInfoViewController.swift in Sources */,
+				49A11F452547EE520073491F /* VotingInfoViewController.swift in Sources */,
 				49DED69225451204004D2D96 /* PollingViewController.swift in Sources */,
 				493983102529496700CD6D68 /* EditAddressViewController.swift in Sources */,
 				49DED63E2544E065004D2D96 /* Election.swift in Sources */,
