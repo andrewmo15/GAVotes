@@ -23,6 +23,8 @@ class CustomButton: UIButton {
         backgroundColor = .white
         layer.borderColor = UIColor.lightGray.cgColor
         layer.borderWidth = 0.5
+        titleLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 25)!
+        setTitleColor(.black, for: .normal)
     }
 
 }

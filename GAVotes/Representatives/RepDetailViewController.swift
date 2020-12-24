@@ -8,7 +8,7 @@
 import UIKit
 import MessageUI
 
-class RepDetailViewController: UIViewController, MFMailComposeViewControllerDelegate, UIScrollViewDelegate {
+class RepDetailViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     var currentOfficial: Officials?
     

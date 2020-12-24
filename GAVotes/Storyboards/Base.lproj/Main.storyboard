@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Louis George Cafe Bold.ttf">
-            <string>LouisGeorgeCafe-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -27,9 +22,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="664" y="899"/>
+            <point key="canvasLocation" x="1862" y="917"/>
         </scene>
-        <!--Select a level-->
+        <!--Levels View Controller-->
         <scene sceneID="lWC-5F-Bvk">
             <objects>
                 <viewController id="Am6-GO-52t" customClass="LevelsViewController" customModule="GAVotes" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,7 +60,7 @@
                         <viewLayoutGuide key="safeArea" id="mnl-B7-TBp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Select a level" id="Vhu-Yx-qAh"/>
+                    <navigationItem key="navigationItem" id="Vhu-Yx-qAh"/>
                     <connections>
                         <outlet property="county" destination="YyZ-nG-cXZ" id="pm5-MT-5BS"/>
                         <outlet property="federal" destination="2TU-Xr-nU5" id="8ci-Mc-srg"/>
@@ -74,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4DR-oQ-gkw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3470" y="145"/>
+            <point key="canvasLocation" x="4380" y="145"/>
         </scene>
         <!--Representatives View Controller-->
         <scene sceneID="Fyy-jR-NrM">
@@ -140,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Soc-rF-qii" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4278" y="145"/>
+            <point key="canvasLocation" x="5187" y="145"/>
         </scene>
         <!--Representative-->
         <scene sceneID="bit-T2-fGw">
@@ -156,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="miH-lh-veJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5116" y="145"/>
+            <point key="canvasLocation" x="6026" y="145"/>
         </scene>
         <!--Candidates View Controller-->
         <scene sceneID="GuT-w6-zO2">
@@ -213,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dgz-a8-eoM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5116" y="917"/>
+            <point key="canvasLocation" x="6026.0869565217399" y="916.74107142857133"/>
         </scene>
         <!--Polling View Controller-->
         <scene sceneID="dqq-rC-R2b">
@@ -270,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYn-9n-aOl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5942" y="917"/>
+            <point key="canvasLocation" x="6850.7246376811599" y="916.74107142857133"/>
         </scene>
         <!--Location View Controller-->
         <scene sceneID="QcK-zl-Smh">
@@ -320,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="He6-au-9II" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6771" y="917"/>
+            <point key="canvasLocation" x="7679.7101449275369" y="916.74107142857133"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="uqd-cW-fzm">
@@ -338,868 +333,12 @@
                     <connections>
                         <segue destination="sce-ah-9Nh" kind="relationship" relationship="viewControllers" id="vdK-Xy-Ig0"/>
                         <segue destination="MMl-FG-jBa" kind="relationship" relationship="viewControllers" id="DPg-IQ-oSs"/>
-                        <segue destination="8UF-Ec-als" kind="relationship" relationship="viewControllers" id="oIS-KI-IAl"/>
+                        <segue destination="Mql-dS-yEn" kind="relationship" relationship="viewControllers" id="b7u-cL-Stq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ScT-pr-FuS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1426" y="899"/>
-        </scene>
-        <!--Edit Address-->
-        <scene sceneID="yH9-iw-st8">
-            <objects>
-                <viewController id="ofM-hZ-NYo" customClass="EditAddressViewController" customModule="GAVotes" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YrT-8a-GdK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="DCN-Ge-EwT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Edit Address" id="KJ8-BI-X1z"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mQi-Gn-b35" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-358" y="899"/>
-        </scene>
-        <!--Voting Info View Controller-->
-        <scene sceneID="mit-PX-vU9">
-            <objects>
-                <viewController id="2BT-H6-1s7" customClass="VotingInfoViewController" customModule="GAVotes" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wPd-F9-lET">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GdP-f3-I0L">
-                                <rect key="frame" x="0.0" y="158" width="414" height="60"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2D-SA-jkV" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="FUT-of-JbU"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="27"/>
-                                        <state key="normal" title="Voter Registration">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="registration:" destination="2BT-H6-1s7" eventType="touchUpInside" id="8yV-sc-gGo"/>
-                                        </connections>
-                                    </button>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gfD-3J-m7R">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7W-EJ-eWq" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="rvx-L8-ADf"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="20"/>
-                                                <state key="normal" title="Voter Registration Requirements">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="vrrequirements:" destination="2BT-H6-1s7" eventType="touchUpInside" id="Pzp-zp-D5y"/>
-                                                </connections>
-                                            </button>
-                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Places people" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uXZ-fD-r9Q">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="GHX-qb-Q3u"/>
-                                                </constraints>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="uXZ-fD-r9Q" firstAttribute="leading" secondItem="gfD-3J-m7R" secondAttribute="leading" id="JBm-pD-Su3"/>
-                                            <constraint firstAttribute="trailing" secondItem="uXZ-fD-r9Q" secondAttribute="trailing" id="Ne4-WI-HK2"/>
-                                            <constraint firstAttribute="trailing" secondItem="O7W-EJ-eWq" secondAttribute="trailing" id="YMf-H3-biO"/>
-                                            <constraint firstItem="O7W-EJ-eWq" firstAttribute="leading" secondItem="gfD-3J-m7R" secondAttribute="leading" id="ylT-ZG-NNI"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BtU-6y-YMl">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szy-mm-x2L" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="R1q-dj-GBq"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="20"/>
-                                                <state key="normal" title="Registering Online">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="vronline:" destination="2BT-H6-1s7" eventType="touchUpInside" id="aBj-eK-awW"/>
-                                                </connections>
-                                            </button>
-                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjd-Ea-5oD">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="SMG-eE-pZg"/>
-                                                </constraints>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="szy-mm-x2L" secondAttribute="trailing" id="HkB-Hb-Fcn"/>
-                                            <constraint firstAttribute="trailing" secondItem="bjd-Ea-5oD" secondAttribute="trailing" id="JrZ-du-1to"/>
-                                            <constraint firstItem="szy-mm-x2L" firstAttribute="leading" secondItem="BtU-6y-YMl" secondAttribute="leading" id="eUz-p6-1zO"/>
-                                            <constraint firstItem="bjd-Ea-5oD" firstAttribute="leading" secondItem="BtU-6y-YMl" secondAttribute="leading" id="hUZ-Du-AvR"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wxa-v3-DpD">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33K-yd-6VQ" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="Qpg-gg-9kV"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="20"/>
-                                                <state key="normal" title="Registering By Mail">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="vrByMail:" destination="2BT-H6-1s7" eventType="touchUpInside" id="wP8-La-WMJ"/>
-                                                </connections>
-                                            </button>
-                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRf-pY-BpV">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="S3i-Jg-fF9"/>
-                                                </constraints>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="yRf-pY-BpV" secondAttribute="trailing" id="12X-jT-MH4"/>
-                                            <constraint firstItem="yRf-pY-BpV" firstAttribute="leading" secondItem="wxa-v3-DpD" secondAttribute="leading" id="7JH-bc-28p"/>
-                                            <constraint firstItem="33K-yd-6VQ" firstAttribute="leading" secondItem="wxa-v3-DpD" secondAttribute="leading" id="egt-gB-AP5"/>
-                                            <constraint firstAttribute="trailing" secondItem="33K-yd-6VQ" secondAttribute="trailing" id="j9k-GD-uNy"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aOa-Ox-ygA">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ty-a0-pPZ" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="s4P-fu-Qg5"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="20"/>
-                                                <state key="normal" title="Registering in Person">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="vrInPerson:" destination="2BT-H6-1s7" eventType="touchUpInside" id="SC9-VJ-LM8"/>
-                                                </connections>
-                                            </button>
-                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZB-Uw-kvd">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="8dO-yQ-hfS"/>
-                                                </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="dZB-Uw-kvd" firstAttribute="leading" secondItem="aOa-Ox-ygA" secondAttribute="leading" id="3xw-F2-keL"/>
-                                            <constraint firstAttribute="trailing" secondItem="4ty-a0-pPZ" secondAttribute="trailing" id="9Ml-Qx-Vs1"/>
-                                            <constraint firstAttribute="trailing" secondItem="dZB-Uw-kvd" secondAttribute="trailing" id="Gjr-y5-u6t"/>
-                                            <constraint firstItem="4ty-a0-pPZ" firstAttribute="leading" secondItem="aOa-Ox-ygA" secondAttribute="leading" id="wmU-i8-owY"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3pt-Y1-wbE">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ib-NO-G18" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="aCl-wW-V5M"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="20"/>
-                                                <state key="normal" title="Registration Deadlines">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="vrDeadlines:" destination="2BT-H6-1s7" eventType="touchUpInside" id="whp-y1-V4W"/>
-                                                </connections>
-                                            </button>
-                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUr-NN-iaI">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="uaO-Or-3VN"/>
-                                                </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="cUr-NN-iaI" firstAttribute="leading" secondItem="3pt-Y1-wbE" secondAttribute="leading" id="6Me-JS-Qog"/>
-                                            <constraint firstAttribute="trailing" secondItem="cUr-NN-iaI" secondAttribute="trailing" id="N54-kf-orC"/>
-                                            <constraint firstAttribute="trailing" secondItem="9Ib-NO-G18" secondAttribute="trailing" id="ejA-r9-9Vh"/>
-                                            <constraint firstItem="9Ib-NO-G18" firstAttribute="leading" secondItem="3pt-Y1-wbE" secondAttribute="leading" id="wlD-ji-TAs"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KMT-3Q-Egg">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNb-ey-abY" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="w2S-G9-0DD"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="20"/>
-                                                <state key="normal" title="Additional Information">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="vrAdditionalInformation:" destination="2BT-H6-1s7" eventType="touchUpInside" id="qyI-70-fr9"/>
-                                                </connections>
-                                            </button>
-                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xD-VQ-JEg">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="ePc-If-u8B"/>
-                                                </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="6xD-VQ-JEg" secondAttribute="trailing" id="JXM-6w-Yhw"/>
-                                            <constraint firstItem="6xD-VQ-JEg" firstAttribute="leading" secondItem="KMT-3Q-Egg" secondAttribute="leading" id="Sgt-me-6S0"/>
-                                            <constraint firstAttribute="trailing" secondItem="sNb-ey-abY" secondAttribute="trailing" id="owN-yS-1gI"/>
-                                            <constraint firstItem="sNb-ey-abY" firstAttribute="leading" secondItem="KMT-3Q-Egg" secondAttribute="leading" id="uNC-lL-ARy"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="B2D-SA-jkV" firstAttribute="leading" secondItem="GdP-f3-I0L" secondAttribute="leading" id="0ce-ii-rCb"/>
-                                    <constraint firstItem="BtU-6y-YMl" firstAttribute="leading" secondItem="GdP-f3-I0L" secondAttribute="leading" id="2jw-Th-SFx"/>
-                                    <constraint firstItem="aOa-Ox-ygA" firstAttribute="leading" secondItem="GdP-f3-I0L" secondAttribute="leading" id="7Od-lz-AWI"/>
-                                    <constraint firstAttribute="trailing" secondItem="KMT-3Q-Egg" secondAttribute="trailing" id="EHh-dL-nzW"/>
-                                    <constraint firstItem="KMT-3Q-Egg" firstAttribute="leading" secondItem="GdP-f3-I0L" secondAttribute="leading" id="Fhe-Fp-VHl"/>
-                                    <constraint firstAttribute="trailing" secondItem="B2D-SA-jkV" secondAttribute="trailing" id="Jaj-Pg-FY2"/>
-                                    <constraint firstAttribute="trailing" secondItem="wxa-v3-DpD" secondAttribute="trailing" id="f90-gq-al8"/>
-                                    <constraint firstItem="wxa-v3-DpD" firstAttribute="leading" secondItem="GdP-f3-I0L" secondAttribute="leading" id="gqd-AX-66T"/>
-                                    <constraint firstAttribute="trailing" secondItem="3pt-Y1-wbE" secondAttribute="trailing" id="jJ6-Ve-X4K"/>
-                                    <constraint firstItem="gfD-3J-m7R" firstAttribute="leading" secondItem="GdP-f3-I0L" secondAttribute="leading" id="qGN-vS-Ce5"/>
-                                    <constraint firstItem="3pt-Y1-wbE" firstAttribute="leading" secondItem="GdP-f3-I0L" secondAttribute="leading" id="qJc-qi-Xlh"/>
-                                    <constraint firstAttribute="trailing" secondItem="gfD-3J-m7R" secondAttribute="trailing" id="sfe-xC-ZtX"/>
-                                    <constraint firstAttribute="trailing" secondItem="aOa-Ox-ygA" secondAttribute="trailing" id="t9e-Er-5Vd"/>
-                                    <constraint firstAttribute="trailing" secondItem="BtU-6y-YMl" secondAttribute="trailing" id="u1i-Xx-8dm"/>
-                                </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZT1-Bd-Dte">
-                                <rect key="frame" x="0.0" y="218" width="414" height="60"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjI-xY-oEJ" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="cyE-oG-xs3"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="27"/>
-                                        <state key="normal" title="Early Voting">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="earlyvoting:" destination="2BT-H6-1s7" eventType="touchUpInside" id="9qt-bp-CaH"/>
-                                        </connections>
-                                    </button>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NvT-qz-hzM">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFP-bH-77F" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="6HU-45-hKZ"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="20"/>
-                                                <state key="normal" title="Early Voting Requirements">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="evRequirements:" destination="2BT-H6-1s7" eventType="touchUpInside" id="oHQ-3X-Uja"/>
-                                                </connections>
-                                            </button>
-                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9DD-I6-rqE">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="FHQ-5k-wLl"/>
-                                                </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="mFP-bH-77F" firstAttribute="leading" secondItem="NvT-qz-hzM" secondAttribute="leading" id="BUb-Su-EOe"/>
-                                            <constraint firstItem="9DD-I6-rqE" firstAttribute="leading" secondItem="NvT-qz-hzM" secondAttribute="leading" id="N6M-yT-SnA"/>
-                                            <constraint firstAttribute="trailing" secondItem="mFP-bH-77F" secondAttribute="trailing" id="gOl-2f-hPP"/>
-                                            <constraint firstAttribute="trailing" secondItem="9DD-I6-rqE" secondAttribute="trailing" id="w6N-Ly-hb6"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Yh-Rq-ynJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0f-XH-OHe" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="ep6-QF-9YH"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="20"/>
-                                                <state key="normal" title="Dates and Deadlines">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="evDatesDeadlines:" destination="2BT-H6-1s7" eventType="touchUpInside" id="KrG-pN-jQL"/>
-                                                </connections>
-                                            </button>
-                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Zzl-hs-wGh">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="dIP-js-EoU"/>
-                                                </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="Zzl-hs-wGh" firstAttribute="leading" secondItem="7Yh-Rq-ynJ" secondAttribute="leading" id="JMs-Hk-eWW"/>
-                                            <constraint firstAttribute="trailing" secondItem="t0f-XH-OHe" secondAttribute="trailing" id="JXs-xp-fDe"/>
-                                            <constraint firstAttribute="trailing" secondItem="Zzl-hs-wGh" secondAttribute="trailing" id="Ycl-4U-oGR"/>
-                                            <constraint firstItem="t0f-XH-OHe" firstAttribute="leading" secondItem="7Yh-Rq-ynJ" secondAttribute="leading" id="vFV-pJ-ad7"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bwV-Sx-r75">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBD-Zo-7jf" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="HeP-ed-EVc"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="20"/>
-                                                <state key="normal" title="Additional Information">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="evAdditionalInformation:" destination="2BT-H6-1s7" eventType="touchUpInside" id="W4M-3o-bNj"/>
-                                                </connections>
-                                            </button>
-                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tMR-T3-yN9">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="Quo-M3-YTd"/>
-                                                </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="EBD-Zo-7jf" firstAttribute="leading" secondItem="bwV-Sx-r75" secondAttribute="leading" id="NEU-Xv-rEq"/>
-                                            <constraint firstAttribute="trailing" secondItem="tMR-T3-yN9" secondAttribute="trailing" id="VBu-PN-h4x"/>
-                                            <constraint firstAttribute="trailing" secondItem="EBD-Zo-7jf" secondAttribute="trailing" id="s7a-wn-lEa"/>
-                                            <constraint firstItem="tMR-T3-yN9" firstAttribute="leading" secondItem="bwV-Sx-r75" secondAttribute="leading" id="swW-aL-9bZ"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="NvT-qz-hzM" firstAttribute="leading" secondItem="ZT1-Bd-Dte" secondAttribute="leading" id="GS0-O8-dGJ"/>
-                                    <constraint firstItem="bwV-Sx-r75" firstAttribute="leading" secondItem="ZT1-Bd-Dte" secondAttribute="leading" id="Ges-6O-KYc"/>
-                                    <constraint firstAttribute="trailing" secondItem="RjI-xY-oEJ" secondAttribute="trailing" id="R9z-JE-l83"/>
-                                    <constraint firstItem="RjI-xY-oEJ" firstAttribute="leading" secondItem="ZT1-Bd-Dte" secondAttribute="leading" id="kNv-rs-2v3"/>
-                                    <constraint firstAttribute="trailing" secondItem="bwV-Sx-r75" secondAttribute="trailing" id="mXo-8d-0kR"/>
-                                    <constraint firstAttribute="trailing" secondItem="NvT-qz-hzM" secondAttribute="trailing" id="mk3-Is-dbK"/>
-                                    <constraint firstItem="7Yh-Rq-ynJ" firstAttribute="leading" secondItem="ZT1-Bd-Dte" secondAttribute="leading" id="n9E-GZ-KFy"/>
-                                    <constraint firstAttribute="trailing" secondItem="7Yh-Rq-ynJ" secondAttribute="trailing" id="vNS-tp-duj"/>
-                                </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="col-tz-j2S">
-                                <rect key="frame" x="0.0" y="278" width="414" height="60"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZv-Cs-zkr" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="T7r-mc-O1b"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="27"/>
-                                        <state key="normal" title="Absentee Voting By Mail">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="avbm:" destination="2BT-H6-1s7" eventType="touchUpInside" id="3IQ-hy-SFp"/>
-                                        </connections>
-                                    </button>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhc-jA-SO1">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTJ-T8-Ww9" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="Xhh-CT-mmW"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="20"/>
-                                                <state key="normal" title="Absentee Voting Policies">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="avbmPolicies:" destination="2BT-H6-1s7" eventType="touchUpInside" id="Yux-uf-ckJ"/>
-                                                </connections>
-                                            </button>
-                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KUl-Rd-cDk">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="SLn-0N-VP0"/>
-                                                </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="VTJ-T8-Ww9" firstAttribute="leading" secondItem="nhc-jA-SO1" secondAttribute="leading" id="7U1-pb-2MM"/>
-                                            <constraint firstItem="KUl-Rd-cDk" firstAttribute="leading" secondItem="nhc-jA-SO1" secondAttribute="leading" id="PlW-Ri-4qA"/>
-                                            <constraint firstAttribute="trailing" secondItem="VTJ-T8-Ww9" secondAttribute="trailing" id="iVK-KL-0DK"/>
-                                            <constraint firstAttribute="trailing" secondItem="KUl-Rd-cDk" secondAttribute="trailing" id="iyb-YU-ynk"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l3c-JB-yZc">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SP5-Vw-i7u" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="hwT-OD-rDh"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="20"/>
-                                                <state key="normal" title="Request and Submit an Absentee">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="avbmRequstSubmitBallot:" destination="2BT-H6-1s7" eventType="touchUpInside" id="ffc-KT-c3l"/>
-                                                </connections>
-                                            </button>
-                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rhA-sy-Sjd">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="OYy-Rv-E8r"/>
-                                                </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="rhA-sy-Sjd" secondAttribute="trailing" id="4MX-J4-dVk"/>
-                                            <constraint firstItem="SP5-Vw-i7u" firstAttribute="leading" secondItem="l3c-JB-yZc" secondAttribute="leading" id="cDg-zl-84a"/>
-                                            <constraint firstAttribute="trailing" secondItem="SP5-Vw-i7u" secondAttribute="trailing" id="id7-kd-Erp"/>
-                                            <constraint firstItem="rhA-sy-Sjd" firstAttribute="leading" secondItem="l3c-JB-yZc" secondAttribute="leading" id="uFk-R3-2ww"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xte-Ha-eKh">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1G-Ec-A5G" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="WyP-Es-YWS"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="20"/>
-                                                <state key="normal" title="How to Vote By Mail">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="avbmByMail:" destination="2BT-H6-1s7" eventType="touchUpInside" id="2Rr-GZ-ZtX"/>
-                                                </connections>
-                                            </button>
-                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OvT-3K-U0U">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="uHB-0d-a7R"/>
-                                                </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="OvT-3K-U0U" secondAttribute="trailing" id="0dd-ET-2Ju"/>
-                                            <constraint firstAttribute="trailing" secondItem="b1G-Ec-A5G" secondAttribute="trailing" id="5xK-pD-Ah0"/>
-                                            <constraint firstItem="OvT-3K-U0U" firstAttribute="leading" secondItem="xte-Ha-eKh" secondAttribute="leading" id="NuY-PH-oF7"/>
-                                            <constraint firstItem="b1G-Ec-A5G" firstAttribute="leading" secondItem="xte-Ha-eKh" secondAttribute="leading" id="dem-mo-jk9"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mM3-d5-OiG">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FfB-Ee-4ub" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="ET4-VE-olG"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="20"/>
-                                                <state key="normal" title="Deadlines">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="avbmDeadlines:" destination="2BT-H6-1s7" eventType="touchUpInside" id="NtL-IQ-IyB"/>
-                                                </connections>
-                                            </button>
-                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ap4-hb-R2u">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="ajd-MK-y6e"/>
-                                                </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="Ap4-hb-R2u" firstAttribute="leading" secondItem="mM3-d5-OiG" secondAttribute="leading" id="Sn6-q4-fLV"/>
-                                            <constraint firstItem="FfB-Ee-4ub" firstAttribute="leading" secondItem="mM3-d5-OiG" secondAttribute="leading" id="e7n-m9-cI0"/>
-                                            <constraint firstAttribute="trailing" secondItem="FfB-Ee-4ub" secondAttribute="trailing" id="fU7-eB-rRZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ap4-hb-R2u" secondAttribute="trailing" id="uBc-yA-SNa"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l0k-j4-TQm">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPN-KX-jcD" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="DpW-dA-bc1"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="20"/>
-                                                <state key="normal" title="Additional Information">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="avbmAdditionalInformation:" destination="2BT-H6-1s7" eventType="touchUpInside" id="7bJ-yZ-nhj"/>
-                                                </connections>
-                                            </button>
-                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="73A-Vg-70E">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="OxX-46-dMZ"/>
-                                                </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="sPN-KX-jcD" firstAttribute="leading" secondItem="l0k-j4-TQm" secondAttribute="leading" id="1gV-7O-ChR"/>
-                                            <constraint firstAttribute="trailing" secondItem="sPN-KX-jcD" secondAttribute="trailing" id="LAE-B6-AjI"/>
-                                            <constraint firstItem="73A-Vg-70E" firstAttribute="leading" secondItem="l0k-j4-TQm" secondAttribute="leading" id="Ua4-1W-kWU"/>
-                                            <constraint firstAttribute="trailing" secondItem="73A-Vg-70E" secondAttribute="trailing" id="neN-IH-4cP"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="l3c-JB-yZc" firstAttribute="leading" secondItem="col-tz-j2S" secondAttribute="leading" id="3Mb-Oq-EcF"/>
-                                    <constraint firstItem="nhc-jA-SO1" firstAttribute="leading" secondItem="col-tz-j2S" secondAttribute="leading" id="57R-YY-WBQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="xte-Ha-eKh" secondAttribute="trailing" id="6Qn-Wd-1No"/>
-                                    <constraint firstAttribute="trailing" secondItem="mM3-d5-OiG" secondAttribute="trailing" id="9ZH-rM-6j6"/>
-                                    <constraint firstItem="mM3-d5-OiG" firstAttribute="leading" secondItem="col-tz-j2S" secondAttribute="leading" id="9qL-lz-eLS"/>
-                                    <constraint firstItem="xte-Ha-eKh" firstAttribute="leading" secondItem="col-tz-j2S" secondAttribute="leading" id="LdX-nR-u4s"/>
-                                    <constraint firstAttribute="trailing" secondItem="OZv-Cs-zkr" secondAttribute="trailing" id="Mho-e7-Igd"/>
-                                    <constraint firstAttribute="trailing" secondItem="l3c-JB-yZc" secondAttribute="trailing" id="OSS-E9-yiE"/>
-                                    <constraint firstItem="l0k-j4-TQm" firstAttribute="leading" secondItem="col-tz-j2S" secondAttribute="leading" id="e9X-wf-NwF"/>
-                                    <constraint firstAttribute="trailing" secondItem="nhc-jA-SO1" secondAttribute="trailing" id="gZC-kb-ykb"/>
-                                    <constraint firstAttribute="trailing" secondItem="l0k-j4-TQm" secondAttribute="trailing" id="rig-nT-C38"/>
-                                    <constraint firstItem="OZv-Cs-zkr" firstAttribute="leading" secondItem="col-tz-j2S" secondAttribute="leading" id="zZR-RC-pJQ"/>
-                                </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uD9-Nu-sJs">
-                                <rect key="frame" x="0.0" y="338" width="414" height="60"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1T-xt-CtK" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="ybj-E8-Yns"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="27"/>
-                                        <state key="normal" title="Voting in Person">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="vip:" destination="2BT-H6-1s7" eventType="touchUpInside" id="Hoq-eH-w2a"/>
-                                        </connections>
-                                    </button>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ra8-JK-gj4">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OP4-pM-cjT" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="9y3-26-eIo"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="20"/>
-                                                <state key="normal" title="Voting Policies and Requirements">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="vipPolicies:" destination="2BT-H6-1s7" eventType="touchUpInside" id="S0L-2H-GiK"/>
-                                                </connections>
-                                            </button>
-                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gwH-6W-Wup">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="jiK-Fs-QaP"/>
-                                                </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="OP4-pM-cjT" firstAttribute="leading" secondItem="ra8-JK-gj4" secondAttribute="leading" id="9w5-kD-pvl"/>
-                                            <constraint firstAttribute="trailing" secondItem="gwH-6W-Wup" secondAttribute="trailing" id="CU4-EX-1gy"/>
-                                            <constraint firstAttribute="trailing" secondItem="OP4-pM-cjT" secondAttribute="trailing" id="bYL-QU-UxO"/>
-                                            <constraint firstItem="gwH-6W-Wup" firstAttribute="leading" secondItem="ra8-JK-gj4" secondAttribute="leading" id="cDw-hx-pJD"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TdL-EY-Buz">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mh-kf-50G" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="uMe-Pc-Lc6"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="20"/>
-                                                <state key="normal" title="Dates and Deadlines">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="vipDatesDeadlines:" destination="2BT-H6-1s7" eventType="touchUpInside" id="ah0-Yj-wIJ"/>
-                                                </connections>
-                                            </button>
-                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="D48-cb-ECZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="2xB-ha-b7W"/>
-                                                </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="1Mh-kf-50G" firstAttribute="leading" secondItem="TdL-EY-Buz" secondAttribute="leading" id="Ue0-8l-Atc"/>
-                                            <constraint firstAttribute="trailing" secondItem="D48-cb-ECZ" secondAttribute="trailing" id="mLf-pn-eWe"/>
-                                            <constraint firstAttribute="trailing" secondItem="1Mh-kf-50G" secondAttribute="trailing" id="nmK-Ci-2dN"/>
-                                            <constraint firstItem="D48-cb-ECZ" firstAttribute="leading" secondItem="TdL-EY-Buz" secondAttribute="leading" id="zx9-TB-HFg"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C6Z-Cn-GrC">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slR-NJ-5op" customClass="CustomButton" customModule="GAVotes" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="TVH-nO-h6P"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="20"/>
-                                                <state key="normal" title="Additional Information">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="vipAdditionalInformation:" destination="2BT-H6-1s7" eventType="touchUpInside" id="wpK-Pf-0et"/>
-                                                </connections>
-                                            </button>
-                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NUR-IV-0pW">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="unX-P0-MVc"/>
-                                                </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="NUR-IV-0pW" secondAttribute="trailing" id="6uJ-P0-9ct"/>
-                                            <constraint firstItem="slR-NJ-5op" firstAttribute="leading" secondItem="C6Z-Cn-GrC" secondAttribute="leading" id="Khg-rS-ZTx"/>
-                                            <constraint firstItem="NUR-IV-0pW" firstAttribute="leading" secondItem="C6Z-Cn-GrC" secondAttribute="leading" id="LMl-Ll-y8k"/>
-                                            <constraint firstAttribute="trailing" secondItem="slR-NJ-5op" secondAttribute="trailing" id="MdU-Pe-J8e"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="C6Z-Cn-GrC" firstAttribute="leading" secondItem="uD9-Nu-sJs" secondAttribute="leading" id="5Ib-Fj-Jth"/>
-                                    <constraint firstAttribute="trailing" secondItem="D1T-xt-CtK" secondAttribute="trailing" id="9hT-GG-8uc"/>
-                                    <constraint firstItem="TdL-EY-Buz" firstAttribute="leading" secondItem="uD9-Nu-sJs" secondAttribute="leading" id="AWW-94-nK3"/>
-                                    <constraint firstAttribute="trailing" secondItem="ra8-JK-gj4" secondAttribute="trailing" id="CQb-is-FT1"/>
-                                    <constraint firstItem="ra8-JK-gj4" firstAttribute="leading" secondItem="uD9-Nu-sJs" secondAttribute="leading" id="Hay-fc-qly"/>
-                                    <constraint firstAttribute="trailing" secondItem="C6Z-Cn-GrC" secondAttribute="trailing" id="IGb-gE-fl6"/>
-                                    <constraint firstAttribute="trailing" secondItem="TdL-EY-Buz" secondAttribute="trailing" id="vni-Zg-5LC"/>
-                                    <constraint firstItem="D1T-xt-CtK" firstAttribute="leading" secondItem="uD9-Nu-sJs" secondAttribute="leading" id="yVL-Es-Z2v"/>
-                                </constraints>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here’s some information about how to register and how to vote." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5af-PR-1I1">
-                                <rect key="frame" x="0.0" y="88" width="414" height="70"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="NfC-Si-qut"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="LouisGeorgeCafe-Bold" family="Louis George Cafe" pointSize="18"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="boR-6F-VA4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="uD9-Nu-sJs" firstAttribute="leading" secondItem="boR-6F-VA4" secondAttribute="leading" id="1GR-Rj-BmF"/>
-                            <constraint firstItem="5af-PR-1I1" firstAttribute="leading" secondItem="boR-6F-VA4" secondAttribute="leading" id="8BF-g2-Q3W"/>
-                            <constraint firstItem="ZT1-Bd-Dte" firstAttribute="top" secondItem="GdP-f3-I0L" secondAttribute="bottom" id="Awh-Fe-MCG"/>
-                            <constraint firstItem="boR-6F-VA4" firstAttribute="trailing" secondItem="5af-PR-1I1" secondAttribute="trailing" id="CAX-qP-mYA"/>
-                            <constraint firstItem="5af-PR-1I1" firstAttribute="top" secondItem="boR-6F-VA4" secondAttribute="top" id="DtO-RX-ULH"/>
-                            <constraint firstItem="GdP-f3-I0L" firstAttribute="leading" secondItem="boR-6F-VA4" secondAttribute="leading" id="N6P-f4-ST1"/>
-                            <constraint firstItem="uD9-Nu-sJs" firstAttribute="top" secondItem="col-tz-j2S" secondAttribute="bottom" id="Uaf-r8-gtk"/>
-                            <constraint firstItem="boR-6F-VA4" firstAttribute="trailing" secondItem="uD9-Nu-sJs" secondAttribute="trailing" id="Yo6-Ty-QvW"/>
-                            <constraint firstItem="col-tz-j2S" firstAttribute="leading" secondItem="boR-6F-VA4" secondAttribute="leading" id="aGi-Jw-0Fy"/>
-                            <constraint firstItem="col-tz-j2S" firstAttribute="top" secondItem="ZT1-Bd-Dte" secondAttribute="bottom" id="aQg-KM-hBk"/>
-                            <constraint firstItem="boR-6F-VA4" firstAttribute="trailing" secondItem="ZT1-Bd-Dte" secondAttribute="trailing" id="cBu-wq-42S"/>
-                            <constraint firstItem="boR-6F-VA4" firstAttribute="trailing" secondItem="GdP-f3-I0L" secondAttribute="trailing" id="cz3-34-ih2"/>
-                            <constraint firstItem="ZT1-Bd-Dte" firstAttribute="leading" secondItem="boR-6F-VA4" secondAttribute="leading" id="eRx-Wh-SQj"/>
-                            <constraint firstItem="boR-6F-VA4" firstAttribute="trailing" secondItem="col-tz-j2S" secondAttribute="trailing" id="w7d-xk-GgI"/>
-                            <constraint firstItem="GdP-f3-I0L" firstAttribute="top" secondItem="5af-PR-1I1" secondAttribute="bottom" id="yKo-cq-UwN"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Lsf-r3-SW5"/>
-                    <connections>
-                        <outlet property="avbmAdditionalInformationBody" destination="73A-Vg-70E" id="mfp-By-9UX"/>
-                        <outlet property="avbmByMailBody" destination="OvT-3K-U0U" id="cVm-Mj-L0h"/>
-                        <outlet property="avbmDeadlines" destination="Ap4-hb-R2u" id="8ub-ql-ZTG"/>
-                        <outlet property="avbmPoliciesBody" destination="KUl-Rd-cDk" id="OKD-qH-q8P"/>
-                        <outlet property="avbmRequestSubmitBallotBody" destination="rhA-sy-Sjd" id="bzo-rG-k4i"/>
-                        <outlet property="evAdditionalInformationBody" destination="tMR-T3-yN9" id="blC-Zq-scL"/>
-                        <outlet property="evDatesDeadlinesBody" destination="Zzl-hs-wGh" id="0u0-k9-SE0"/>
-                        <outlet property="evRequirementsBody" destination="9DD-I6-rqE" id="yRC-fd-4vd"/>
-                        <outlet property="vipAdditionalInformationBody" destination="NUR-IV-0pW" id="miu-qD-p4I"/>
-                        <outlet property="vipDatesDeadlinesBody" destination="D48-cb-ECZ" id="RoT-r0-SJn"/>
-                        <outlet property="vipPoliciesBody" destination="gwH-6W-Wup" id="Vav-zn-fOr"/>
-                        <outlet property="vrAdditionalInformationBody" destination="6xD-VQ-JEg" id="5KN-GY-gMl"/>
-                        <outlet property="vrByMailBody" destination="yRf-pY-BpV" id="Pt9-Ms-PNK"/>
-                        <outlet property="vrDeadlinesBody" destination="cUr-NN-iaI" id="uDI-eI-mqh"/>
-                        <outlet property="vrInPersonBody" destination="dZB-Uw-kvd" id="NhU-rf-kK4"/>
-                        <outlet property="vronlineBody" destination="bjd-Ea-5oD" id="2wq-dR-F8S"/>
-                        <outlet property="vrrequirementsBody" destination="uXZ-fD-r9Q" id="QJD-2I-Hgm"/>
-                        <outletCollection property="vrcollection" destination="gfD-3J-m7R" collectionClass="NSMutableArray" id="iUY-O2-HEj"/>
-                        <outletCollection property="vrcollection" destination="wxa-v3-DpD" collectionClass="NSMutableArray" id="0Kx-fw-2OO"/>
-                        <outletCollection property="vrcollection" destination="BtU-6y-YMl" collectionClass="NSMutableArray" id="hkf-Gd-Sbd"/>
-                        <outletCollection property="vrcollection" destination="aOa-Ox-ygA" collectionClass="NSMutableArray" id="umS-gT-hFj"/>
-                        <outletCollection property="vrcollection" destination="3pt-Y1-wbE" collectionClass="NSMutableArray" id="VPC-y3-b6b"/>
-                        <outletCollection property="vrcollection" destination="KMT-3Q-Egg" collectionClass="NSMutableArray" id="3Y5-tL-86K"/>
-                        <outletCollection property="evcollection" destination="NvT-qz-hzM" collectionClass="NSMutableArray" id="TBx-fM-V74"/>
-                        <outletCollection property="evcollection" destination="7Yh-Rq-ynJ" collectionClass="NSMutableArray" id="6fx-v0-mrX"/>
-                        <outletCollection property="evcollection" destination="bwV-Sx-r75" collectionClass="NSMutableArray" id="EJa-pz-Ad7"/>
-                        <outletCollection property="avbmcollection" destination="nhc-jA-SO1" collectionClass="NSMutableArray" id="Gy9-lX-Q40"/>
-                        <outletCollection property="avbmcollection" destination="l3c-JB-yZc" collectionClass="NSMutableArray" id="v6l-SR-xP0"/>
-                        <outletCollection property="avbmcollection" destination="xte-Ha-eKh" collectionClass="NSMutableArray" id="ZYK-yl-sU5"/>
-                        <outletCollection property="avbmcollection" destination="mM3-d5-OiG" collectionClass="NSMutableArray" id="UrN-SB-6cw"/>
-                        <outletCollection property="vipcollection" destination="ra8-JK-gj4" collectionClass="NSMutableArray" id="V4L-XI-bPQ"/>
-                        <outletCollection property="vipcollection" destination="TdL-EY-Buz" collectionClass="NSMutableArray" id="fZN-HJ-LpZ"/>
-                        <outletCollection property="vipcollection" destination="C6Z-Cn-GrC" collectionClass="NSMutableArray" id="gSM-wh-AtL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wyf-M0-aqT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3470" y="1693"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="95V-WY-ape">
-            <objects>
-                <navigationController storyboardIdentifier="editAddress" automaticallyAdjustsScrollViewInsets="NO" id="qFe-4l-tRk" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Wc-43-Cq0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ofM-hZ-NYo" kind="relationship" relationship="rootViewController" id="2Tk-9C-wjn"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3lu-YJ-Rub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1125" y="899"/>
+            <point key="canvasLocation" x="2677" y="917"/>
         </scene>
         <!--Available Election View Controller-->
         <scene sceneID="vu8-40-dwP">
@@ -1257,7 +396,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0Z-nk-gJc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3469.5652173913045" y="916.74107142857133"/>
+            <point key="canvasLocation" x="4379.7101449275369" y="916.74107142857133"/>
         </scene>
         <!--Elections View Controller-->
         <scene sceneID="PAG-6l-OrO">
@@ -1273,7 +412,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M5F-fw-PQb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4277" y="917"/>
+            <point key="canvasLocation" x="5186.9565217391309" y="916.74107142857133"/>
         </scene>
         <!--Representatives-->
         <scene sceneID="dSo-RO-0gs">
@@ -1301,7 +440,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOz-JN-KYO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2694" y="145"/>
+            <point key="canvasLocation" x="3603" y="145"/>
         </scene>
         <!--Elections-->
         <scene sceneID="4Vn-7m-V9U">
@@ -1329,27 +468,44 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1i-eS-G7l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2693" y="917"/>
+            <point key="canvasLocation" x="3602.898550724638" y="916.74107142857133"/>
         </scene>
-        <!--Voter Info-->
-        <scene sceneID="j2w-ID-7Oy">
+        <!--Info View Controller-->
+        <scene sceneID="gYV-xt-pgL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8UF-Ec-als" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Voter Info" image="info.circle.fill" catalog="system" id="bZ5-g0-aPu"/>
+                <viewController id="glj-C7-xPQ" customClass="InfoViewController" customModule="GAVotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="naz-wh-XC5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="jtF-a0-QGy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mJT-bC-7H3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hxg-Bv-NHT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4380" y="1730"/>
+        </scene>
+        <!--Voting Info-->
+        <scene sceneID="HJq-yI-Ed4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mql-dS-yEn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Voting Info" image="info.circle.fill" catalog="system" id="S56-Yh-VjE"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qBy-hl-yll">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Rcd-b0-eYY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2BT-H6-1s7" kind="relationship" relationship="rootViewController" id="ZbF-4T-u7t"/>
+                        <segue destination="glj-C7-xPQ" kind="relationship" relationship="rootViewController" id="4sF-2u-800"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7wE-r0-DoO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mpH-2N-ZQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2693" y="1693"/>
+            <point key="canvasLocation" x="3603" y="1730"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -1359,9 +515,6 @@
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

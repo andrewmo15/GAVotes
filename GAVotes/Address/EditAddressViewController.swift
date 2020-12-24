@@ -89,6 +89,7 @@ class EditAddressViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         states.delegate = self
         state.inputView = states
         configureToolBar()
@@ -124,6 +125,7 @@ class EditAddressViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancel))
         navigationItem.rightBarButtonItem?.tintColor = .white
         navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "LouisGeorgeCafe-Bold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        self.title = "Edit Address"
     }
     
     private func configureToolBar() {

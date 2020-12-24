@@ -43,13 +43,14 @@ class LevelsViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "location"), style: .done, target: self, action: #selector(showAddress))
+        self.title = "Representatives"
     }
     
     @objc private func showAddress() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "editAddress")
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        let vc = EditAddressViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true)
     }
     
     private func configureButtons() {

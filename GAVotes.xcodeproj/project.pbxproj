@@ -13,14 +13,11 @@
 		49006B4425258D2A00FCAACA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49006B4225258D2A00FCAACA /* Main.storyboard */; };
 		49006B4625258D2C00FCAACA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49006B4525258D2C00FCAACA /* Assets.xcassets */; };
 		49006B4925258D2C00FCAACA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49006B4725258D2C00FCAACA /* LaunchScreen.storyboard */; };
-		49006B5425258D2C00FCAACA /* GAVotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49006B5325258D2C00FCAACA /* GAVotesTests.swift */; };
-		49006B5F25258D2C00FCAACA /* GAVotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49006B5E25258D2C00FCAACA /* GAVotesUITests.swift */; };
 		490935CB25259D61009D0740 /* RepresentativesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490935CA25259D61009D0740 /* RepresentativesViewController.swift */; };
 		492AAF482549214700DF1C0F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492AAF472549214700DF1C0F /* CustomButton.swift */; };
 		493983102529496700CD6D68 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4939830F2529496700CD6D68 /* EditAddressViewController.swift */; };
 		49437A70252ABBCA00D70271 /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49437A6F252ABBCA00D70271 /* LevelsViewController.swift */; };
 		4975665F2526E1410026B1A8 /* ElectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975665E2526E1410026B1A8 /* ElectionsViewController.swift */; };
-		49A11F452547EE520073491F /* VotingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A11F442547EE520073491F /* VotingInfoViewController.swift */; };
 		49B2BF4C25460BD8007BC3CB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B2BF4B25460BD8007BC3CB /* Location.swift */; };
 		49DAA6672529B48300438D60 /* Officials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAA6662529B48300438D60 /* Officials.swift */; };
 		49DAA66C2529B4AE00438D60 /* Polling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAA66B2529B4AE00438D60 /* Polling.swift */; };
@@ -29,6 +26,11 @@
 		49DED6852544FCFD004D2D96 /* CandidatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DED6842544FCFD004D2D96 /* CandidatesViewController.swift */; };
 		49DED68A2544FE54004D2D96 /* Candidates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DED6892544FE54004D2D96 /* Candidates.swift */; };
 		49DED69225451204004D2D96 /* PollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DED69125451204004D2D96 /* PollingViewController.swift */; };
+		49DFCB352591BF2800A00431 /* VRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFCB342591BF2800A00431 /* VRViewController.swift */; };
+		49DFCB3D2591CBFA00A00431 /* EVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFCB3C2591CBFA00A00431 /* EVViewController.swift */; };
+		49DFCB452591CE5900A00431 /* AVBMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFCB442591CE5900A00431 /* AVBMViewController.swift */; };
+		49DFCB4D2591D0FC00A00431 /* VIPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFCB4C2591D0FC00A00431 /* VIPViewController.swift */; };
+		49DFCB582591E0F200A00431 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFCB572591E0F100A00431 /* InfoViewController.swift */; };
 		49EB604B2549E857007313C8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EB604A2549E857007313C8 /* MapKit.framework */; };
 		49EDD4A425278FF2008E0E2E /* RepDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDD4A325278FF2008E0E2E /* RepDetailViewController.swift */; };
 		49EDD4AF2528128F008E0E2E /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDD4AE2528128F008E0E2E /* LocationViewController.swift */; };
@@ -67,17 +69,12 @@
 		49006B4825258D2C00FCAACA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49006B4A25258D2C00FCAACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49006B4F25258D2C00FCAACA /* GAVotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GAVotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		49006B5325258D2C00FCAACA /* GAVotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAVotesTests.swift; sourceTree = "<group>"; };
-		49006B5525258D2C00FCAACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49006B5A25258D2C00FCAACA /* GAVotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GAVotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		49006B5E25258D2C00FCAACA /* GAVotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAVotesUITests.swift; sourceTree = "<group>"; };
-		49006B6025258D2C00FCAACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490935CA25259D61009D0740 /* RepresentativesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativesViewController.swift; sourceTree = "<group>"; };
 		492AAF472549214700DF1C0F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		4939830F2529496700CD6D68 /* EditAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
 		49437A6F252ABBCA00D70271 /* LevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
 		4975665E2526E1410026B1A8 /* ElectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectionsViewController.swift; sourceTree = "<group>"; };
-		49A11F442547EE520073491F /* VotingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingInfoViewController.swift; sourceTree = "<group>"; };
 		49B2BF4B25460BD8007BC3CB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		49DAA6662529B48300438D60 /* Officials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Officials.swift; sourceTree = "<group>"; };
 		49DAA66B2529B4AE00438D60 /* Polling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polling.swift; sourceTree = "<group>"; };
@@ -86,6 +83,11 @@
 		49DED6842544FCFD004D2D96 /* CandidatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidatesViewController.swift; sourceTree = "<group>"; };
 		49DED6892544FE54004D2D96 /* Candidates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candidates.swift; sourceTree = "<group>"; };
 		49DED69125451204004D2D96 /* PollingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PollingViewController.swift; path = GAVotes/Elections/PollingViewController.swift; sourceTree = SOURCE_ROOT; };
+		49DFCB342591BF2800A00431 /* VRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRViewController.swift; sourceTree = "<group>"; };
+		49DFCB3C2591CBFA00A00431 /* EVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EVViewController.swift; path = GAVotes/VotingInfo/EVViewController.swift; sourceTree = SOURCE_ROOT; };
+		49DFCB442591CE5900A00431 /* AVBMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AVBMViewController.swift; path = GAVotes/VotingInfo/AVBMViewController.swift; sourceTree = SOURCE_ROOT; };
+		49DFCB4C2591D0FC00A00431 /* VIPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPViewController.swift; sourceTree = "<group>"; };
+		49DFCB572591E0F100A00431 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		49EB604A2549E857007313C8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		49EB604C2549E864007313C8 /* GAVotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GAVotes.entitlements; sourceTree = "<group>"; };
 		49EDD4A325278FF2008E0E2E /* RepDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepDetailViewController.swift; sourceTree = "<group>"; };
@@ -128,8 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				49006B3B25258D2A00FCAACA /* GAVotes */,
-				49006B5225258D2C00FCAACA /* GAVotesTests */,
-				49006B5D25258D2C00FCAACA /* GAVotesUITests */,
 				49006B3A25258D2A00FCAACA /* Products */,
 				49EB60492549E857007313C8 /* Frameworks */,
 			);
@@ -149,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				49EB604C2549E864007313C8 /* GAVotes.entitlements */,
-				49A11F442547EE520073491F /* VotingInfoViewController.swift */,
+				49DFCB332591BF0900A00431 /* VotingInfo */,
 				49F8987C2545647700FC7A3C /* Fonts */,
 				49DAA6782529B5BA00438D60 /* Storyboards */,
 				49DAA6772529B5A300438D60 /* Elections */,
@@ -160,24 +160,6 @@
 				49006B4A25258D2C00FCAACA /* Info.plist */,
 			);
 			path = GAVotes;
-			sourceTree = "<group>";
-		};
-		49006B5225258D2C00FCAACA /* GAVotesTests */ = {
-			isa = PBXGroup;
-			children = (
-				49006B5325258D2C00FCAACA /* GAVotesTests.swift */,
-				49006B5525258D2C00FCAACA /* Info.plist */,
-			);
-			path = GAVotesTests;
-			sourceTree = "<group>";
-		};
-		49006B5D25258D2C00FCAACA /* GAVotesUITests */ = {
-			isa = PBXGroup;
-			children = (
-				49006B5E25258D2C00FCAACA /* GAVotesUITests.swift */,
-				49006B6025258D2C00FCAACA /* Info.plist */,
-			);
-			path = GAVotesUITests;
 			sourceTree = "<group>";
 		};
 		49DAA6732529B55F00438D60 /* Resources */ = {
@@ -233,6 +215,18 @@
 				49006B4725258D2C00FCAACA /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		49DFCB332591BF0900A00431 /* VotingInfo */ = {
+			isa = PBXGroup;
+			children = (
+				49DFCB572591E0F100A00431 /* InfoViewController.swift */,
+				49DFCB342591BF2800A00431 /* VRViewController.swift */,
+				49DFCB3C2591CBFA00A00431 /* EVViewController.swift */,
+				49DFCB442591CE5900A00431 /* AVBMViewController.swift */,
+				49DFCB4C2591D0FC00A00431 /* VIPViewController.swift */,
+			);
+			path = VotingInfo;
 			sourceTree = "<group>";
 		};
 		49EB60492549E857007313C8 /* Frameworks */ = {
@@ -396,20 +390,24 @@
 				492AAF482549214700DF1C0F /* CustomButton.swift in Sources */,
 				4975665F2526E1410026B1A8 /* ElectionsViewController.swift in Sources */,
 				49DAA6672529B48300438D60 /* Officials.swift in Sources */,
+				49DFCB352591BF2800A00431 /* VRViewController.swift in Sources */,
 				49006B4125258D2A00FCAACA /* WelcomeViewController.swift in Sources */,
+				49DFCB452591CE5900A00431 /* AVBMViewController.swift in Sources */,
 				49DED6362544DF19004D2D96 /* AvailableElectionViewController.swift in Sources */,
 				49B2BF4C25460BD8007BC3CB /* Location.swift in Sources */,
 				49006B3D25258D2A00FCAACA /* AppDelegate.swift in Sources */,
 				49DAA66C2529B4AE00438D60 /* Polling.swift in Sources */,
 				49DED6852544FCFD004D2D96 /* CandidatesViewController.swift in Sources */,
 				49006B3F25258D2A00FCAACA /* SceneDelegate.swift in Sources */,
+				49DFCB4D2591D0FC00A00431 /* VIPViewController.swift in Sources */,
 				490935CB25259D61009D0740 /* RepresentativesViewController.swift in Sources */,
-				49A11F452547EE520073491F /* VotingInfoViewController.swift in Sources */,
 				49DED69225451204004D2D96 /* PollingViewController.swift in Sources */,
 				493983102529496700CD6D68 /* EditAddressViewController.swift in Sources */,
 				49DED63E2544E065004D2D96 /* Election.swift in Sources */,
+				49DFCB3D2591CBFA00A00431 /* EVViewController.swift in Sources */,
 				49437A70252ABBCA00D70271 /* LevelsViewController.swift in Sources */,
 				49EDD4A425278FF2008E0E2E /* RepDetailViewController.swift in Sources */,
+				49DFCB582591E0F200A00431 /* InfoViewController.swift in Sources */,
 				49EDD4AF2528128F008E0E2E /* LocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,7 +416,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49006B5425258D2C00FCAACA /* GAVotesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +423,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49006B5F25258D2C00FCAACA /* GAVotesUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,7 +512,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -571,7 +567,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -595,6 +591,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrewmo.GAVotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -616,6 +613,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrewmo.GAVotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
