@@ -149,11 +149,11 @@
 			isa = PBXGroup;
 			children = (
 				49EB604C2549E864007313C8 /* GAVotes.entitlements */,
-				49DFCB332591BF0900A00431 /* VotingInfo */,
 				49F8987C2545647700FC7A3C /* Fonts */,
 				49DAA6782529B5BA00438D60 /* Storyboards */,
 				49DAA6772529B5A300438D60 /* Elections */,
 				49DAA6762529B58500438D60 /* Representatives */,
+				49DFCB332591BF0900A00431 /* VotingInfo */,
 				49DAA6752529B57800438D60 /* Address */,
 				49DAA6732529B55F00438D60 /* Resources */,
 				49006B4525258D2C00FCAACA /* Assets.xcassets */,

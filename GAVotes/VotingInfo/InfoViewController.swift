@@ -11,7 +11,7 @@ class InfoViewController: UIViewController {
     
     private let label: UILabel = {
         let label = UILabel()
-        label.text = "Here's some information about how to register and how to vote."
+        label.text = "Here's some information about how to register vote. Tap a topic to get started."
         label.textAlignment = .center
         label.textColor = .black
         label.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 20)

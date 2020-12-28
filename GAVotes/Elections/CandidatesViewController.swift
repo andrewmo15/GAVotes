@@ -60,7 +60,7 @@ extension CandidatesViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 22)!
         cell.textLabel?.textColor = .black
         cell.detailTextLabel?.text = formatName(name: (candidates?.candidates[indexPath.section]![indexPath.row].party)!)
-        cell.detailTextLabel?.font = UIFont(name: "LouisGeorgeCafe-Bold", size: 17)!
+        cell.detailTextLabel?.font = UIFont(name: "LouisGeorgeCafe", size: 17)!
         cell.detailTextLabel?.textColor = .black
         return cell
     }

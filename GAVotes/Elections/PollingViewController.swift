@@ -78,16 +78,29 @@ extension PollingViewController: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = .white
         cell.textLabel?.textColor = .black
         cell.detailTextLabel?.textColor = .black
+        cell.accessoryType = .disclosureIndicator
         switch indexPath.section {
         case 0:
             cell.textLabel?.text = formatName(name: polling![indexPath.row].name)
-            cell.detailTextLabel?.text = "\(polling![indexPath.row].start) - \(polling![indexPath.row].end)"
+            if polling![indexPath.row].start == "Not Available" && polling![indexPath.row].start == "Not Available" {
+                cell.detailTextLabel?.text = "Dates Not Available"
+            } else {
+                cell.detailTextLabel?.text = "\(polling![indexPath.row].start) - \(polling![indexPath.row].end)"
+            }
         case 1:
             cell.textLabel?.text = formatName(name: early![indexPath.row].name)
-            cell.detailTextLabel?.text = "\(early![indexPath.row].start) - \(early![indexPath.row].end)"
+            if early![indexPath.row].start == "Not Available" && early![indexPath.row].start == "Not Available" {
+                cell.detailTextLabel?.text = "Dates Not Available"
+            } else {
+                cell.detailTextLabel?.text = "\(early![indexPath.row].start) - \(early![indexPath.row].end)"
+            }
         case 2:
             cell.textLabel?.text = formatName(name: absentee![indexPath.row].name)
-            cell.detailTextLabel?.text = "\(absentee![indexPath.row].start) - \(absentee![indexPath.row].end)"
+            if absentee![indexPath.row].start == "Not Available" && absentee![indexPath.row].start == "Not Available" {
+                cell.detailTextLabel?.text = "Dates Not Available"
+            } else {
+                cell.detailTextLabel?.text = "\(absentee![indexPath.row].start) - \(absentee![indexPath.row].end)"
+            }
         default:
             break
         }
