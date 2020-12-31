@@ -242,6 +242,7 @@ extension LocationViewController: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = location?.address
             cell.textLabel?.numberOfLines = 2
             cell.selectionStyle = .default
+            cell.textLabel?.textColor = .link
         case 2:
             cell.textLabel?.text = location?.hours
             cell.textLabel?.numberOfLines = 20

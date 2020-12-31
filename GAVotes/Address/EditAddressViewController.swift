@@ -94,10 +94,12 @@ class EditAddressViewController: UIViewController {
         state.inputView = states
         configureToolBar()
         configureNavBar()
-        address.addTarget(self, action: #selector(WelcomeViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
-        city.addTarget(self, action: #selector(WelcomeViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
-        state.addTarget(self, action: #selector(WelcomeViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
-        zipcode.addTarget(self, action: #selector(WelcomeViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(EditAddressViewController.viewTapped(gestureRecognizer:)))
+        view.addGestureRecognizer(tapGesture)
+        address.addTarget(self, action: #selector(EditAddressViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
+        city.addTarget(self, action: #selector(EditAddressViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
+        state.addTarget(self, action: #selector(EditAddressViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
+        zipcode.addTarget(self, action: #selector(EditAddressViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
         view.addSubview(address)
         view.addSubview(city)
         view.addSubview(state)
@@ -143,6 +145,10 @@ class EditAddressViewController: UIViewController {
     
     @objc private func cancel() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc private func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
     @objc private func submitTapped() {

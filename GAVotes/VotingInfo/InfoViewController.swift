@@ -51,6 +51,7 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavBar()
+        view.backgroundColor = .white
         view.addSubview(label)
         view.addSubview(vr)
         view.addSubview(ev)

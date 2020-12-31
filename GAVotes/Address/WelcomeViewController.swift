@@ -127,6 +127,8 @@ class WelcomeViewController: UIViewController {
         state.inputView = states
         configureToolBar()
         configureNavBar()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(WelcomeViewController.viewTapped(gestureRecognizer:)))
+        view.addGestureRecognizer(tapGesture)
         address.addTarget(self, action: #selector(WelcomeViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
         city.addTarget(self, action: #selector(WelcomeViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
         state.addTarget(self, action: #selector(WelcomeViewController.textFieldShouldReturn(_:)), for: UIControl.Event.primaryActionTriggered)
@@ -184,6 +186,10 @@ class WelcomeViewController: UIViewController {
         toolBar.setItems([doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         state.inputAccessoryView = toolBar
+    }
+    
+    @objc private func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
     @objc private func doneTapped() {

@@ -85,19 +85,14 @@ class ElectionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(scrollView)
-        let url = formatURL()
-        getData(from: url)
         configureNavBar()
         view.backgroundColor = .white
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        view.addSubview(scrollView)
         let url = formatURL()
         getData(from: url)
-        configureNavBar()
-        view.backgroundColor = .white
     }
     
     override func viewDidLayoutSubviews() {
@@ -109,7 +104,7 @@ class ElectionsViewController: UIViewController {
         data.frame = CGRect(x: 30, y: date.frame.maxY + 20, width: view.frame.width - 60, height: 100)
         candidates.frame = CGRect(x: 30, y: data.frame.maxY + 100, width: view.frame.width - 60, height: 60)
         polling.frame = CGRect(x: 30, y: candidates.frame.maxY + 10, width: view.frame.width - 60, height: 60)
-        error.frame = CGRect(x: 20, y: 100, width: view.frame.width - 40, height: view.frame.height - 200)
+        error.frame = CGRect(x: 20, y: 0, width: view.frame.width - 40, height: view.frame.height - 200)
     }
     
     private func configureNavBar() {
@@ -121,7 +116,6 @@ class ElectionsViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bell.fill"), style: .done, target: self, action: #selector(alert))
         self.title = "Election"
     }
     
@@ -187,6 +181,7 @@ class ElectionsViewController: UIViewController {
             scrollView.addSubview(data)
             scrollView.addSubview(polling)
             scrollView.addSubview(candidates)
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bell.fill"), style: .done, target: self, action: #selector(alert))
         } else {
             error.text = "Data is not yet available for your location: \(UserDefaults.standard.string(forKey: "FullAddress") ?? "No address provided")\nPlease come back later or try a different location"
             name.removeFromSuperview()

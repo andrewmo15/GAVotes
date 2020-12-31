@@ -10,9 +10,9 @@
 		49006B3D25258D2A00FCAACA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49006B3C25258D2A00FCAACA /* AppDelegate.swift */; };
 		49006B3F25258D2A00FCAACA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49006B3E25258D2A00FCAACA /* SceneDelegate.swift */; };
 		49006B4125258D2A00FCAACA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49006B4025258D2A00FCAACA /* WelcomeViewController.swift */; };
-		49006B4425258D2A00FCAACA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49006B4225258D2A00FCAACA /* Main.storyboard */; };
 		49006B4625258D2C00FCAACA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49006B4525258D2C00FCAACA /* Assets.xcassets */; };
-		49006B4925258D2C00FCAACA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49006B4725258D2C00FCAACA /* LaunchScreen.storyboard */; };
+		49054BF1259E94C7005928C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49054BF0259E94C7005928C9 /* Main.storyboard */; };
+		49054BF9259E94E6005928C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49054BF8259E94E6005928C9 /* LaunchScreen.storyboard */; };
 		490935CB25259D61009D0740 /* RepresentativesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490935CA25259D61009D0740 /* RepresentativesViewController.swift */; };
 		492AAF482549214700DF1C0F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492AAF472549214700DF1C0F /* CustomButton.swift */; };
 		493983102529496700CD6D68 /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4939830F2529496700CD6D68 /* EditAddressViewController.swift */; };
@@ -64,12 +64,12 @@
 		49006B3C25258D2A00FCAACA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49006B3E25258D2A00FCAACA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		49006B4025258D2A00FCAACA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		49006B4325258D2A00FCAACA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49006B4525258D2C00FCAACA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		49006B4825258D2C00FCAACA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49006B4A25258D2C00FCAACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49006B4F25258D2C00FCAACA /* GAVotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GAVotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49006B5A25258D2C00FCAACA /* GAVotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GAVotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49054BF0259E94C7005928C9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		49054BF8259E94E6005928C9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		490935CA25259D61009D0740 /* RepresentativesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativesViewController.swift; sourceTree = "<group>"; };
 		492AAF472549214700DF1C0F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		4939830F2529496700CD6D68 /* EditAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
@@ -211,8 +211,8 @@
 		49DAA6782529B5BA00438D60 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				49006B4225258D2A00FCAACA /* Main.storyboard */,
-				49006B4725258D2C00FCAACA /* LaunchScreen.storyboard */,
+				49054BF0259E94C7005928C9 /* Main.storyboard */,
+				49054BF8259E94E6005928C9 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -354,10 +354,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				49F898842545648B00FC7A3C /* Louis George Cafe Bold.ttf in Resources */,
+				49054BF1259E94C7005928C9 /* Main.storyboard in Resources */,
 				49F898862545648B00FC7A3C /* Louis George Cafe Light Italic.ttf in Resources */,
-				49006B4925258D2C00FCAACA /* LaunchScreen.storyboard in Resources */,
+				49054BF9259E94E6005928C9 /* LaunchScreen.storyboard in Resources */,
 				49006B4625258D2C00FCAACA /* Assets.xcassets in Resources */,
-				49006B4425258D2A00FCAACA /* Main.storyboard in Resources */,
 				49F898872545648B00FC7A3C /* Louis George Cafe.ttf in Resources */,
 				49F898852545648B00FC7A3C /* Louis George Cafe Italic.ttf in Resources */,
 				49F898832545648B00FC7A3C /* Louis George Cafe Light.ttf in Resources */,
@@ -440,25 +440,6 @@
 			targetProxy = 49006B5B25258D2C00FCAACA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		49006B4225258D2A00FCAACA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49006B4325258D2A00FCAACA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		49006B4725258D2C00FCAACA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49006B4825258D2C00FCAACA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		49006B6125258D2C00FCAACA /* Debug */ = {

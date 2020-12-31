@@ -19,8 +19,6 @@ class LevelsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        let url = formatURL()
-        getData(from: url)
         configureButtons()
         configureNavBar()
     }
@@ -29,8 +27,6 @@ class LevelsViewController: UIViewController {
         super.viewDidAppear(true)
         let url = formatURL()
         getData(from: url)
-        configureButtons()
-        configureNavBar()
     }
     
     private func configureNavBar() {
